@@ -1,0 +1,11 @@
+# Fontes brutas (PDF, PPTX, imagens, extrações) ficam fora do git
+fontes/brutos/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Sistema
+.DS_Store
+Thumbs.db

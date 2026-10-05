@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT M&amp;A Cockpit</title>
+<meta name="description" content="Painel do portfólio de ofertas IT M&amp;A da A&amp;M Digital &amp; Technology Services: ciclo do deal, readiness e governança.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f4f5f7;
+  --surface: #fcfcfb;
+  --surface-2: #eef1f5;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6f6e69;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --brand: #0b2d52;
+  --rule: #0b2d52;
+  --brand-ink: #ffffff;
+  --accent: #256abf;
+  --s-atual: #184f95;
+  --s-alvo: #6da7ec;
+  --track: #cde2fb;
+  --shadow: 0 1px 2px rgba(11, 11, 11, 0.06), 0 4px 16px rgba(11, 11, 11, 0.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --surface-2: #232322;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #9a9890;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.10);
+    --brand: #0f2742;
+  --rule: #3987e5;
+    --brand-ink: #ffffff;
+    --accent: #6da7ec;
+    --s-atual: #86b6ef;
+    --s-alvo: #3987e5;
+    --track: #0d366b;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-2: #232322;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --muted: #9a9890;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.10);
+  --brand: #0f2742;
+  --rule: #3987e5;
+  --brand-ink: #ffffff;
+  --accent: #6da7ec;
+  --s-atual: #86b6ef;
+  --s-alvo: #3987e5;
+  --track: #0d366b;
+  --shadow: none;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+
+/* Cabeçalho */
+.hero { background: var(--brand); color: var(--brand-ink); padding: 28px 0 24px; }
+.hero .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-end; justify-content: space-between; }
+.eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .78; margin: 0 0 6px; }
+.hero h1 { font-size: clamp(26px, 4vw, 38px); line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+.hero p.sub { margin: 8px 0 0; opacity: .85; max-width: 62ch; }
+.theme-btn {
+  background: transparent; color: var(--brand-ink); border: 1px solid rgba(255,255,255,.35);
+  border-radius: 999px; padding: 6px 14px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.theme-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* KPIs */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: -20px auto 0; position: relative; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; box-shadow: var(--shadow); }
+.tile .label { color: var(--ink-2); font-size: 13px; margin: 0; }
+.tile .value { font-size: 30px; font-weight: 650; margin: 2px 0 0; letter-spacing: -.01em; }
+.tile .value.hero-fig { font-size: 48px; line-height: 1.05; }
+.tile .delta { color: var(--ink-2); font-size: 13px; margin: 4px 0 0; }
+.tile .delta strong { color: var(--ink); }
+
+section.block { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin: 18px 0; box-shadow: var(--shadow); }
+.block h2 { font-size: 19px; margin: 0; letter-spacing: -.005em; }
+.block .lede { color: var(--ink-2); margin: 4px 0 18px; max-width: 80ch; }
+
+/* Ciclo do deal */
+.cycle { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+.phase-head { font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2);
+  border-top: 3px solid var(--rule); padding-top: 8px; }
+.phase-head small { display: block; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--muted); font-size: 12px; margin-top: 2px; line-height: 1.35; }
+.card {
+  text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px;
+  display: flex; flex-direction: column; gap: 6px; min-width: 0;
+}
+.card:hover { border-color: var(--accent); }
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card .code { font-size: 11px; color: var(--muted); letter-spacing: .04em; }
+.card .name { font-weight: 600; font-size: 14px; line-height: 1.3; }
+.card .po { font-size: 12px; color: var(--ink-2); }
+.card .phases { display: none; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.card.struck .name { text-decoration: line-through; text-decoration-color: var(--muted); }
+.tag { display: inline-block; font-size: 11px; border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; color: var(--ink-2); }
+.review-row { grid-column: 1 / -1; margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--grid); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.review-row > span { font-size: 12px; color: var(--muted); margin-right: 4px; }
+
+/* Medidor (atual + marcador de alvo) */
+.meter { position: relative; height: 8px; border-radius: 4px; background: var(--track); }
+.meter .fill { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: var(--s-atual); }
+.meter .goal { position: absolute; top: -3px; width: 2px; height: 14px; background: var(--ink-2); border-radius: 1px; }
+.meter-legend { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+/* Gráfico atual → alvo */
+.legend { display: flex; gap: 18px; font-size: 13px; color: var(--ink-2); margin: 0 0 8px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+.legend .k-atual { background: var(--s-atual); }
+.legend .k-alvo { background: var(--surface); box-shadow: inset 0 0 0 2.5px var(--s-alvo); }
+.chart { width: 100%; height: auto; display: block; overflow: visible; }
+.chart text { fill: var(--ink-2); font-size: 12px; }
+.chart .lvl { fill: var(--muted); font-size: 11px; }
+.chart .gridline { stroke: var(--grid); stroke-width: 1; }
+.chart .row-hit { fill: transparent; cursor: pointer; }
+.chart .row-hit:hover, .chart .row-hit:focus { fill: var(--surface-2); outline: none; }
+.chart .conn { stroke: var(--axis); stroke-width: 2; stroke-linecap: round; }
+.chart .dot-atual { fill: var(--s-atual); stroke: var(--surface); stroke-width: 2; }
+.chart .dot-alvo { fill: var(--surface); stroke: var(--s-alvo); stroke-width: 2.5; }
+.chart .val { fill: var(--ink); font-variant-numeric: tabular-nums; }
+.chart .struck-label { text-decoration: line-through; }
+.tooltip { position: fixed; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 10px; font-size: 13px; box-shadow: 0 6px 24px rgba(0,0,0,.18); opacity: 0; transition: opacity .12s; z-index: 20; max-width: 280px; }
+.tooltip .t-name { color: var(--ink-2); font-size: 12px; margin-bottom: 4px; }
+.tooltip .t-row { display: flex; align-items: center; gap: 8px; }
+.tooltip .t-row b { font-variant-numeric: tabular-nums; }
+.tooltip .key { width: 12px; height: 2px; border-radius: 1px; }
+
+/* Insights */
+.insights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.insight { border: 1px solid var(--border); border-radius: 12px; padding: 16px; background: var(--surface-2); }
+.insight .kicker { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); margin: 0 0 6px; font-weight: 650; }
+.insight h3 { margin: 0 0 6px; font-size: 16px; line-height: 1.3; }
+.insight p { margin: 0; color: var(--ink-2); font-size: 14px; }
+.insight .num { font-size: 26px; font-weight: 650; color: var(--ink); margin: 8px 0 2px; }
+
+/* Tabela */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--grid); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); font-weight: 600; }
+td.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+tr.struck td.o-name { text-decoration: line-through; color: var(--ink-2); }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--surface-2); }
+
+/* Painel lateral de detalhe */
+.drawer-bg { position: fixed; inset: 0; background: rgba(0,0,0,.35); opacity: 0; pointer-events: none; transition: opacity .15s; z-index: 30; }
+.drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(480px, 100%); background: var(--surface); color: var(--ink);
+  border-left: 1px solid var(--border); transform: translateX(100%); transition: transform .2s ease; z-index: 31; overflow-y: auto; padding: 24px; }
+.drawer.open { transform: none; }
+.drawer-bg.open { opacity: 1; pointer-events: auto; }
+.drawer h3 { margin: 4px 0 8px; font-size: 21px; line-height: 1.25; }
+.drawer .close { float: right; background: none; border: 1px solid var(--border); color: var(--ink); border-radius: 8px; padding: 4px 10px; cursor: pointer; font: inherit; }
+.drawer dl { display: grid; grid-template-columns: 120px 1fr; gap: 6px 12px; font-size: 14px; margin: 16px 0; }
+.drawer dt { color: var(--ink-2); }
+.drawer dd { margin: 0; }
+.drawer .quote { border-left: 3px solid var(--rule); padding: 4px 0 4px 12px; color: var(--ink-2); margin: 12px 0; }
+.drawer .src { font-size: 12px; color: var(--muted); }
+.drawer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); margin: 18px 0 6px; }
+.drawer ol, .drawer ul { margin: 0; padding-left: 20px; font-size: 14px; }
+.drawer li { margin: 2px 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; }
+
+footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
+
+@media (max-width: 900px) {
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .insights { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .cycle { grid-template-columns: 1fr; }
+  .cycle .phase-head { display: none; }
+  .cycle .card { grid-column: 1 / -1 !important; grid-row: auto !important; }
+  .cycle .review-row { grid-row: auto !important; }
+  .card .phases { display: block; }
+}
+@media (max-width: 480px) {
+  .kpis { grid-template-columns: 1fr; }
+  .tile .value.hero-fig { font-size: 40px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" id="eyebrow">Alvarez &amp; Marsal · Digital &amp; Technology Services</p>
+      <h1>IT M&amp;A: cockpit da service line</h1>
+      <p class="sub">Todo o ciclo do deal, da estratégia ao exit: onde cada oferta atua, quão pronta está e para onde vai até o fim do ano fiscal.</p>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema claro/escuro">Tema</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="kpis" id="kpis"></div>
+
+  <section class="block" aria-labelledby="h-ciclo">
+    <h2 id="h-ciclo">Ciclo do deal</h2>
+    <p class="lede">Cada cartão é uma oferta, posicionada nas fases em que atua. A barra mostra o readiness atual; o traço vertical marca o alvo do FY. Clique para ver o detalhe.</p>
+    <div class="cycle" id="cycle"></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-ready">
+    <h2 id="h-ready">Readiness: atual → alvo FY</h2>
+    <p class="lede">Escala oficial de 1 (oferta incompleta, risco muito alto) a 5 (oferta otimizada, risco muito baixo). Ordenado pelo readiness atual.</p>
+    <div class="legend"><span><i class="k-atual"></i>Atual</span><span><i class="k-alvo"></i>Alvo FY</span></div>
+    <svg class="chart" id="chart" role="img" aria-labelledby="h-ready"></svg>
+  </section>
+
+  <section class="block" aria-labelledby="h-ins">
+    <h2 id="h-ins">O que os números dizem</h2>
+    <p class="lede">Leituras calculadas a partir dos dados do catálogo. Para a análise completa, veja <a href="../docs/">docs/</a>.</p>
+    <div class="insights" id="insights"></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-tab">
+    <h2 id="h-tab">Tabela do portfólio</h2>
+    <p class="lede">Todos os valores do painel, em formato de tabela.</p>
+    <div class="table-wrap"><table id="table"></table></div>
+  </section>
+
+  <footer id="footer"></footer>
+</main>
+
+<div class="tooltip" id="tip" role="status" aria-live="polite"></div>
+<div class="drawer-bg" id="drawerBg"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="d-title"></aside>
+
+<script id="dados" type="application/json">/*__DADOS__*/{}</script>
+<script>
+(function () {
+  "use strict";
+  var D = JSON.parse(document.getElementById("dados").textContent);
+  var fmt = function (v) { return Number(v).toFixed(1).replace(".", ","); };
+  var fmt2 = function (v) { return Number(v).toFixed(2).replace(".", ","); };
+  var el = function (tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  };
+  var SVG = "http://www.w3.org/2000/svg";
+  var svgEl = function (tag, attrs) {
+    var n = document.createElementNS(SVG, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    return n;
+  };
+  var faseIdx = {};
+  D.fases.forEach(function (f, i) { faseIdx[f.id] = i; });
+  var escalaNome = function (v) {
+    var n = Math.max(1, Math.min(5, Math.floor(v + 1e-9)));
+    return D.escala.filter(function (e) { return e.nivel === n; })[0];
+  };
+  var avg = function (xs) { return xs.reduce(function (a, b) { return a + b; }, 0) / (xs.length || 1); };
+  var ofertas = D.ofertas;
+  var ativas = ofertas.filter(function (o) { return o.no_catalogo_cliente; });
+  var tachadasFora = ofertas.filter(function (o) { return !o.no_catalogo_cliente; });
+
+  /* Tema */
+  var root = document.documentElement;
+  try { var t = localStorage.getItem("itma-theme"); if (t) root.setAttribute("data-theme", t); } catch (e) {}
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("itma-theme", next); } catch (e) {}
+  });
+
+  /* KPIs */
+  var kpis = document.getElementById("kpis");
+  var ind = D.indicadores;
+  var tile = function (label, value, delta, hero) {
+    var t = el("div", "tile");
+    t.appendChild(el("p", "label", label));
+    t.appendChild(el("p", "value" + (hero ? " hero-fig" : ""), value));
+    if (delta) {
+      var d = el("p", "delta");
+      d.appendChild(document.createTextNode(delta[0]));
+      d.appendChild(el("strong", null, delta[1]));
+      d.appendChild(document.createTextNode(delta[2] || ""));
+      t.appendChild(d);
+    }
+    return t;
+  };
+  var estrutHoje = ofertas.filter(function (o) { return o.readiness.atual >= 4; }).length;
+  var estrutAlvo = ofertas.filter(function (o) { return o.readiness.alvo_fy >= 4; }).length;
+  var nStruck = ofertas.filter(function (o) { return o.situacao_status_slide === "riscada"; }).length;
+  kpis.appendChild(tile("Readiness da service line", fmt2(ind.readiness_atual), ["Alvo FY ", fmt2(ind.readiness_alvo_fy), " · +" + fmt2(ind.readiness_alvo_fy - ind.readiness_atual)], true));
+  kpis.appendChild(tile("Ofertas no catálogo do cliente", String(ativas.length), ["", String(ofertas.length), " linhas no slide de status, " + nStruck + " tachadas"]));
+  kpis.appendChild(tile("Ofertas estruturadas (nível ≥ 4)", estrutHoje + " → " + estrutAlvo, ["Hoje → alvo do FY, de ", String(ofertas.length), " linhas"]));
+  var saltos = ofertas.filter(function (o) { return o.readiness.alvo_fy - o.readiness.atual >= 1 - 1e-9; }).length;
+  kpis.appendChild(tile("Saltos de um nível inteiro no FY", String(saltos), ["Linhas com meta de ", "+1,0", " ponto até o fim do ano fiscal"]));
+
+  /* Medidor */
+  var meter = function (o) {
+    var w = el("div");
+    var m = el("div", "meter");
+    m.setAttribute("role", "img");
+    m.setAttribute("aria-label", "Readiness atual " + fmt(o.readiness.atual) + ", alvo " + fmt(o.readiness.alvo_fy) + " de 5");
+    var f = el("div", "fill"); f.style.width = (o.readiness.atual / 5 * 100) + "%";
+    var g = el("div", "goal"); g.style.left = "calc(" + (o.readiness.alvo_fy / 5 * 100) + "% - 1px)";
+    m.appendChild(f); m.appendChild(g); w.appendChild(m);
+    w.appendChild(el("div", "meter-legend", fmt(o.readiness.atual) + " → " + fmt(o.readiness.alvo_fy)));
+    return w;
+  };
+  var card = function (o) {
+    var c = el("button", "card" + (o.situacao_status_slide === "riscada" ? " struck" : ""));
+    c.type = "button";
+    c.appendChild(el("span", "code", o.codigo));
+    c.appendChild(el("span", "phases", o.fases.map(function (f) { return D.fases[faseIdx[f]].nome; }).join(" · ")));
+    c.appendChild(el("span", "name", o.nome_no_catalogo || o.nome));
+    c.appendChild(meter(o));
+    if (o.po) c.appendChild(el("span", "po", "PO: " + o.po));
+    if (o.situacao_status_slide === "riscada") c.appendChild(el("span", "tag", "Tachada no status"));
+    c.addEventListener("click", function () { openDrawer(o); });
+    return c;
+  };
+
+  /* Ciclo do deal: grade de 6 fases, cada oferta ocupa a faixa contínua de fases em que atua */
+  var cycle = document.getElementById("cycle");
+  D.fases.forEach(function (f, i) {
+    var h = el("div", "phase-head", f.nome);
+    h.appendChild(el("small", null, f.pergunta_do_cliente));
+    h.style.gridColumn = String(i + 1);
+    h.style.gridRow = "1";
+    cycle.appendChild(h);
+  });
+  var ocupacao = {}; /* células (linha:coluna) já ocupadas */
+  var ultimaLinha = 1;
+  var colocar = function (ini, fim) {
+    for (var row = 2; ; row++) {
+      var livre = true;
+      for (var c = ini; c <= fim; c++) if (ocupacao[row + ":" + c]) { livre = false; break; }
+      if (livre) {
+        for (var c2 = ini; c2 <= fim; c2++) ocupacao[row + ":" + c2] = true;
+        ultimaLinha = Math.max(ultimaLinha, row);
+        return row;
+      }
+    }
+  };
+  ativas
+    .map(function (o) {
+      var idx = o.fases.map(function (f) { return faseIdx[f]; });
+      return { o: o, ini: Math.min.apply(null, idx), fim: Math.max.apply(null, idx) };
+    })
+    .sort(function (a, b) { return (a.fim - a.ini) - (b.fim - b.ini) || a.ini - b.ini; })
+    .forEach(function (x) {
+      var c = card(x.o);
+      c.style.gridColumn = (x.ini + 1) + " / " + (x.fim + 2);
+      c.style.gridRow = String(colocar(x.ini, x.fim));
+      cycle.appendChild(c);
+    });
+  if (tachadasFora.length) {
+    var rr = el("div", "review-row");
+    rr.appendChild(el("span", null, "Linhas tachadas no slide de status, sem caixa própria no catálogo:"));
+    tachadasFora.forEach(function (o) { rr.appendChild(card(o)); });
+    rr.style.gridRow = String(ultimaLinha + 1);
+    cycle.appendChild(rr);
+  }
+
+  /* Gráfico atual → alvo (dumbbell) */
+  var tip = document.getElementById("tip");
+  var showTip = function (o, x, y) {
+    tip.textContent = "";
+    tip.appendChild(el("div", "t-name", o.nome));
+    [["Atual", o.readiness.atual, "var(--s-atual)"], ["Alvo FY", o.readiness.alvo_fy, "var(--s-alvo)"]].forEach(function (r) {
+      var row = el("div", "t-row");
+      var k = el("span", "key"); k.style.background = r[2];
+      row.appendChild(k); row.appendChild(el("b", null, fmt(r[1]))); row.appendChild(el("span", null, r[0]));
+      tip.appendChild(row);
+    });
+    tip.appendChild(el("div", "t-name", escalaNome(o.readiness.atual).nome + " hoje · +" + fmt(o.readiness.alvo_fy - o.readiness.atual) + " no FY"));
+    var w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.min(window.innerWidth - w - 8, x + 14) + "px";
+    tip.style.top = Math.max(8, y - h - 10) + "px";
+    tip.style.opacity = 1;
+  };
+  var hideTip = function () { tip.style.opacity = 0; };
+
+  var drawChart = function () {
+    var svg = document.getElementById("chart");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    var W = svg.parentNode.clientWidth - 44;
+    var narrow = W < 640;
+    var labelW = narrow ? 0 : 300, valW = 70, rowH = narrow ? 44 : 34, top = 26;
+    var sorted = ofertas.slice().sort(function (a, b) { return b.readiness.atual - a.readiness.atual || b.readiness.alvo_fy - a.readiness.alvo_fy; });
+    var H = top + sorted.length * rowH + 8;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("height", H);
+    var x0 = labelW + 8, x1 = W - valW - 12;
+    var sx = function (v) { return x0 + (v - 1) / 4 * (x1 - x0); };
+    D.escala.forEach(function (e) {
+      svg.appendChild(svgEl("line", { x1: sx(e.nivel), x2: sx(e.nivel), y1: top - 6, y2: H - 4, "class": "gridline" }));
+      var t = svgEl("text", { x: sx(e.nivel), y: 12, "text-anchor": e.nivel === 1 ? "start" : (e.nivel === 5 ? "end" : "middle"), "class": "lvl" });
+      t.textContent = narrow ? String(e.nivel) : e.nivel + " · " + e.nome.replace("Oferta ", "");
+      svg.appendChild(t);
+    });
+    sorted.forEach(function (o, i) {
+      var cy = top + i * rowH + (narrow ? 30 : rowH / 2);
+      var g = svgEl("g", { tabindex: "0", role: "button", "aria-label": o.nome + ": atual " + fmt(o.readiness.atual) + ", alvo " + fmt(o.readiness.alvo_fy) });
+      g.appendChild(svgEl("rect", { x: 0, y: top + i * rowH, width: W, height: rowH, rx: 6, "class": "row-hit" }));
+      var lab = svgEl("text", narrow ? { x: 0, y: cy - 14 } : { x: 0, y: cy + 4 });
+      lab.textContent = o.nome_no_status || o.nome;
+      if (o.situacao_status_slide === "riscada") lab.setAttribute("class", "struck-label");
+      g.appendChild(lab);
+      g.appendChild(svgEl("line", { x1: sx(o.readiness.atual), x2: sx(o.readiness.alvo_fy), y1: cy, y2: cy, "class": "conn" }));
+      g.appendChild(svgEl("circle", { cx: sx(o.readiness.alvo_fy), cy: cy, r: 5.5, "class": "dot-alvo" }));
+      g.appendChild(svgEl("circle", { cx: sx(o.readiness.atual), cy: cy, r: 6, "class": "dot-atual" }));
+      var v = svgEl("text", { x: W, y: cy + 4, "text-anchor": "end", "class": "val" });
+      v.textContent = fmt(o.readiness.atual) + " → " + fmt(o.readiness.alvo_fy);
+      g.appendChild(v);
+      g.addEventListener("pointermove", function (ev) { showTip(o, ev.clientX, ev.clientY); });
+      g.addEventListener("pointerleave", hideTip);
+      g.addEventListener("focus", function () { var r = g.getBoundingClientRect(); showTip(o, r.left + sx(o.readiness.alvo_fy), r.top + rowH / 2); });
+      g.addEventListener("blur", hideTip);
+      g.addEventListener("click", function () { openDrawer(o); });
+      g.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); openDrawer(o); } });
+      svg.appendChild(g);
+    });
+  };
+  drawChart();
+  var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(drawChart, 120); });
+
+  /* Insights calculados */
+  var only = function (o, set) { return o.fases.every(function (f) { return set.indexOf(f) >= 0; }); };
+  var pontas = ativas.filter(function (o) { return only(o, ["strategy"]) || only(o, ["exit"]); });
+  var transversais = ativas.filter(function (o) { return o.fases.length === D.fases.length; });
+  var miolo = ativas.filter(function (o) { return pontas.indexOf(o) < 0 && transversais.indexOf(o) < 0; });
+  var r = function (xs) { return avg(xs.map(function (o) { return o.readiness.atual; })); };
+  var porPO = {};
+  ofertas.forEach(function (o) { if (o.po) porPO[o.po] = (porPO[o.po] || 0) + 1; });
+  var topPO = Object.keys(porPO).sort(function (a, b) { return porPO[b] - porPO[a]; })[0];
+  var insights = [
+    { k: "Forma do portfólio", h: "Forte no meio, frágil nas pontas",
+      n: fmt(r(miolo)) + " × " + fmt(r(pontas)),
+      p: "Readiness médio das ofertas de diligência e execução (" + miolo.length + ") contra as das pontas do ciclo, estratégia e exit (" + pontas.length + "). O ciclo é bem servido onde o deal acontece e mais fraco onde ele começa e termina." },
+    { k: "Paradoxo do valor", h: "A oferta mais ampla é a menos madura",
+      n: transversais.length ? fmt(transversais[0].readiness.atual) : "—",
+      p: "IT Synergies & Value Creation é a única que atravessa as 6 fases e ancora a relação recorrente com fundos de PE, mas tem o menor readiness do portfólio." },
+    { k: "Capacidade", h: "Concentração em poucos POs",
+      n: topPO ? porPO[topPO] + " de " + ofertas.length : "—",
+      p: topPO ? "Linhas sob um único PO (" + topPO + "). O próprio slide avisa que POs e membros serão reajustados." : "Dados de governança não disponíveis nesta versão." },
+  ];
+  var ins = document.getElementById("insights");
+  insights.forEach(function (x) {
+    var c = el("article", "insight");
+    c.appendChild(el("p", "kicker", x.k));
+    c.appendChild(el("h3", null, x.h));
+    c.appendChild(el("p", "num", x.n));
+    c.appendChild(el("p", null, x.p));
+    ins.appendChild(c);
+  });
+
+  /* Tabela (gêmea acessível do gráfico) */
+  var table = document.getElementById("table");
+  var thead = el("thead"), hr = el("tr");
+  ["Código", "Oferta", "Fases", "Atual", "Alvo FY", "Gap", "Nível atual", "PO", "Squad"].forEach(function (h, i) {
+    var th = el("th", null, h); if (i >= 3 && i <= 5) th.style.textAlign = "right"; hr.appendChild(th);
+  });
+  thead.appendChild(hr); table.appendChild(thead);
+  var tbody = el("tbody");
+  ofertas.forEach(function (o) {
+    var tr = el("tr", o.situacao_status_slide === "riscada" ? "struck" : "");
+    var faseNomes = o.fases.map(function (f) { return D.fases[faseIdx[f]].nome; }).join(", ");
+    [[o.codigo], [o.nome, "o-name"], [faseNomes], [fmt(o.readiness.atual), "num"], [fmt(o.readiness.alvo_fy), "num"],
+     ["+" + fmt(o.readiness.alvo_fy - o.readiness.atual), "num"], [escalaNome(o.readiness.atual).nome], [o.po || "—"], [(o.squad || []).join(", ") || "—"]]
+      .forEach(function (c) { tr.appendChild(el("td", c[1] || null, c[0])); });
+    tr.tabIndex = 0;
+    tr.addEventListener("click", function () { openDrawer(o); });
+    tr.addEventListener("keydown", function (ev) { if (ev.key === "Enter") openDrawer(o); });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+
+  /* Painel de detalhe */
+  var drawer = document.getElementById("drawer"), bg = document.getElementById("drawerBg");
+  var lastFocus = null;
+  function closeDrawer() {
+    drawer.classList.remove("open"); bg.classList.remove("open");
+    drawer.setAttribute("aria-hidden", "true");
+    if (lastFocus) lastFocus.focus();
+  }
+  function openDrawer(o) {
+    lastFocus = document.activeElement;
+    drawer.textContent = "";
+    var x = el("button", "close", "Fechar"); x.type = "button"; x.addEventListener("click", closeDrawer);
+    drawer.appendChild(x);
+    drawer.appendChild(el("span", "code", o.codigo + (o.situacao_status_slide === "riscada" ? " · tachada no slide de status" : "")));
+    var h = el("h3", null, o.nome); h.id = "d-title"; drawer.appendChild(h);
+    if (o.proposta_de_valor) {
+      drawer.appendChild(el("p", null, o.proposta_de_valor));
+      drawer.appendChild(el("p", "src", "Proposta de valor: síntese analítica deste repositório, a validar com o PO."));
+    }
+    drawer.appendChild(meter(o));
+    var dl = el("dl");
+    var row = function (k, v) { dl.appendChild(el("dt", null, k)); dl.appendChild(el("dd", null, v)); };
+    row("Fases", o.fases.map(function (f) { return D.fases[faseIdx[f]].nome; }).join(", "));
+    row("Nível atual", escalaNome(o.readiness.atual).nome + " (risco " + escalaNome(o.readiness.atual).risco + ")");
+    row("Nome no status", o.nome_no_status || "—");
+    row("Nome no catálogo", o.nome_no_catalogo || "Sem caixa própria");
+    if (o.po) row("PO", o.po);
+    if (o.squad) row("Squad", o.squad.join(", ") || "—");
+    drawer.appendChild(dl);
+    if (o.descricao_oficial) {
+      drawer.appendChild(el("div", "quote", o.descricao_oficial));
+      drawer.appendChild(el("p", "src", "Descrição oficial, slide “A&M é M&A”."));
+    }
+    var dk = o.deck;
+    if (dk) {
+      var NI = "Não informado no deck";
+      var h4 = function (txt) { drawer.appendChild(el("h4", null, txt)); };
+      var lista = function (tag, itens) { var l = el(tag); itens.forEach(function (i) { l.appendChild(el("li", null, i)); }); drawer.appendChild(l); };
+      if (dk.objetivo) { h4("Objetivo · deck comercial"); drawer.appendChild(el("p", null, dk.objetivo)); }
+      if (dk.etapas && dk.etapas.length) { h4("Como fazemos"); lista("ol", dk.etapas.map(function (s) { return s.replace(/^\d+\s+/, ""); })); }
+      if (dk.abordagem) drawer.appendChild(el("p", "src", dk.abordagem));
+      if (dk.dimensoes && dk.dimensoes.length) {
+        h4("Dimensões avaliadas");
+        var ch = el("div", "chips"); dk.dimensoes.forEach(function (d) { ch.appendChild(el("span", "chip", d)); }); drawer.appendChild(ch);
+      }
+      if (dk.entregaveis && dk.entregaveis.length) { h4("Entregáveis"); lista("ul", dk.entregaveis); }
+      var dl2 = el("dl");
+      var row2 = function (k, v) { if (v && v !== NI) { dl2.appendChild(el("dt", null, k)); dl2.appendChild(el("dd", null, v)); } };
+      row2("Momento", dk.momento); row2("Prazo", dk.prazo); row2("Modelo comercial", dk.modelo_comercial);
+      if (dl2.childNodes.length) { h4("Quando e como contratar"); drawer.appendChild(dl2); }
+      if (dk.cases && dk.cases.length) { h4("Cases"); lista("ul", dk.cases); }
+      if (dk.observacao) drawer.appendChild(el("p", "src", dk.observacao));
+    }
+    if (o.dossie) {
+      var a = el("a", null, "Abrir o dossiê completo →"); a.href = "../" + o.dossie;
+      var p = el("p"); p.appendChild(a); drawer.appendChild(p);
+    }
+    drawer.classList.add("open"); bg.classList.add("open");
+    drawer.setAttribute("aria-hidden", "false");
+    x.focus();
+  }
+  bg.addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && drawer.classList.contains("open")) closeDrawer(); });
+
+  var lid = D.lideranca && D.lideranca.length ? " · Liderança da service line: " + D.lideranca.join(", ") : "";
+  document.getElementById("footer").textContent =
+    D.meta.firma + " · " + D.meta.pratica + " · " + D.meta.service_line + lid +
+    " · Dados de " + D.meta.atualizado_em + (D.aviso ? " · Aviso do slide: “" + D.aviso + "”" : "") +
+    " · Gerado por scripts/catalogo.py a partir de data/.";
+})();
+</script>
+</body>
+</html>

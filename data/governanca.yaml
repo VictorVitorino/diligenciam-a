@@ -1,0 +1,64 @@
+# =============================================================================
+#  GOVERNANÇA DA SERVICE LINE IT M&A  ·  USO INTERNO
+#  Fonte: slide "Status das Ofertas – IT M&A".
+#  Contém nomes de profissionais. Não publicar fora da A&M.
+# =============================================================================
+
+aviso_do_slide: "POs e Membros serão reajustados"
+
+lideranca_service_line:
+  - Thiago Vieira
+
+# Fluxo de status de cada oferta (legenda do slide). Na versão analisada,
+# a coluna "Status" estava vazia para todas as ofertas.
+fluxo_status:
+  - id: pendente-avaliacao
+    nome: Pendente de Avaliação
+  - id: em-avaliacao-po
+    nome: Em Avaliação do PO
+  - id: pendente-aprovacao
+    nome: Pendente de Aprovação
+  - id: aprovada
+    nome: Aprovada
+
+ofertas:
+  it-ma-playbook:
+    po: Thiago Lorusso
+    squad: [Glaucea N, Tatiane N]
+    status: null
+  it-separation-strategy-design:
+    po: Heitor Milani
+    squad: [Marcela B]
+    status: null
+  it-due-diligence-buy-side:
+    po: Matheus Teixeira
+    squad: [Julio F]
+    status: null
+  it-integration-separation-planning:
+    po: Thiago Lorusso
+    squad: [Marcela B]
+    status: null
+  it-integration-management-office:
+    po: Talita Galvão
+    squad: [Tatiane N, Guilherme C]
+    status: null
+  it-separation-management-office:
+    po: Heitor Milani
+    squad: [Guilherme C]
+    status: null
+  it-due-diligence-sell-side:
+    po: Eric Anjos
+    squad: [João M, Luana G]
+    status: null
+  it-synergies-value-creation:
+    po: Guilherme Brein
+    squad: [Giovanna B, Alexandre B]
+    status: null
+  it-due-diligence-corporate:
+    po: Thiago Lorusso
+    squad: [Victor F, Thais M]
+    status: null
+  it-due-diligence-venture-capital:
+    po: Guilherme Brein
+    squad: [Tatiane N, Thais M]
+    status: null

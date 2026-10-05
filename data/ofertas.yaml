@@ -1,0 +1,540 @@
+# =============================================================================
+#  CATÁLOGO IT M&A · Alvarez & Marsal · Digital & Technology Services (DTS)
+#  Fonte única da verdade. Toda a documentação e o painel derivam deste arquivo.
+#
+#  Convenção de proveniência de cada campo:
+#    descricao_oficial  -> texto transcrito do slide "A&M É M&A" (fonte primária)
+#    readiness          -> slide "Status das Ofertas – IT M&A" (fonte primária)
+#    deck.*             -> Deck Comercial DTS M&A Full v7 (fonte primária)
+#    analise.*          -> síntese analítica deste repositório, A VALIDAR com o PO
+#
+#  Nas descrições oficiais só foram corrigidos erros de digitação do slide
+#  (ex.: "para da transação" -> "para a transação"). O sentido não foi alterado.
+# =============================================================================
+
+meta:
+  firma: Alvarez & Marsal (A&M)
+  pratica: Digital & Technology Services (DTS)
+  service_line: IT M&A
+  experiencia_declarada: "mais de 20 anos de experiência de atuação global"
+  atualizado_em: "2026-10-05"
+  # Os arquivos-fonte brutos NÃO são versionados neste repositório.
+  fontes:
+    - id: deck-comercial
+      titulo: "Deck Comercial - DIGITAL & TECHNOLOGY SERVICES - M&A - Full v7.pdf"
+      tipo: deck comercial completo (PDF, 10,9 MB)
+      status_ingestao: analisado
+    - id: slide-status
+      titulo: "Status das Ofertas – IT M&A"
+      tipo: slide interno de governança
+      status_ingestao: analisado
+    - id: slide-catalogo
+      titulo: "A&M é M&A"
+      tipo: slide de posicionamento (também presente no deck comercial)
+      status_ingestao: analisado
+    - id: deck-one-pagers
+      titulo: "One-pagers DTS.pptx"
+      tipo: deck de one-pagers (123 MB)
+      status_ingestao: pendente
+      observacao: "Aguardando versão em partes menores que 10 MB. Ver fontes/README.md."
+
+# Escala oficial de readiness (legenda do slide de status)
+escala_readiness:
+  - nivel: 1
+    nome: Oferta incompleta
+    risco: muito alto
+  - nivel: 2
+    nome: Oferta inicial
+    risco: alto
+  - nivel: 3
+    nome: Oferta definida
+    risco: médio
+  - nivel: 4
+    nome: Oferta estruturada
+    risco: baixo
+  - nivel: 5
+    nome: Oferta otimizada
+    risco: muito baixo
+
+# Indicadores consolidados declarados no slide (o script valida que batem
+# com a média simples das ofertas).
+indicadores_service_line:
+  readiness_atual: 3.29
+  readiness_alvo_fy: 3.95
+
+# Ciclo de vida do deal (linha do tempo do slide "A&M é M&A")
+fases:
+  - id: strategy
+    ordem: 1
+    nome: M&A Strategy
+    pergunta_do_cliente: "Nossa TI está preparada para fazer M&A de forma recorrente e previsível?"
+  - id: pre-deal
+    ordem: 2
+    nome: Pré-deal
+    pergunta_do_cliente: "Quais riscos e oportunidades de TI mudam o valor (e o preço) deste deal?"
+  - id: sign-to-close
+    ordem: 3
+    nome: Sign-to-Close
+    pergunta_do_cliente: "Como chegamos ao Day 1 sem ruptura e com o valor já endereçado?"
+  - id: first-100-days
+    ordem: 4
+    nome: 100 days
+    pergunta_do_cliente: "Como capturar as sinergias de TI no menor tempo possível?"
+  - id: hold
+    ordem: 5
+    nome: Hold period (~3-5 anos)
+    pergunta_do_cliente: "Como a TI multiplica o valor do ativo durante o ciclo de investimento?"
+  - id: exit
+    ordem: 6
+    nome: Exit
+    pergunta_do_cliente: "Como preparar a TI para vender pelo melhor valor, sem surpresas na diligência?"
+
+# Famílias propostas (análise) para leitura do portfólio
+familias:
+  - id: estrategia-design
+    nome: Estratégia & Design
+  - id: diligencia
+    nome: Diligência
+  - id: planejamento-execucao
+    nome: Planejamento & Execução
+  - id: valor
+    nome: Criação de Valor
+
+# -----------------------------------------------------------------------------
+#  OFERTAS
+#  situacao_status_slide: ativa | riscada  (linha tachada no slide de status)
+#  no_catalogo_cliente:   true se aparece no slide "A&M é M&A"
+# -----------------------------------------------------------------------------
+ofertas:
+
+  - id: it-ma-playbook
+    codigo: ITMA-01
+    dossie: ofertas/01-it-ma-playbook.md
+    nome: IT M&A Playbook
+    nome_no_status: IT M&A Playbook
+    nome_no_catalogo: IT M&A Playbook
+    familia: estrategia-design
+    fases: [strategy]
+    lado: [corporate, private-equity]
+    tipo_transacao: [aquisicao, integracao, separacao]
+    situacao_status_slide: ativa
+    no_catalogo_cliente: true
+    readiness: { atual: 2.7, alvo_fy: 3.7 }
+    descricao_oficial: >-
+      Desenvolvimento de Playbook de TI para M&A do cliente, sob medida, para
+      preparar a organização de TI na avaliação, preparação, gerenciamento e
+      execução de aquisições e integrações ou separações no âmbito de tecnologia.
+    deck:
+      objetivo: Assessorar e desenvolver as áreas de tecnologia, no estabelecimento de ferramentas e padrões, nas diversas
+        etapas de um ciclo de M&A.
+      etapas:
+      - 01 Compreender
+      - 02 Definir
+      - 03 Acompanhar (recomendável)
+      - 04 Preparar
+      dimensoes:
+      - IT Due Diligence
+      - Plano de integração ou separação
+      - Escritório de integração ou separação
+      entregaveis:
+      - Ferramentas para IT Due Diligence
+      - Template personalizado de IT Data Request
+      - Modelos de estimativas financeiras para o Business Plan
+      - Drivers de priorização do roadmap de integração ou separação
+      - Ferramentas de planejamento da integração ou separação
+      - Checklist de tomada de controle
+      - Plano de treinamento da operação personalizado
+      - IT Tactical design (exemplo)
+      momento: Não informado no deck
+      prazo: Não informado no deck
+      modelo_comercial: Não informado no deck
+      cases: []
+    analise:
+      proposta_de_valor: "Transforma M&A de evento heroico em capacidade organizacional repetível."
+      cliente_ideal: "Corporates e plataformas de PE com tese de buy-and-build (aquisições recorrentes)."
+      gatilhos: ["Plano de aquisições anunciado", "Integração anterior com problemas", "Novo CIO/CFO com agenda inorgânica"]
+      kpis: ["Tempo até Day 1", "% de sinergias de TI capturadas", "Reuso de artefatos entre deals"]
+      conexoes: [it-due-diligence-buy-side, it-integration-separation-planning]
+
+  - id: it-due-diligence-buy-side
+    codigo: ITMA-02
+    dossie: ofertas/02-it-due-diligence-buy-side.md
+    nome: IT Due Diligence (Buy Side)
+    nome_no_status: IT Due Diligence (Private Equity)
+    nome_no_catalogo: IT Due Diligence (Buy Side) PE or VC
+    familia: diligencia
+    fases: [pre-deal]
+    lado: [private-equity, venture-capital]
+    tipo_transacao: [aquisicao]
+    situacao_status_slide: ativa
+    no_catalogo_cliente: true
+    readiness: { atual: 4.5, alvo_fy: 4.7 }
+    descricao_oficial: >-
+      Identificar potenciais riscos ou problemas que possam influenciar no valor
+      do deal, avaliar sinergias e garantir que os investimentos de TI serão
+      considerados dentro do plano estratégico do deal.
+    deck:
+      objetivo: Mapear o cenário atual (As-Is), identificar riscos e oportunidades e endereçá-los com recomendações
+        (iniciativas de mitigação e enablers).
+      etapas:
+      - 01 Compreender
+      - 02 Capturar & Avaliar
+      - 03 Recomendar
+      dimensoes:
+      - Pessoas
+      - Governança
+      - Segurança
+      - Infraestrutura
+      - Sistemas
+      - Digital
+      entregaveis:
+      - Findings por dimensão
+      - Assessment de disciplinas e maturidade
+      - Matriz de riscos
+      - Recomendações com prazo, CAPEX e OPEX em cenários worst/base/best
+      - Avaliação de maturidade As-Is
+      momento: Pré-deal
+      prazo: 'Até 6 semanas (variante VC On Demand: 2 a 3 semanas)'
+      modelo_comercial: 'Profundidade sob medida (níveis 1 a 3 por disciplina). Variante VC em modelos VMaaS: On Demand
+        (R$ 35k/semana), Package (anual/semestral, consumo por acionamento) e Full Cycle (as-a-service, faturamento
+        mensal).'
+      cases:
+      - 'CERC: IT DD para possível investimento do Mubadala Capital'
+      - 'Virutex Ilko (Chile): 17 iniciativas mapeadas, base do plano de integração'
+      - 'Braveo (tese de distribuição de FMCG): IT DDs e planejamento de PMI de 4 das 15 investidas'
+    analise:
+      proposta_de_valor: "Traduz a TI do alvo em linguagem de deal: risco, CAPEX/OPEX oculto e alavancas de valor."
+      cliente_ideal: "Fundos de PE e VC em processo competitivo de aquisição."
+      gatilhos: ["Abertura de data room (VDR)", "Carta de intenções (LOI) assinada", "Ativo com TI crítica para a tese"]
+      kpis: ["Ajustes de preço/cláusulas originados pela DD de TI", "Prazo de entrega do relatório", "Precisão das estimativas vs. realizado"]
+      conexoes: [it-integration-separation-planning, it-synergies-value-creation]
+
+  - id: it-separation-strategy-design
+    codigo: ITMA-03
+    dossie: ofertas/03-it-separation-strategy-design.md
+    nome: IT Separation Strategy & Design
+    nome_no_status: IT Separation Strategy & Design
+    nome_no_catalogo: IT Separation Strategy & Design
+    familia: estrategia-design
+    fases: [pre-deal]
+    lado: [corporate, private-equity]
+    tipo_transacao: [separacao, carve-out]
+    situacao_status_slide: ativa
+    no_catalogo_cliente: true
+    readiness: { atual: 3.6, alvo_fy: 4.1 }
+    descricao_oficial: >-
+      Definição da estratégia de TI para a separação, através do diagnóstico da
+      estrutura atual, mapeamento dos entanglements e definição dos cenários de
+      separação, construindo o landscape de TI futuro.
+    deck:
+      objetivo: Definir a estratégia de TI da separação com mitigação de riscos e prevenção de ruptura das operações
+        de TI existentes.
+      etapas:
+      - 01 Compreender
+      - 02 Capturar & Avaliar
+      - 03 Definir
+      abordagem: 'Mapeamento As-Is → Entanglement Log (Major e Minor; Build Duplicate, Rebuild ou New Build) → Avaliação de cenários To-Be'
+      dimensoes:
+      - Pessoas
+      - Processos
+      - Aplicações
+      - Infraestrutura
+      - Governança
+      entregaveis:
+      - Entanglement Log (Major e Minor)
+      - Heatmap de riscos
+      - Suporte à definição do TSA
+      - Inventário de aplicações
+      - Estratégia de licenciamento
+      - Infraestrutura necessária para a NewCo
+      - Estrutura organizacional e modelo operacional To-Be
+      - Análise de custos (Opex/Capex, one-time e stranded)
+      momento: Pré-deal (momento recomendado para início)
+      prazo: Não informado no deck
+      modelo_comercial: Não informado no deck
+      cases:
+      - 'Mubadala e UniFTC: carve-out de nova instituição de ensino, mais de 50 entanglements mapeados'
+      - 'Mubadala e Invepar (MetroRio e LAMSA, holding Hmobi): mais de 67 entanglements mapeados'
+    analise:
+      proposta_de_valor: "Desembaraça a TI antes que o emaranhado vire custo, atraso ou TSA eterno."
+      cliente_ideal: "Grupos em desinvestimento (carve-out) e compradores de unidades de negócio."
+      gatilhos: ["Decisão de desinvestir uma unidade", "Spin-off planejado", "Compra de carve-out"]
+      kpis: ["Nº de entanglements mapeados e resolvidos", "Duração e custo de TSAs", "Custo one-off de separação"]
+      conexoes: [it-integration-separation-planning, it-separation-management-office]
+
+  - id: it-integration-separation-planning
+    codigo: ITMA-04
+    dossie: ofertas/04-it-integration-separation-planning.md
+    nome: IT Integration & Separation Planning (Day 1 & 100-Day)
+    nome_no_status: IT Integration & Separation Planning
+    nome_no_catalogo: IT Integration & Separation Planning (Day1-&100-Day)
+    familia: planejamento-execucao
+    fases: [sign-to-close]
+    lado: [corporate, private-equity]
+    tipo_transacao: [integracao, separacao]
+    situacao_status_slide: ativa
+    no_catalogo_cliente: true
+    readiness: { atual: 4.0, alvo_fy: 4.3 }
+    descricao_oficial: >-
+      Planejamento robusto do projeto e mudança, garantindo que a TI esteja
+      envolvida no processo de M&A junto com as principais áreas funcionais,
+      mitigando riscos e antecipando captura de valor para a transação.
+    deck:
+      objetivo: Planejamento robusto da integração da target com a buyer ou da separação de unidades de negócio, com
+        foco nos 100 primeiros dias.
+      etapas:
+      - Descobrir
+      - Planejar
+      - Desenvolver
+      - Recomendar
+      - Consolidar
+      dimensoes:
+      - Pessoas
+      - Processos
+      - Aplicações
+      - Infraestrutura
+      - Governança
+      entregaveis:
+      - Project charters com escopo, prazo e custo
+      - Cronograma de integração ou separação com foco em 100 dias
+      - Checklist de tomada de controle para o Day 1
+      - Matriz de priorização e heatmap de pessoas
+      - Matriz de riscos e roadmap consolidado
+      - Estratégias de orçamentação de tecnologia
+      - Estratégia e plano de comunicação
+      - Matriz RACI
+      - Transição para IMO ou SMO
+      momento: Entre Signing e Closing (sem planejamento, empresas podem gastar de 2 a 3 vezes mais com TI)
+      prazo: Não informado no deck
+      modelo_comercial: Não informado no deck
+      cases:
+      - 'Plurix (holding do Pátria no varejo regional): ITDD de 6 targets, arquitetura de referência, planejamento e
+        PMI de TI D1–D100'
+      - 'Braveo: 35 iniciativas de 2 investidas para o plano de 100 dias'
+      - 'Invepar: preparação do carve-out de TI de MetroRio e MetroBarra (NewCo Hmobi)'
+    analise:
+      proposta_de_valor: "Garante um Day 1 sem ruptura e um plano de 100 dias que já nasce orientado a valor."
+      cliente_ideal: "Compradores e vendedores entre a assinatura (signing) e o fechamento (closing)."
+      gatilhos: ["Signing do SPA", "Aprovação regulatória em andamento", "Necessidade de TSA"]
+      kpis: ["Incidentes críticos no Day 1", "Aderência ao plano de 100 dias", "Sinergias antecipadas"]
+      conexoes: [it-integration-management-office, it-separation-management-office]
+
+  - id: it-integration-management-office
+    codigo: ITMA-05
+    dossie: ofertas/05-it-integration-management-office.md
+    nome: IT Integration Management Office (IMO)
+    nome_no_status: IT Integration Management Office
+    nome_no_catalogo: IT Integration Management Office (IMO)
+    familia: planejamento-execucao
+    fases: [first-100-days, hold]
+    lado: [corporate, private-equity]
+    tipo_transacao: [integracao]
+    situacao_status_slide: ativa
+    no_catalogo_cliente: true
+    readiness: { atual: 3.5, alvo_fy: 4.0 }
+    descricao_oficial: >-
+      Execução de todo o programa de integração (PMI – Post Merger Integration)
+      identificando e controlando riscos e situações críticas. Gerindo todas as
+      frentes de trabalho que permeiam tecnologia de forma a garantir a plena
+      captura de valor no menor tempo.
+    deck:
+      objetivo: Alcançar as principais fontes de valor num processo de integração.
+      etapas:
+      - Executar
+      - Capturar
+      - Gerir
+      dimensoes:
+      - Estabilização
+      - Captura de sinergias
+      entregaveis:
+      - Execução das iniciativas da DD e do Day 1 & Day 100 Plan
+      - Execução do roadmap de integração
+      - Elevação da maturidade de TI
+      - Preparação do ambiente de tecnologia para o crescimento
+      - Gestão da mudança em projetos complexos
+      - Suporte às estratégias de investimento e desinvestimento
+      momento: 'A partir do Closing: 100 dias e hold period'
+      prazo: Não informado no deck
+      modelo_comercial: Não informado no deck
+      cases: []
+    analise:
+      proposta_de_valor: "Transforma a tese de sinergia em entrega, com governança de programa e controle de risco."
+      cliente_ideal: "Adquirentes em fase de Post Merger Integration (PMI)."
+      gatilhos: ["Closing do deal", "Sinergias de TI comprometidas no business case"]
+      kpis: ["% de sinergias de TI capturadas vs. plano", "Tempo de captura", "Riscos críticos mitigados"]
+      conexoes: [it-synergies-value-creation]
+
+  - id: it-separation-management-office
+    codigo: ITMA-06
+    dossie: ofertas/06-it-separation-management-office.md
+    nome: IT Separation Management Office (SMO)
+    nome_no_status: IT Separation Management Office
+    nome_no_catalogo: IT Separation Management Office (SMO)
+    familia: planejamento-execucao
+    fases: [first-100-days, hold]
+    lado: [corporate, private-equity]
+    tipo_transacao: [separacao, carve-out]
+    situacao_status_slide: riscada
+    no_catalogo_cliente: true
+    readiness: { atual: 3.9, alvo_fy: 4.3 }
+    descricao_oficial: >-
+      Execução do programa de separação e transição dos serviços, sistemas e
+      ativos de TI para o novo ambiente da NewCo. Garantir que todas as
+      iniciativas para solução dos entanglements sejam realizadas. Gerenciamento
+      dos riscos do programa, suporte à implementação de novos procedimentos e
+      políticas da NewCo.
+    deck:
+      objetivo: Executar a separação e a transição de serviços, sistemas e ativos de TI para a NewCo.
+      etapas: []
+      dimensoes: []
+      entregaveis: []
+      momento: 100 dias e hold period
+      prazo: Não informado no deck
+      modelo_comercial: Não informado no deck
+      cases: []
+      observacao: Sem seção dedicada no trecho extraído do deck.
+    analise:
+      proposta_de_valor: "Coloca a NewCo de pé, com saída dos TSAs no prazo e sem herdar o caos do vendedor."
+      cliente_ideal: "NewCos de carve-out e vendedores com obrigações de TSA."
+      gatilhos: ["Closing de carve-out", "TSAs assinados", "Cronograma de standalone"]
+      kpis: ["Saída de TSAs no prazo", "Custo de standalone vs. plano", "Continuidade operacional"]
+      conexoes: [it-synergies-value-creation]
+
+  - id: it-due-diligence-sell-side
+    codigo: ITMA-07
+    dossie: ofertas/07-it-due-diligence-sell-side.md
+    nome: IT Vendor Due Diligence (Sell Side)
+    nome_no_status: IT Vendor Due Diligence
+    nome_no_catalogo: IT Due Diligence (Sell Side)
+    familia: diligencia
+    fases: [exit]
+    lado: [private-equity, corporate]
+    tipo_transacao: [venda, desinvestimento]
+    situacao_status_slide: ativa
+    no_catalogo_cliente: true
+    readiness: { atual: 2.7, alvo_fy: 3.7 }
+    descricao_oficial: >-
+      Preparação da organização de TI do cliente para o M&A, garantindo
+      prontidão na etapa de diligência, fornecendo as visões necessárias,
+      oportunidades e potenciais de geração de valor com a transação.
+    deck:
+      objetivo: Prover informações relevantes sobre a tecnologia para avaliações e decisões, preservando ou aumentando
+        o valor da transação.
+      etapas:
+      - Descoberta
+      - Preparação
+      - Aconselhamento
+      dimensoes:
+      - Organização
+      - Estratégia & Governança
+      - Aplicações
+      - Infraestrutura
+      - Segurança
+      entregaveis:
+      - Checklist de tecnologia
+      - Evidências
+      - Roadmap de iniciativas
+      - Gestão do VDR
+      - Gabarito de tecnologia (Q&A)
+      - Macroplan de separação (desinvestimento)
+      momento: Exit. Entrada de 1 a 2 anos antes do deal (transformação), 6 meses antes (mitigação de riscos) ou na
+        diligência (prontidão)
+      prazo: Não informado no deck
+      modelo_comercial: Não informado no deck
+      cases: []
+    analise:
+      proposta_de_valor: "Controla a narrativa de TI na venda e protege o múltiplo contra descontos por risco."
+      cliente_ideal: "Fundos em fase de saída e corporates em desinvestimento."
+      gatilhos: ["Mandato de venda assinado", "Preparação de data room", "Equity story em construção"]
+      kpis: ["Nº de red flags levantadas por compradores", "Prazo do processo de venda", "Ajustes de preço evitados"]
+      conexoes: [it-synergies-value-creation, it-ma-playbook]
+
+  - id: it-synergies-value-creation
+    codigo: ITMA-08
+    dossie: ofertas/08-it-synergies-value-creation.md
+    nome: IT Synergies & Value Creation (Value Creation as a Service)
+    nome_no_status: IT Synergies & Value Creation
+    nome_no_catalogo: IT Synergies & Value Creation (Value Creation as a Service)
+    familia: valor
+    fases: [strategy, pre-deal, sign-to-close, first-100-days, hold, exit]
+    lado: [private-equity]
+    tipo_transacao: [aquisicao, integracao, separacao, venda]
+    situacao_status_slide: ativa
+    no_catalogo_cliente: true
+    readiness: { atual: 2.3, alvo_fy: 3.3 }
+    descricao_oficial: >-
+      Atuar como advisor para os fundos de Private Equities suportando a
+      estrutura de Value Creation no âmbito de tecnologia. Acompanhando todo o
+      ciclo de investimento, desde a DD, identificação de sinergias e geração de
+      valor até execução, garantindo o resultado.
+    deck:
+      objetivo: Advisor de tecnologia para fundos de PE em todo o ciclo de investimento, da DD à execução, garantindo
+        o resultado.
+      etapas: []
+      dimensoes: []
+      entregaveis: []
+      momento: Todo o ciclo de investimento
+      prazo: Não informado no deck
+      modelo_comercial: Não informado no deck
+      cases: []
+      observacao: Sem seção dedicada no trecho extraído do deck.
+    analise:
+      proposta_de_valor: "Advisor de tecnologia do fundo: do deal ao exit, com valor medido, não prometido."
+      cliente_ideal: "Fundos de PE com portfólio de investidas (portcos) e time de value creation enxuto."
+      gatilhos: ["Novo fundo/aquisição de plataforma", "Plano de value creation (VCP) em revisão", "Pressão por EBITDA no hold"]
+      kpis: ["EBITDA atribuível a iniciativas de TI", "Nº de investidas acompanhadas", "Recorrência de receita com o fundo"]
+      conexoes: [it-due-diligence-buy-side, it-integration-management-office, it-due-diligence-sell-side]
+
+  # --- Linhas tachadas no slide de status, sem caixa própria no catálogo ---
+
+  - id: it-due-diligence-corporate
+    codigo: ITMA-09
+    dossie: ofertas/02-it-due-diligence-buy-side.md
+    nome: IT Due Diligence (Corporate)
+    nome_no_status: IT Due Diligence (Corporate)
+    nome_no_catalogo: null
+    familia: diligencia
+    fases: [pre-deal]
+    lado: [corporate]
+    tipo_transacao: [aquisicao]
+    situacao_status_slide: riscada
+    no_catalogo_cliente: false
+    readiness: { atual: 3.2, alvo_fy: 3.9 }
+    descricao_oficial: null
+    analise:
+      leitura_provavel: "Variante da DD buy-side para compradores estratégicos; tachada no status e ausente do catálogo, o que sugere consolidação na DD buy-side. Confirmar."
+
+  - id: it-due-diligence-venture-capital
+    codigo: ITMA-10
+    dossie: ofertas/02-it-due-diligence-buy-side.md
+    nome: IT Due Diligence (Venture Capital)
+    nome_no_status: IT Due Diligence (Venture Capital)
+    nome_no_catalogo: null
+    familia: diligencia
+    fases: [pre-deal]
+    lado: [venture-capital]
+    tipo_transacao: [aquisicao, investimento-minoritario]
+    situacao_status_slide: riscada
+    no_catalogo_cliente: false
+    readiness: { atual: 2.5, alvo_fy: 3.5 }
+    descricao_oficial: null
+    deck:
+      objetivo: DD modular adaptável às necessidades de VCs (julho/2023).
+      etapas: []
+      dimensoes:
+      - Ativos tecnológicos
+      - Mercado
+      - Escalabilidade
+      - Estratégia
+      - Defesa
+      - Planejamento
+      - Governança
+      - Value Management Office
+      - Produto
+      entregaveis: []
+      momento: Pré-deal
+      prazo: 'On Demand: 2 a 3 semanas'
+      modelo_comercial: VMaaS On Demand (R$ 35k/semana) · Package (anual/semestral) · Full Cycle (as-a-service)
+      cases: []
+    analise:
+      leitura_provavel: "Absorvida pela caixa 'IT Due Diligence (Buy Side) PE or VC' do catálogo. Confirmar."

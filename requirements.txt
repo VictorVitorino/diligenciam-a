@@ -1,0 +1,3 @@
+PyYAML>=6.0
+python-pptx>=1.0   # só para `catalogo.py extrair` em .pptx
+pypdf>=4.0         # só para `catalogo.py extrair` em .pdf
