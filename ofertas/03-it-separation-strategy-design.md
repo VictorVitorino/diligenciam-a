@@ -9,7 +9,7 @@
 **Em síntese** 💡
 
 - **O que é.** É a oferta de desenho da separação de TI em carve-outs. Ela mapeia os entanglements em cinco dimensões (Pessoas, Processos, Aplicações, Infraestrutura e Governança), classifica-os em Major ou Minor, avalia estratégias de resolução (Build Duplicate, Rebuild e New Build) e define o landscape de TI e o modelo operacional To-Be da NewCo, com suporte à definição do TSA.
-- **Uma das ofertas mais bem documentadas do deck.** A seção traz fatores críticos de sucesso, escopo em três etapas, cinco dimensões, método de entanglements, fluxo de "como fazemos", seis entregáveis-exemplo e dois cases nomeados com escala: mais de 50 e mais de 67 entanglements mapeados, ambos com o Mubadala.
+- **Documentação robusta no deck.** A seção traz fatores críticos de sucesso, escopo em três etapas, cinco dimensões, método de entanglements, fluxo de "como fazemos", seis entregáveis-exemplo e dois cases nomeados com escala: mais de 50 e mais de 67 entanglements mapeados, ambos com o Mubadala.
 - **Maturidade acima da média.** Com readiness 3,6 (nível 3, "Oferta definida"), a oferta é a 4ª entre as 10 linhas e fica acima da média da service line (3,29). As lacunas são comerciais (preço, prazo, equipe) e de formato dos entregáveis, não de método.
 - **Posição estratégica.** Com o IT Separation Management Office (SMO) tachado no slide de status, esta é a única oferta ativa dedicada exclusivamente a separação. Ela é a porta de entrada da cadeia de separação: desenho, planejamento de Day 1 e execução.
 
@@ -189,7 +189,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    I0[Alinhamento<br/>estratégico inicial] --> DG
+    I0[Alinhamento<br/>estratégico inicial]
     subgraph DG [Diagnóstico]
         direction TB
         D1[Avaliação do cenário As-Is]
@@ -199,8 +199,7 @@ flowchart LR
         D5[Análise sobre<br/>quebra de sinergias]
         D6[Mapeamento de entanglements]
     end
-    DG --> N((Definição da<br/>Estratégia de<br/>Separação))
-    N --> SA
+    N((Definição da<br/>Estratégia de<br/>Separação))
     subgraph SA [Saídas]
         direction TB
         S1[Entanglement Log]
@@ -212,6 +211,9 @@ flowchart LR
         S7[Estrutura organizacional To-Be]
         S8[Modelo operacional futuro]
     end
+    I0 --> DG
+    DG --> N
+    N --> SA
 ```
 
 ### 4.5 Visão integrada 💡
@@ -384,14 +386,14 @@ O case de Integration & Separation Planning (linha 2293) descreve o mesmo carve-
 **Entrada (de onde vem a demanda)**
 
 - Decisão de um grupo de desinvestir uma unidade, ou de um fundo de comprar um ativo que precisa ser separado.
-- IT Due Diligence (Buy Side), quando o alvo é um carve-out. As duas ofertas compartilham as etapas Compreender e Capturar & Avaliar (linhas 847–861), e a relação com o Mubadala nasceu também de DD (linha 953).
+- IT Due Diligence (Buy Side), quando o alvo é um carve-out. As duas ofertas compartilham as etapas Compreender e Capturar & Avaliar (linhas 847–861), e o Mubadala também é cliente de DD da prática (linha 953).
 - IT Vendor Due Diligence (Sell Side), quando o vendedor prepara a separação antes de ir a mercado. Hipótese: o deck não traz case desse lado.
 - IT M&A Playbook, cuja área "Plano de integração ou separação" espelha esta oferta.
 
 **Saída (pull-through)**
 
 - **IT Integration & Separation Planning (Day 1 e 100 dias).** O Entanglement Log é o artefato de passagem: a abordagem de Planning parte do "levantamento de informações detalhadas do parque tecnológico e entanglement log" (linha 2075) e cita "matriz de tecnologia e entanglement log" (linha 1983).
-- **IT Separation Management Office (em revisão).** Pela descrição oficial, o SMO deve "garantir que todas as iniciativas para solução dos entanglements sejam realizadas" (linhas 429–437): executa o que esta oferta desenha.
+- **IT Separation Management Office (em revisão).** Pela descrição oficial, o SMO deve "garantir que todas as iniciativas para solução dos entanglements sejam realizadas" (linhas 433–435): executa o que esta oferta desenha.
 - **IT Synergies & Value Creation.** O fundo comprador segue no hold period com a NewCo recém-criada.
 
 ```mermaid
@@ -469,7 +471,7 @@ flowchart LR
 💡 **Observações.**
 
 - **A cadeia de separação compartilha pessoas.** Heitor Milani também é PO do SMO, que está tachado. Marcela B também integra o squad de IT Integration & Separation Planning. Isso favorece a continuidade do Entanglement Log entre desenho, planejamento e execução. Por outro lado, a revisão do SMO recai sobre o mesmo PO.
-- **Squad enxuto.** É a única oferta ativa com squad de uma só pessoa, ao lado de IT Due Diligence (Buy Side). Há risco de capacidade se a formalização comercial e a padronização dos entregáveis andarem em paralelo.
+- **Squad enxuto e concentrado.** É uma das três ofertas ativas com squad de uma só pessoa, ao lado de IT Due Diligence (Buy Side) e de IT Integration & Separation Planning. Marcela B é a única integrante dos squads desta oferta e de Planning, o que concentra em uma pessoa as duas primeiras etapas da cadeia de separação. Há risco de capacidade se a formalização comercial e a padronização dos entregáveis andarem em paralelo.
 - **O que separa 3,6 de 4,1.** Modelo comercial, prazo e equipe-tipo explícitos; momento recomendado de início legível; templates padronizados (Entanglement Log, heatmap de riscos, suporte ao TSA); e cases com resultados quantificados, além da contagem de entanglements.
 
 ---
