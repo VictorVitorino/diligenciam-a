@@ -272,6 +272,7 @@ a{color:var(--s1)}
 .steps>div:first-child{clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%);padding-left:16px;border-radius:8px 0 0 8px}
 .steps>div:nth-child(even){background:#E3ECF5}
 .steps>div.on{background:var(--navy2);color:#fff}
+.steps>div:last-child{margin-right:0}
 .steps b{display:block;font:700 17px/1.15 var(--fh);color:var(--navy);text-transform:uppercase;letter-spacing:.02em}
 .steps span{display:block;font-size:12.5px;line-height:1.38;color:var(--ink2);margin-top:3px}
 .steps>div.on b{color:#fff}.steps>div.on span{color:#C8DBEB}
@@ -355,3 +356,51 @@ a{color:var(--s1)}
 .sr-top .am-mark{width:34px;height:34px;margin-right:-10px}
 .cv-brand .am-mark{width:48px;height:48px}
 .am-slogan{margin-left:18px;padding-left:18px;border-left:1px solid rgba(255,255,255,.25);font:700 12px var(--fb);letter-spacing:.22em;text-transform:uppercase;color:#F9A64A;white-space:nowrap}
+
+/* ---------- logotipo (lockup tipográfico) ---------- */
+.am-logo{display:flex;flex-direction:column;line-height:1;position:relative;flex:none}
+.am-logo .w{font:900 19px/1 Arial,"Helvetica Neue",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff;white-space:nowrap}
+.am-logo .s{font:500 11px var(--fb);letter-spacing:.06em;color:#9DBBD9;margin-top:5px;white-space:nowrap}
+.cv-brand .am-logo .w{font-size:26px}
+.cv-brand .am-logo .s{font-size:13px;margin-top:7px}
+.am-logo.dark .w{color:var(--navy)}.am-logo.dark .s{color:var(--muted)}
+.ico{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;width:1em;height:1em;display:inline-block;vertical-align:-.15em}
+.icb{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--ice);color:var(--navy);font-size:24px;flex:none}
+.icb.or{background:#FEF1E2;color:var(--orange-d)}.icb.nv{background:var(--navy2);color:#fff}.icb.wh{background:rgba(255,255,255,.12);color:#fff}
+.icb.lg{width:56px;height:56px;border-radius:14px;font-size:30px}
+[data-go]{cursor:pointer}
+
+/* =====================================================================
+   ESTILO "AM": slide branco, título grande em marinho, régua com pontos,
+   rodapé com "Digital & Technology Services" e o símbolo A&M
+   ===================================================================== */
+.estilo-am .slide{background:#fff}
+.estilo-am .slide.dark{background:radial-gradient(1100px 700px at 78% 28%,#1F3263 0%,#122143 40%,#002B49 75%)}
+.estilo-am .am-top{position:absolute;left:64px;right:64px;top:34px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;z-index:2}
+.estilo-am .am-top h1{font:800 54px/1 var(--fh);color:var(--navy);text-transform:uppercase;letter-spacing:-.005em;max-width:1180px;white-space:nowrap}
+.estilo-am .am-sub{font:500 15px var(--fb);color:var(--ink2);margin-top:6px}
+.estilo-am .am-side{display:flex;flex-direction:column;align-items:flex-end;gap:7px;padding-bottom:4px}
+.estilo-am .am-mod{font:700 11.5px var(--fb);letter-spacing:.16em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+.estilo-am .am-chip{font:800 11px var(--fb);background:var(--ice2);border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--navy)}
+.estilo-am .am-rule{position:absolute;left:64px;right:64px;top:124px;height:2px;background:var(--navy)}
+.estilo-am .am-rule::before,.estilo-am .am-rule::after{content:"";position:absolute;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--navy)}
+.estilo-am .am-rule::before{left:-2px}.estilo-am .am-rule::after{right:-2px}
+.estilo-am .body{left:64px;right:64px;top:146px;bottom:84px;border:0;border-radius:0;padding:6px 0 0;background:transparent}
+.estilo-am .am-foot{position:absolute;left:64px;right:64px;bottom:14px;height:62px;border-top:1.5px solid var(--navy);display:flex;align-items:center;gap:18px}
+.estilo-am .am-foot::after{content:"";position:absolute;right:-2px;top:-6px;width:10px;height:10px;border-radius:50%;background:var(--navy)}
+.estilo-am .am-foot .s{font-size:11px;color:var(--muted);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.estilo-am .am-foot .dts{font:600 13px var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);white-space:nowrap}
+.estilo-am .am-foot .am-symbol{width:57px;height:50px;flex:none}
+.estilo-am .am-foot .n{font:700 11px var(--fb);color:var(--navy);white-space:nowrap}
+.estilo-am .card{background:#F4F6F8;border-color:#E3E7EC}
+.estilo-am .card.soft{background:#EEF2F6}
+.estilo-am .card.nv{background:linear-gradient(140deg,#122143,#1F3263);border-color:#1F3263}
+.estilo-am .kpi{background:#F4F6F8;border-color:#E3E7EC}
+.estilo-am .kpi.hl{background:linear-gradient(140deg,#122143,#1F3263);border-color:#1F3263}
+.estilo-am .fdii,.estilo-am .fdii>div{background:#F4F6F8}.estilo-am .fdii .m{background:#E6ECF3}
+.estilo-am .tbl th{background:var(--navy)}
+.estilo-am .tbl tr:nth-child(even) td{background:#F7F8FA}
+.estilo-am .cv-brand{align-items:center;gap:16px}
+.estilo-am .cv-symbol{width:77px;height:68px}
+.estilo-am .cv-symbol .am-ink{fill:#fff}
+.static .am-top h1 .kw>span{transform:none!important;animation:none!important}

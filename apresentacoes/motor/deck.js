@@ -329,6 +329,48 @@ const DECK = META.titulo || document.title;
 const AMDECO = `<svg class="am-deco" viewBox="0 0 520 80" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><path d="M40 80 L100 0" stroke="#F78C16" stroke-width="1.4" fill="none"/><path d="M150 80 L210 0" stroke="#5E8AB4" stroke-width="7" fill="none" opacity=".55"/><path d="M190 80 V0" stroke="#F78C16" stroke-width="1.2" opacity=".7"/><path d="M280 80 L340 0" stroke="#5E8AB4" stroke-width="16" fill="none" opacity=".45"/><path d="M350 80 V0" stroke="#5E8AB4" stroke-width="5" opacity=".45"/><path d="M420 80 L480 0" stroke="#F78C16" stroke-width="1.4" fill="none" opacity=".8"/></svg>`;
 const AMMARK = `<svg class="am-mark" viewBox="0 0 46 46" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l11 14L5 37" stroke="#F78C16"/><path d="M15 9l11 14-11 14" stroke="#5E8AB4"/><path d="M25 9l11 14-11 14" stroke="#9DBBD9"/></svg>`;
 const SLOGAN = META.slogan === false ? "" : (META.slogan || "Leadership. Action. Results.℠");
+/* Logotipo: lockup tipográfico. Para usar o arquivo oficial da marca, troque o conteúdo de AMLOGO por <img src="..."> (ver GUIA.md). */
+const ESTILO = META.estilo || "faixa";
+if (ESTILO === "am") document.documentElement.classList.add("estilo-am");
+/* Símbolo A&M: aproximação do logotipo (dois traços em "A" e as letras empilhadas). Troque pelo arquivo oficial quando disponível. */
+const AMSYMBOL = `<svg class="am-symbol" viewBox="137 56 307 271" aria-hidden="true"><g class="am-ink" fill="#002B49"><polygon points="298,56 334,56 174,326 138,326"/><rect x="305" y="56" width="29" height="270"/><text x="393" y="226" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="60">A</text><text x="395" y="275" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="60">&amp;</text><text x="392" y="326" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="60">M</text></g><g fill="#5E8AB4"><polygon points="265,193 293,136 293,326 265,326"/><polygon points="344,136 372,193 372,326 344,326"/></g></svg>`;  // símbolo A&M vetorizado do arquivo "performance" (geometria medida do PNG)
+const AMLOGO = (sub) => `<span class="am-logo"><span class="w">Alvarez &amp; Marsal</span>${sub ? `<span class="s">${esc(sub)}</span>` : ""}</span>`;
+const IC = {
+  search: '<circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+  shield: '<path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/>',
+  chip: '<rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/>',
+  sparkle: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+  code: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
+  split: '<path d="M3 6h5l5 6-5 6H3"/><path d="M13 12h8M18 9l3 3-3 3"/>',
+  day1: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9.5 15l2 2 3.5-4"/>',
+  tower: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 13v-3M11 13V8M15 13V6"/>',
+  contract: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 12h6M9 16h6"/>',
+  chart: '<path d="M3 20h18"/><path d="M5 16l5-5 4 3 6-7"/><path d="M16 7h4v4"/>',
+  eye: '<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>',
+  coins: '<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>',
+  rocket: '<path d="M12 3c3 2 5 6 5 10l-2 2h-6l-2-2c0-4 2-8 5-10z"/><circle cx="12" cy="10" r="1.5"/><path d="M9 15l-3 4M15 15l3 4"/>',
+  bars: '<path d="M5 20v-8M11 20V5M17 20v-5M2 20h20"/>',
+  exit: '<path d="M14 3H5v18h9"/><path d="M10 12h11M18 9l3 3-3 3"/>',
+  book: '<path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/>',
+  buoy: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l3.5 3.5M14.9 14.9l3.5 3.5M18.4 5.6l-3.5 3.5M9.1 14.9l-3.5 3.5"/>',
+  graph: '<circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="11" r="2.5"/><circle cx="12" cy="19" r="2"/><path d="M7 7l3 2.5M17 7l-3 2.5M12 13.5V17"/>',
+  check: '<path d="M5 12l4 4L19 6"/>',
+  money: '<circle cx="12" cy="12" r="9"/><path d="M12 7v10"/><path d="M15 9.5c0-1.4-1.3-2.5-3-2.5s-3 1.1-3 2.5 1.3 2.5 3 2.5 3 1.1 3 2.5-1.3 2.5-3 2.5-3-1.1-3-2.5"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  building: '<rect x="4" y="3" width="16" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/>',
+  briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/>',
+  gavel: '<path d="M14 4l6 6-3 3-6-6z"/><path d="M10 8l-7 7 3 3 7-7"/><path d="M3 21h9"/>',
+  flag: '<path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/>',
+  people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 14.5c3 0 6 2 6 5.5"/>',
+  bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+  handshake: '<path d="M3 11l4-4 5 2 3-2 6 5-3 3-3-2-3 3-3-1-3 3z"/><path d="M8 12l3 3M11 10l3 3"/>',
+  map: '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>',
+  layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5M3 17l9 5 9-5"/>',
+  cycle: '<path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/>',
+};
+document.querySelectorAll("[data-ic]").forEach(el => { const d = IC[el.dataset.ic]; if (d) el.innerHTML = `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`; });
 function kin(el) {
   let k = 0; const walk = n => [...n.childNodes].forEach(c => {
     if (c.nodeType === 3) { const parts = c.textContent.split(/(\s+)/); const f = document.createDocumentFragment();
@@ -338,9 +380,25 @@ function kin(el) {
   walk(el);
 }
 slides.forEach((s, i) => {
+  if (ESTILO === "am") {
+    if (s.dataset.band) {
+      const top = H("div", { class: "am-top" }); const p = (s.dataset.p || "").split(" · ");
+      const head = s.dataset.h || s.dataset.band.split(" · ")[0];
+      top.innerHTML = `<div class="am-h"><h1>${esc(head)}</h1>${s.dataset.bs ? `<div class="am-sub">${esc(s.dataset.bs)}</div>` : ""}</div>` +
+        `<div class="am-side"><span class="am-mod">${p.length > 1 ? "Módulo " + esc(p[0]) + " · " + esc(p.slice(1).join(" · ")) : esc(p[0] || "")}</span><span class="am-chip">${i + 1} / ${N}</span></div>`;
+      s.prepend(top); top.after(H("div", { class: "am-rule" })); kin(top.querySelector("h1"));
+    }
+    if (s.hasAttribute("data-nofoot")) return;
+    const f = H("div", { class: "am-foot" }, s);
+    if (s.dataset.src) H("span", { class: "s", title: s.dataset.src }, f, s.dataset.src);
+    H("span", { class: "dts" }, f, META.rodapeAm || "Digital & Technology Services");
+    f.insertAdjacentHTML("beforeend", AMSYMBOL);
+    H("span", { class: "n" }, f, `${i + 1} / ${N}`);
+    return;
+  }
   if (s.dataset.band) {
     const top = H("div", { class: "sr-top" }); const p = (s.dataset.p || "").split(" · ");
-    top.innerHTML = `${AMDECO}${AMMARK}<div class="am-wm"><span class="am-a">Alvarez &amp; Marsal</span><span class="am-s">${esc(BRAND_S)}</span></div><div class="am-div"></div>` +
+    top.innerHTML = `${AMDECO}${AMLOGO(BRAND_S)}<div class="am-div"></div>` +
       `<div class="am-title"><b>${esc(s.dataset.t || "")}</b><span>${p.length > 1 ? "Parte " + esc(p[0]) + " · " + esc(p.slice(1).join(" · ")) : esc(p[0] || "")}</span></div>` +
       `<div class="am-right"><span class="am-dot"></span>${esc(DECK)}<span class="am-chip">${i + 1} / ${N}</span></div>`;
     s.prepend(top); s.prepend(H("div", { class: "sr-dec" }, null, "▸▸▸▸▸▸▸▸▸▸▸▸"));
@@ -356,7 +414,7 @@ slides.forEach((s, i) => {
 document.querySelectorAll(".kin").forEach(kin);
 
 /* capa: marca e arte */
-document.querySelectorAll(".cv-brand").forEach(b => { if (!b.innerHTML.trim()) b.innerHTML = `${AMMARK}<span class="am-wm"><span class="am-a">Alvarez &amp; Marsal</span><span class="am-s">${esc(BRAND_S)}</span></span>${SLOGAN ? `<span class="am-slogan">${esc(SLOGAN)}</span>` : ""}`; });
+document.querySelectorAll(".cv-brand").forEach(b => { if (!b.innerHTML.trim()) b.innerHTML = `${ESTILO === "am" ? AMSYMBOL.replace('class="am-symbol"', 'class="am-symbol cv-symbol"') : ""}${AMLOGO(BRAND_S)}${SLOGAN ? `<span class="am-slogan">${esc(SLOGAN)}</span>` : ""}`; });
 document.querySelectorAll(".cv-deco").forEach(box => {
   const s = S("svg", { viewBox: "0 0 760 760", width: "100%", height: "100%" }, box), cx = 380, cy = 380;
   [140, 215, 290, 350].forEach((r, i) => S("circle", { cx, cy, r, style: `fill:none;stroke:rgba(255,255,255,${.07 + i * .02});stroke-width:1` }, s));
@@ -387,6 +445,7 @@ document.querySelectorAll("[data-show]").forEach(el => el.addEventListener("clic
   sl.querySelectorAll(`[data-show]`).forEach(o => { const t2 = sl.querySelector("#" + o.dataset.show); if (t2 && t2.dataset.grp === g) o.classList.toggle("sel", o === el); });
 }));
 document.querySelectorAll(".flip").forEach(f => f.addEventListener("click", () => f.classList.toggle("on")));
+document.querySelectorAll("[data-go]").forEach(el => el.addEventListener("click", () => go((+el.dataset.go || 1) - 1)));
 
 /* dicas */
 const tipEl = $("tip");
@@ -420,7 +479,7 @@ function fit() {
 }
 addEventListener("resize", fit);
 function animCharts(n) {
-  if (REDMO) return;
+  if (REDMO) { n.querySelectorAll(".lv .fl[data-w]").forEach(f => { f.style.transition = "none"; f.style.width = f.dataset.w + "%"; }); return; }
   n.querySelectorAll(".ch [data-g]").forEach(el => {
     const g = el.dataset.g, delay = parseFloat(el.style.animationDelay) || 0, o = { duration: 900, delay: 250 + delay, easing: "cubic-bezier(.2,.7,.2,1)", fill: "backwards" };
     el.style.transformBox = "fill-box";
@@ -490,7 +549,7 @@ stage.addEventListener("touchend", e => { if (tx == null) return; const dx = e.c
 function renderAll() {
   slides.forEach(s => { const was = s.classList.contains("active"); if (!was) s.classList.add("measure"); s.querySelectorAll(".pane:not(.on) .ch").forEach(c => c.dataset.lazy = "1"); s.querySelectorAll(".ch:not([data-lazy])").forEach(drawChart); if (!was) s.classList.remove("measure"); });
 }
-addEventListener("beforeprint", () => { slides.forEach(s => { s.classList.add("measure"); s.querySelectorAll(".ch").forEach(c => { delete c.dataset.lazy; drawChart(c); }); s.classList.remove("measure"); }); });
+addEventListener("beforeprint", () => { slides.forEach(s => { s.classList.add("measure"); s.querySelectorAll(".ch").forEach(c => { delete c.dataset.lazy; drawChart(c); }); s.querySelectorAll(".lv .fl[data-w]").forEach(f => { f.style.transition = "none"; f.style.width = f.dataset.w + "%"; }); s.classList.remove("measure"); }); });
 fit();
 const start = Math.max(0, Math.min(N - 1, (parseInt(location.hash.slice(1), 10) || 1) - 1));
 const boot = () => { renderAll(); activate(start, true); document.documentElement.classList.add("ready"); };

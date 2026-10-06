@@ -3,104 +3,219 @@
   "arquivo": "apresentacao-it-ma-2027.html",
   "titulo": "IT M&A 2027",
   "pagina": "IT M&A 2027 · Apresentação da área",
-  "descricao": "Apresentação da área de IT M&A da DTS em 15 slides: o portfólio 2027, os produtos novos, os novos nomes e como a IA entra em cada um.",
+  "descricao": "Apresentação executiva da área de IT M&A da DTS em 15 slides e 5 módulos: por que agora, o que vendemos, IA tangível em cada serviço, para quem e quanto, como começar.",
   "fonte": "docs/07-estrategia-e-inovacao.md",
   "grupo": "Comece aqui",
   "ordem": 0,
   "rotulo": "Apresentação da área",
-  "resumo": "15 slides para apresentar a área: o portfólio 2027 com novos nomes, os 10 produtos novos, o motor de IA e o que a IA faz em cada produto.",
+  "estilo": "am",
+  "resumo": "15 slides executivos em 5 módulos: os 8 serviços que já vendemos com IA rodando em cada etapa, as 10 extensões que o mercado já vende, as fatias de mercado e como começar.",
   "nos": ["Decidir", "Transacionar", "Criar valor", "Sair"],
   "centro": ["IA", "em todo o ciclo do deal"],
   "capitulos": {
-    "1 · Por quê": ["01", "Por que mudar", "O mercado virou plataforma com IA. Nós temos método e execução."],
-    "2 · Portfólio": ["02", "O portfólio 2027", "Quatro linhas, novos nomes e um motor de IA."],
-    "3 · Produtos": ["03", "Produtos com IA", "O que a IA faz em cada produto, da triagem ao exit."],
-    "4 · Plano": ["04", "Como chegamos lá", "Prioridades, receita, clientes e o plano de 2027."]
+    "1 · Por que agora": ["01", "Por que agora", "O mercado virou plataforma com IA. Nós temos método e execução."],
+    "2 · O que vendemos": ["02", "O que vendemos", "Os 8 serviços de hoje, renovados, e a IA que roda por baixo de todos."],
+    "3 · IA tangível": ["03", "IA tangível", "Serviço a serviço: o que entra, o que a IA faz, o que o especialista decide e o que o cliente recebe."],
+    "4 · Para quem e quanto": ["04", "Para quem e quanto", "Fatias de mercado, escada de recorrência e formas de cobrar."],
+    "5 · Como começar": ["05", "Como começar", "Plano de 2027 e as três decisões."]
   }
 }
 -->
 
 <style data-deck>
-.prod{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;display:flex;flex-direction:column;gap:7px;position:relative}
-.prod .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.prod h3{font:700 22px/1.05 var(--fh);color:var(--navy);letter-spacing:.005em}
-.prod .was{font:500 11.5px var(--fb);color:var(--muted);margin-top:2px}
-.prod p{font-size:13px;line-height:1.42;color:var(--ink2)}
-.prod .ft{margin-top:auto;font:500 12px var(--fb);color:var(--ink2);display:flex;gap:10px;justify-content:space-between;border-top:1px solid var(--line2);padding-top:7px}
-.prod .ft b{color:var(--navy)}
-.prod.star{border:2px solid var(--orange);box-shadow:0 0 0 4px rgba(247,140,22,.12)}
-.prod.dk{background:linear-gradient(140deg,#122143,#1F3263);border-color:#1F3263}
-.prod.dk h3{color:#fff}.prod.dk p,.prod.dk .was{color:#C8DBEB}.prod.dk .ft{color:#C8DBEB;border-color:rgba(255,255,255,.18)}.prod.dk .ft b{color:#fff}
-.ia{background:#FFF6EC;border:1px solid #F7D2A8;border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.42;color:var(--ink2)}
-.ia::before{content:"IA";display:inline-block;font:800 10.5px/1.2 var(--fb);letter-spacing:.08em;background:var(--orange-d);color:#fff;border-radius:4px;padding:2px 6px;margin-right:7px;vertical-align:1px}
-.prod.dk .ia{background:rgba(247,140,22,.14);border-color:rgba(247,140,22,.45);color:#F3E3D0}
-.tn{display:inline-block;font:800 10px var(--fb);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:4px;white-space:nowrap;color:#fff;background:var(--s2)}
-.tr{display:inline-block;font:800 10px var(--fb);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:4px;white-space:nowrap;color:#fff;background:var(--s1)}
-.nota{display:inline-block;font:800 12px var(--fb);color:var(--orange-d);background:#FEF1E2;border-radius:4px;padding:3px 7px;white-space:nowrap}
-.arch{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.arch .ln{border-radius:12px;background:var(--ice2);border:1px solid var(--line2);padding:12px 13px;display:flex;flex-direction:column;gap:7px}
-.arch .ln h4{font:800 19px var(--fh);letter-spacing:.04em;text-transform:uppercase;color:var(--navy)}
-.arch .ln h4 small{display:block;font:600 11.5px var(--fb);letter-spacing:0;text-transform:none;color:var(--muted)}
-.arch .pr{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:700 13.5px/1.25 var(--fb);color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:8px}
-.arch .pr.nw{border-left:4px solid var(--s2)}.arch .pr.ev{border-left:4px solid var(--s1)}
-.arch .pr i{font-style:normal;font:800 9.5px var(--fb);letter-spacing:.08em;color:var(--orange-d);background:#FEF1E2;border-radius:4px;padding:2px 5px}
-.engine{border-radius:12px;padding:12px 18px;background:linear-gradient(100deg,#122143,#1F3263 60%,#33556D);color:#fff;display:flex;align-items:center;gap:18px}
-.engine b{font:800 20px var(--fh);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
-.engine span{font-size:13px;color:#C8DBEB}
-.mods-unused{display:grid;grid-template-columns:140px repeat(4,1fr);gap:4px;font-size:12px}
-.mods>div{background:#EEF3F8;border-radius:6px;padding:7px 8px;color:var(--ink2);text-align:center}
-.mods>div.h{background:var(--navy2);color:#fff;font-weight:700}
-.mods>div.l{background:transparent;text-align:left;font-weight:700;color:var(--navy);padding-left:0}
-.mods>div.on{background:#DCE8F5;color:var(--navy);font-weight:600}
-/* escala de apresentação */
-.stmt{font-size:36px}.stmt.sm{font-size:31px}
-.lead{font-size:16px}
-.card p,.card li{font-size:15px;line-height:1.5}
-.card h4{font-size:17px}.card h3{font-size:26px}
-.kpi{padding:16px 18px}.kpi .v{font-size:60px}.kpi .l{font-size:14.5px}.kpi .d{font-size:13px}
-.steps>div{padding:18px 20px 18px 30px}.steps b{font-size:20px}.steps span{font-size:14px}
-.fdii>div{font-size:14.5px;padding:15px 20px}
-.callout{font-size:15px;padding:14px 18px}
-.tbl{font-size:14.5px}.tbl td{padding:11px 12px}.tbl th{font-size:11.5px;padding:10px 12px}
-.pill{font-size:13px;padding:8px 12px}
-.ttl{font-size:18px}.ttl small{font-size:13px}
-.prod{gap:9px;padding:16px 18px}
-.prod h3{font-size:25px}.prod p{font-size:14.5px;line-height:1.48}.prod .was{font-size:12.5px}
-.ia,.met{font-size:14px;line-height:1.45;border-radius:8px;padding:9px 11px}
-.met{background:#F3F6F9;border:1px solid #DDE5EC;color:var(--ink2)}
-.met::before{content:"SEM\00a0IA";word-spacing:3px;display:inline-block;font:800 10px/1.2 var(--fb);letter-spacing:.08em;background:#6B7B8C;color:#fff;border-radius:4px;padding:2px 6px;margin-right:7px;vertical-align:1px}
-.ia::before{content:"COM\00a0IA";word-spacing:3px}
-.prod.dk .met{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#DDE6F0}
-.who{font-size:13px;line-height:1.4;color:var(--ink2)}.who b{color:var(--navy)}
-.prod.dk .who{color:#C8DBEB}.prod.dk .who b{color:#fff}
-.prod .ft{font-size:13.5px}
-.arch .pr{font-size:15px;padding:10px 12px;flex-direction:column;align-items:flex-start;gap:2px;position:relative}
-.arch .pr small{font:500 12.5px var(--fb);color:var(--muted)}
-.arch .pr i{position:absolute;right:8px;top:9px}
-.arch .ln h4{font-size:21px}
-.engine span{font-size:14px}
+/* paleta A&M nos gráficos: laranja destaca, azul-aço descansa, rampa marinho→céu para valores */
+:root{--s1:#5E8AB4;--s2:#F78C16;--s3:#33556D;--s4:#9DBBD9;--hl:#F78C16;--mut:#9DBBD9;
+  --o1:#9DB9D8;--o2:#7099C4;--o3:#4D78A8;--o4:#2F5584;--o5:#002B49}
+/* escala executiva: menos blocos, tipos maiores */
+.stmt{font-size:40px}.stmt.sm{font-size:34px}
+.lead{font-size:17px}
+.card p,.card li{font-size:16px;line-height:1.5}
+.card h4{font-size:19px}.card h3{font-size:28px}
+.kpi{padding:18px 20px}.kpi .v{font-size:66px}.kpi .l{font-size:15px}.kpi .d{font-size:13.5px}
+.steps>div{padding:20px 22px 20px 32px}.steps b{font-size:21px}.steps span{font-size:14.5px}
+.fdii>div{font-size:15.5px;padding:16px 20px}
+.callout{font-size:17px;padding:16px 20px}
+.pill{font-size:13.5px;padding:9px 13px}
+.ttl{font-size:19px}.ttl small{font-size:13.5px}
+/* módulos da agenda */
+.mods{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;flex:1 1 auto!important;min-height:0}
+.mod{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 20px 18px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:transform .18s,box-shadow .18s}
+.mod::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;background:var(--navy2)}
+.mod:nth-child(2)::before{background:var(--steel)}.mod:nth-child(3)::before{background:var(--orange)}.mod:nth-child(4)::before{background:var(--slate)}.mod:nth-child(5)::before{background:var(--navy3)}
+.mod:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,43,73,.16)}
+.mod .n{font:800 54px/1 var(--fh);color:var(--ice);position:absolute;right:16px;top:14px}
+.mod h3{font:700 30px/1.05 var(--fh);color:var(--navy);margin-top:8px}
+.mod .q{font:600 italic 16px/1.4 var(--fb);color:var(--orange-d)}
+.mod p{font-size:16px;line-height:1.5;color:var(--ink2)}
+.mod .go{font:700 12.5px var(--fb);letter-spacing:.08em;text-transform:uppercase;color:var(--steel);margin-top:auto}
+/* perguntas do comprador (virar) */
+.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.qs .flip{height:400px}
+.qs .fr{background:linear-gradient(150deg,#122143,#1F3263);color:#fff;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between}
+.qs .fr .q{font:800 44px/1.05 var(--fh);letter-spacing:.005em}
+.qs .fr .h{font:600 13px var(--fb);letter-spacing:.14em;text-transform:uppercase;color:#F9A64A}
+.qs .fr .v{font:600 13px var(--fb);color:#9DBBD9}
+.qs .bk{background:#fff;border:2px solid var(--orange);padding:24px 26px;display:flex;flex-direction:column;gap:12px}
+.qs .bk h4{font:800 13px var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--orange-d)}
+.qs .bk .a{font:700 27px/1.2 var(--fh);color:var(--navy)}
+.qs .bk p{font-size:16px;line-height:1.45;color:var(--ink2)}
+/* etiquetas */
+.tn,.tr{display:inline-block;font:800 10.5px var(--fb);letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:4px;white-space:nowrap;color:#fff;vertical-align:middle}
+.tn{background:var(--orange-d)}.tr{background:var(--steel)}
+.nota{display:inline-block;font:800 12.5px var(--fb);color:var(--orange-d);background:#FEF1E2;border-radius:4px;padding:3px 8px;white-space:nowrap}
+/* mapa do portfólio */
+.arch{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.arch .ln{border-radius:16px;background:var(--ice2);border:1px solid var(--line2);padding:14px 14px 12px;display:flex;flex-direction:column;gap:9px}
+.arch .ln h4{font:800 22px var(--fh);white-space:nowrap;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);display:flex;align-items:center;gap:10px}
+.arch .ln h4 small{font:600 12px var(--fb);letter-spacing:0;text-transform:none;color:var(--muted);margin-left:auto}
+.arch .pr{background:#fff;border:1px solid var(--line);border-left:5px solid var(--steel);border-radius:10px;padding:11px 12px;display:flex;align-items:center;gap:10px}
+.arch .pr .ico{font-size:24px;color:var(--steel);flex:none}
+.arch .pr span{font:700 17px/1.2 var(--fb);color:var(--navy)}
+.arch .pr small{display:block;font:500 13px var(--fb);color:var(--muted);margin-top:2px}
+.arch .ex{font:800 11px var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--orange-d);margin-top:2px}
+.arch .pills{display:flex;flex-wrap:wrap;gap:6px}
+.engine{border-radius:14px;padding:14px 20px;background:linear-gradient(100deg,#122143,#1F3263 60%,#33556D);color:#fff;display:flex;align-items:center;gap:20px}
+.engine b{font:800 22px var(--fh);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.engine span{color:#C8DBEB;font-size:16px}
+/* pilares com ícone */
+.pil{display:flex;gap:12px;align-items:flex-start}
+.pil .icb{margin-top:2px}
+/* serviço executivo */
+.svc{background:#F4F6F8;border:1px solid #E3E7EC;border-radius:16px;padding:18px 22px;display:flex;flex-direction:column;gap:14px;min-height:0}
+.svc.star{border:2px solid var(--orange);box-shadow:0 0 0 4px rgba(247,140,22,.1)}
+.svc-hd{display:flex;align-items:center;gap:14px}
+.svc-hd .tx{flex:1;min-width:0}
+.svc-hd h3{font:700 31px/1.05 var(--fh);color:var(--navy)}
+.svc-hd .was{font:500 14px var(--fb);color:var(--muted);margin-top:3px}
+.svc-hd .promise{font:600 italic 17px/1.35 var(--fb);color:var(--orange-d);text-align:right;max-width:470px}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.flow.f2{grid-template-columns:1fr 1fr}.flow.f1{grid-template-columns:1fr;gap:10px}
+.flow>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;position:relative;display:flex;flex-direction:column;gap:6px}
+.flow>div::before{content:attr(data-n);display:inline-grid;place-items:center;min-width:30px;height:30px;padding:0 8px;border-radius:8px;background:var(--orange);color:#fff;font:800 15px var(--fh);letter-spacing:.04em;width:max-content}
+.flow>div.in::before{background:var(--steel)}
+.flow>div.hum{border:1.5px dashed var(--navy2)}.flow>div.hum::before{background:var(--navy2)}
+.flow h4{font:700 20px/1.15 var(--fh);color:var(--navy)}
+.flow p{font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.flow p b{color:var(--navy)}
+.flow.f1>div{flex-direction:row;align-items:flex-start;gap:12px;padding:11px 14px}
+.flow.f1>div::before{flex:none;margin-top:1px}
+.flow.f1>div>div{display:flex;flex-direction:column;gap:3px}
+.rec{display:flex;gap:28px;align-items:center;border-top:1px solid var(--line);padding-top:12px;font:500 15.5px var(--fb);color:var(--ink2);margin-top:auto}
+.rec b{color:var(--navy)}
+.rec .r{margin-left:auto;white-space:nowrap}
+.exts{display:grid;gap:12px}
+.ext{background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.ext h4{font:700 20px/1.1 var(--fh);color:var(--navy);display:flex;align-items:center;gap:8px}
+.ext h4 .nota{margin-left:auto}
+.ext p{font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.ext p b{color:var(--navy)}
+/* matriz capacidade de IA × serviço */
+.mx{width:100%;border-collapse:separate;border-spacing:0;font-size:14px}
+.mx th{font:700 11.5px/1.2 var(--fb);letter-spacing:.04em;text-transform:uppercase;background:var(--navy2);color:#fff;padding:9px 6px;text-align:center;vertical-align:bottom}
+.mx th:first-child{text-align:left;padding-left:14px;border-radius:6px 0 0 0}.mx th:last-child{border-radius:0 6px 0 0}
+.mx th.nw{background:var(--orange-d)}
+.mx td{padding:0 6px;border-bottom:1px solid var(--line2);text-align:center;height:31px}
+.mx td:first-child{text-align:left;padding-left:14px;font:700 15px var(--fb);color:var(--navy)}
+.mx tr:nth-child(even) td{background:#FAFBFD}
+.mx .on,.mx .half{display:inline-block;width:17px;height:17px;border-radius:50%;vertical-align:middle}
+.mx .on{background:var(--orange)}
+.mx .half{background:linear-gradient(90deg,var(--orange) 50%,#fff 50%);border:1.5px solid var(--orange)}
+.mx .no{display:inline-block;width:6px;height:6px;border-radius:50%;background:#D6DEE6;vertical-align:middle}
+.leg{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--ink2);flex-wrap:wrap}
+.leg i{display:inline-block;vertical-align:middle;margin-right:7px}
+.leg .on,.leg .half{width:17px;height:17px;border-radius:50%}
+.leg .on{background:var(--orange)}.leg .half{background:linear-gradient(90deg,var(--orange) 50%,#fff 50%);border:1.5px solid var(--orange)}
+.leg .no{width:6px;height:6px;border-radius:50%;background:#D6DEE6}
+/* fatias */
+.slice{border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+.slice .rk{display:flex;justify-content:space-between;align-items:center}
+.slice h3{font:700 28px/1.05 var(--fh)}
+.slice .big{font-size:56px}
+.slice .big small{font-size:14px;margin-left:4px}
+.slice .pr{font-size:14.5px;line-height:1.4}
+.slice.p1{background:linear-gradient(150deg,#122143,#1F3263);color:#fff}
+.slice.p1 h3,.slice.p1 .big{color:#fff}.slice.p1 .big small,.slice.p1 .small{color:#9DB7CE}.slice.p1 .pr{color:#C8DBEB}
+.slice.p2{background:#fff;border:1px solid var(--line)}
+.slice .ico{font-size:28px}
 </style>
 
-<!-- 1 -->
+<!-- 1 · Capa -->
 <section class="slide dark cover" data-t="Capa" data-nofoot>
   <div class="cv-deco"></div>
   <div class="cv">
     <div class="cv-brand" data-a="fade"></div>
-    <div class="cv-eye" data-a="up" style="--d:1">Digital &amp; Technology Services · M&amp;A</div>
-    <h1 class="cv-h kin">IT M&amp;A 2027: da diligência ao valor, <em>com IA</em></h1>
-    <p class="cv-lead" data-a="up" style="--d:4">Um portfólio novo: quatro linhas de produto, dez produtos e módulos novos, seis com receita mensal e um motor de evidências com IA desenhado a partir do método de diligência da A&amp;M.</p>
+    <div class="cv-eye" data-a="up" style="--d:1">Digital &amp; Technology Services · IT M&amp;A</div>
+    <h1 class="cv-h kin">Os serviços que já vendemos, com <em>IA rodando</em> em cada etapa do deal</h1>
+    <p class="cv-lead" data-a="up" style="--d:4">Da triagem do alvo ao exit: os 8 serviços de hoje, renovados, com a IA lendo, citando e sugerindo em cada passo. O especialista decide. O cliente recebe mais rápido e com rastro.</p>
+    <div class="cv-pills" data-a="up" style="--d:5"><span>Decidir</span><span>Transacionar</span><span>Criar valor</span><span>Sair</span></div>
     <div class="cv-meta" data-a="up" style="--d:6">
-      <div><b data-count="4">4</b><span>linhas de produto</span></div>
-      <div><b data-count="8">8</b><span>ofertas renovadas</span></div>
-      <div><b data-count="10">10</b><span>produtos e módulos novos</span></div>
-      <div><b data-count="6">6</b><span>novos com receita mensal</span></div>
+      <div><b data-count="8">8</b><span>serviços renovados</span></div>
+      <div><b data-count="10">10</b><span>capacidades de IA</span></div>
+      <div><b data-count="10">10</b><span>extensões que o mercado já vende</span></div>
+      <div><b data-count="12">12</b><span>semanas de piloto</span></div>
     </div>
     <div class="cv-date" data-a="fade" style="--d:8">Proposta para 2027 · versão para discussão</div>
   </div>
 </section>
 
-<!-- 2 -->
-<section class="slide" data-p="Contexto" data-t="Quem somos" data-band="Quem somos · A&amp;M, DTS e IT M&amp;A" data-c="c-navy" data-bs="Leadership. Action. Results.℠" data-src="Fonte: Deck Comercial DTS M&A (slides “Quem somos?”, “Por que A&M?”, “Prêmios e reconhecimentos” e “Digital & Technology Services”), sintetizado em docs/01, seções 6 a 10 📘.">
+<!-- 2 · Agenda modular -->
+<section class="slide" data-p="Contexto" data-t="Cinco módulos" data-h="Cinco módulos" data-band="Cinco módulos · leve só o que a conversa pede" data-c="c-navy" data-bs="Clique em um módulo para ir direto" data-src="Estrutura da apresentação. Conteúdo com fontes em cada slide (docs/00, 04, 07, 09, 10, 12).">
+  <div class="body spread">
+    <div class="stmt kin">Já cobrimos o ciclo inteiro do deal. A proposta: <em>IA tangível dentro de cada serviço</em> e <em>o que o mercado já vende</em> somado por cima.</div>
+    <div class="mods">
+      <div class="mod" data-go="3" data-a="up" style="--d:2"><span class="n">1</span><span class="icb nv" data-ic="clock"></span><h3>Por que agora</h3><p class="q">“O que mudou no mercado?”</p><p>As três perguntas do comprador, as plataformas das grandes firmas e a janela aberta no Brasil.</p><span class="go">slides 3–5 ›</span></div>
+      <div class="mod" data-go="6" data-a="up" style="--d:3"><span class="n">2</span><span class="icb nv" data-ic="layers"></span><h3>O que vendemos</h3><p class="q">“O que é o portfólio 2027?”</p><p>Os 8 serviços de hoje com nome de mercado, as extensões e a IA que roda por baixo de todos.</p><span class="go">slides 6–7 ›</span></div>
+      <div class="mod" data-go="8" data-a="up" style="--d:4"><span class="n">3</span><span class="icb or" data-ic="sparkle"></span><h3>IA tangível</h3><p class="q">“O que a IA faz, de fato?”</p><p>Serviço a serviço: o que entra, o que a IA faz, o que o especialista decide e o que o cliente recebe.</p><span class="go">slides 8–13 ›</span></div>
+      <div class="mod" data-go="14" data-a="up" style="--d:5"><span class="n">4</span><span class="icb nv" data-ic="map"></span><h3>Para quem e quanto</h3><p class="q">“Onde jogamos e como cobramos?”</p><p>Fatias de mercado com direito de vencer, a escada de recorrência e as formas de cobrar.</p><span class="go">slide 14 ›</span></div>
+      <div class="mod" data-go="15" data-a="up" style="--d:6"><span class="n">5</span><span class="icb nv" data-ic="flag"></span><h3>Como começar</h3><p class="q">“O que decidir agora?”</p><p>Plano de 2027 em ondas, piloto de 12 semanas e as três decisões que abrem a Onda 1.</p><span class="go">slide 15 ›</span></div>
+    </div>
+    <div class="callout" data-a="fade" style="--d:7"><b>Em uma frase 💡:</b> os 8 serviços que já vendemos 📘, com IA que lê, cita e sugere em cada etapa; 10 extensões que o mercado concorrente já vende ✅🔎; um piloto de 12 semanas para provar.</div>
+  </div>
+</section>
+
+<!-- 3 · As três perguntas do comprador -->
+<section class="slide" data-p="1 · Por que agora" data-t="As três perguntas" data-h="As três perguntas do comprador" data-band="As três perguntas do comprador · e a nossa resposta" data-c="c-blue" data-bs="Clique nos cartões para virar" data-src="Fonte: docs/07-estrategia-e-inovacao.md (arquitetura e Tabelas A e B); prazos conforme Tabela A (A2) e Tabela B (B2); readiness em data/ofertas.yaml 🗂️. Proposta 💡.">
+  <div class="body spread">
+    <div class="stmt kin">Todo comprador faz três perguntas sobre tecnologia. <em>Já respondemos as três com serviços</em>; a proposta é responder <em>mais rápido, com IA e com rastro</em>.</div>
+    <div class="qs">
+      <div class="flip" data-a="up" style="--d:2"><div class="in">
+        <div class="fr"><span class="h">Antes do deal</span><span class="q">“A tecnologia mata o deal?”</span><span class="v">clique para ver a resposta ›</span></div>
+        <div class="bk"><h4>Linha 1 · Decidir</h4><span class="a">Em 5–10 dias, uma triagem. Em 1 a 6 semanas, a diligência completa.</span><p><b>Technology Due Diligence</b>, o carro-chefe, com módulos de cyber, código e IA. <b>Tech Deal Screening</b> antes da carta de intenção.</p><p>A IA lê o data room e cita a fonte de cada achado.</p></div>
+      </div></div>
+      <div class="flip" data-a="up" style="--d:3"><div class="in">
+        <div class="fr"><span class="h">Entre a assinatura e os 100 dias</span><span class="q">“Quanto custa integrar ou separar?”</span><span class="v">clique para ver a resposta ›</span></div>
+        <div class="bk"><h4>Linha 2 · Transacionar</h4><span class="a">Um blueprint de separação, um plano de Day 1 e um escritório que executa.</span><p><b>Carve-out &amp; Separation Blueprint</b>, <b>Day 1 &amp; 100-Day Readiness</b>, <b>Transaction Office</b> e <b>TSA Control Tower</b>.</p><p>Com o DNA de execução do TMO.</p></div>
+      </div></div>
+      <div class="flip" data-a="up" style="--d:4"><div class="in">
+        <div class="fr"><span class="h">No hold e no exit</span><span class="q">“Quanto vale no exit?”</span><span class="v">clique para ver a resposta ›</span></div>
+        <div class="bk"><h4>Linhas 3 e 4 · Criar valor e Sair</h4><span class="a">Valor capturado todo mês e um data room sempre pronto para a venda.</span><p><b>Tech Value Creation Office</b>, <b>Portfolio Cyber Watch</b>, <b>CIO fracionado</b> e <b>Exit Readiness Track</b>.</p><p>O exit de um fundo é o pré-deal do próximo.</p></div>
+      </div></div>
+    </div>
+    <div class="callout" data-a="fade" style="--d:5"><b>Hoje 📘🗂️:</b> oito ofertas em todas as fases do deal; a mais madura é a IT Due Diligence (readiness 4,5), a mais ampla, Value Creation, está em 2,3. <b>A proposta 💡:</b> um motor de evidências com IA ligando as quatro linhas, com citação em tudo.</div>
+  </div>
+</section>
+
+<!-- 4 · Por que agora -->
+<section class="slide" data-p="1 · Por que agora" data-t="O mercado virou plataforma" data-h="Por que agora" data-band="Por que agora · o mercado virou plataforma com IA" data-c="c-steel" data-bs="Mercado e Brasil" data-src="Fontes: comunicados oficiais (A&M, KPMG, PwC, Deloitte); KPMG Brasil; Serasa Experian; KPMG 2026 Global M&A Outlook (docs/09). Leitura da liderança em docs/04.">
+  <div class="body spread">
+    <div class="stmt kin">Em 2025–2026 as grandes firmas <em>transformaram M&amp;A em plataforma com IA</em>. No Brasil, <em>a janela está aberta</em>.</div>
+    <div class="ch" data-type="timeline" data-h="230"><script type="application/json">{"textW":270,"items":[
+      {"d":"jan/2024","t":"A&M lança o DiligenceGPT","s":"acelerador de diligência para PE ✅","c":"s2"},
+      {"d":"mai/2026","t":"KPMG + Anthropic","s":"aliança global; preferencial para PE ✅"},
+      {"d":"set/2026","t":"PwC + Palantir","s":"meta declarada: deals até 50% mais rápidos ✅"},
+      {"d":"set/2026","t":"Deloitte M&A Platform","s":"IA agêntica em mais de 1.000 engajamentos ✅"}
+    ]}</script></div>
+    <div class="kpis" style="--n:3">
+      <div class="kpi" data-a="up" style="--d:2"><div class="l">Deals com fundos no Brasil em 2025</div><div class="v"><span data-count="50">50</span><small>%</small></div><div class="d">eram 43% em 2024 · KPMG Brasil ✅</div></div>
+      <div class="kpi" data-a="up" style="--d:3;--kc:var(--s2)"><div class="l">Empresas em recuperação judicial</div><div class="v" data-count="2466">2.466</div><div class="d">recorde da série iniciada em 2012 · Serasa ✅</div></div>
+      <div class="kpi" data-a="up" style="--d:4;--kc:var(--s3)"><div class="l">Veem separação de TI e dados como risco</div><div class="v"><span data-count="40">40</span><small>%</small></div><div class="d">KPMG, 700 decisores no mundo ✅</div></div>
+    </div>
+    <div class="callout" data-a="fade" style="--d:6">As páginas brasileiras das Big Four não mostram ferramentas de IA para M&amp;A 🔎. Na leitura da liderança, a área perdeu espaço porque <b>o foco foi para o TMO</b>; a proposta transforma isso em vantagem 💡: <b>diligência com IA e execução com o mesmo time</b>.</div>
+  </div>
+</section>
+
+<!-- 5 · Quem somos -->
+<section class="slide" data-p="1 · Por que agora" data-t="Quem somos" data-h="Quem somos" data-band="Quem somos · A&amp;M, DTS e IT M&amp;A" data-c="c-navy" data-bs="Leadership. Action. Results.℠" data-src="Fonte: Deck Comercial DTS M&A de 2023 (slides “Quem somos?”, “Por que A&M?”, “Prêmios e reconhecimentos” e “Digital & Technology Services”), sintetizado em docs/01, seções 6 a 10 📘. Números institucionais a confirmar com o Marketing.">
   <div class="body spread">
     <div class="stmt kin">Desde 1983, a A&amp;M ajuda clientes a <em>melhorar o desempenho</em> e a <em>maximizar valor</em> para seus stakeholders.</div>
     <div class="kpis" style="--n:5">
@@ -108,407 +223,273 @@
       <div class="kpi" data-a="up" style="--d:3;--kc:var(--s2)"><div class="l">Profissionais no Brasil</div><div class="v">1.000<small>+</small></div><div class="d">São Paulo, Rio de Janeiro e Belo Horizonte 📘</div></div>
       <div class="kpi" data-a="up" style="--d:4"><div class="l">Escritórios</div><div class="v" data-count="77">77</div><div class="d">deck comercial de 2023 📘, a confirmar</div></div>
       <div class="kpi" data-a="up" style="--d:5"><div class="l">Países</div><div class="v">25<small>+</small></div><div class="d">em 5 continentes 📘</div></div>
-      <div class="kpi hl" data-a="up" style="--d:6"><div class="l">Desde</div><div class="v">1983</div><div class="d">DNA de turnaround 📘</div></div>
+      <div class="kpi hl" data-a="up" style="--d:6"><div class="l">IT M&amp;A dentro da DTS</div><div class="v">1<small>de 4</small></div><div class="d">pilares da Digital &amp; Technology Services 📘</div></div>
     </div>
-    <div class="row" style="gap:16px">
-      <div class="f1">
-        <div class="ttl">Por que a A&amp;M <small>quatro pilares 📘</small></div>
-        <div class="g4 mt8">
-          <div class="card bl" data-a="up" style="--d:6"><h4>Implementação</h4><p>DNA de turnaround, participação ativa na execução, <i>problem solvers</i>.</p></div>
-          <div class="card bl" data-a="up" style="--d:7"><h4>Rapidez</h4><p>Quick wins, abordagem descomplicada, abertura a soluções inovadoras.</p></div>
-          <div class="card bl" data-a="up" style="--d:8"><h4>Seniores</h4><p>Executivos da indústria, de consultorias e de finanças; posições interinas.</p></div>
-          <div class="card bl" data-a="up" style="--d:9"><h4>Interesses alinhados</h4><p>Hands-on, soluções construídas com o cliente, relação de longo prazo.</p></div>
-        </div>
-      </div>
-      <div style="width:520px">
-        <div class="ttl">Digital &amp; Technology Services <small>quatro pilares 📘</small></div>
-        <div class="g2 mt8" style="gap:8px">
-          <div class="card soft" data-a="up" style="--d:7;padding:10px 12px"><h4>Transformação e Projetos Estratégicos</h4></div>
-          <div class="card soft" data-a="up" style="--d:8;padding:10px 12px"><h4>Reestruturação de TI e Gestão de Custos</h4></div>
-          <div class="card nv" data-a="up" style="--d:9;padding:10px 12px"><h4>IT M&amp;A</h4><p class="small" style="color:#C8DBEB">Due diligence, integração, separação, sinergias e criação de valor pela tecnologia</p></div>
-          <div class="card soft" data-a="up" style="--d:10;padding:10px 12px"><h4>Digital Strategy</h4></div>
-        </div>
-      </div>
+    <div class="g4">
+      <div class="card bl" data-a="up" style="--d:6"><div class="pil"><span class="icb" data-ic="bolt"></span><div><h4>Implementação</h4><p>DNA de turnaround, participação ativa na execução, <i>problem solvers</i>.</p></div></div></div>
+      <div class="card bl" data-a="up" style="--d:7"><div class="pil"><span class="icb" data-ic="rocket"></span><div><h4>Rapidez</h4><p>Quick wins, abordagem descomplicada, abertura a soluções inovadoras.</p></div></div></div>
+      <div class="card bl" data-a="up" style="--d:8"><div class="pil"><span class="icb" data-ic="people"></span><div><h4>Seniores</h4><p>Executivos da indústria, de consultorias e de finanças; posições interinas.</p></div></div></div>
+      <div class="card bl" data-a="up" style="--d:9"><div class="pil"><span class="icb" data-ic="handshake"></span><div><h4>Interesses alinhados</h4><p>Hands-on, soluções construídas com o cliente, relação de longo prazo.</p></div></div></div>
     </div>
     <div class="row" data-a="fade" style="--d:10;gap:10px;flex-wrap:wrap;align-items:center"><span class="ttl" style="margin-right:4px">Reconhecimentos da firma global 📘</span><span class="pill">Financial Due Diligence of the Year · PE Awards 2022 · Transaction Advisory Group</span><span class="pill">Specialist Due Diligence Provider of the Year · British PE Awards 2022 · PEPI</span><span class="pill">1º em restructuring consulting na Europa · Consultancy</span></div>
   </div>
 </section>
 
-<!-- 3 -->
-<section class="slide" data-p="1 · Por quê" data-t="A mensagem" data-band="A mensagem · de serviço a produto, com IA" data-c="c-navy" data-bs="O resumo em uma tela" data-src="Fonte: docs/00-sumario-executivo.md e docs/07-estrategia-e-inovacao.md. Números do portfólio 2027 são proposta 💡.">
+<!-- 6 · O portfólio 2027 -->
+<section class="slide" data-p="2 · O que vendemos" data-t="O portfólio 2027" data-h="O portfólio 2027" data-band="Portfólio 2027 · os 8 serviços de hoje, renovados, e as extensões" data-c="c-purple" data-bs="Nenhum serviço é descontinuado" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seção 3 (arquitetura) e Tabelas A e B. Proposta 💡.">
   <div class="body spread">
-    <div class="stmt kin">Propomos sair de <em>8 serviços vendidos como horas</em> para um <em>portfólio de produtos com IA</em>, da triagem do alvo ao exit 💡.</div>
-    <div class="g3">
-      <div class="card bl" data-a="up" style="--d:2"><div class="eye">Renovar</div><div class="row" style="align-items:baseline;gap:8px"><span class="big" data-count="8">8</span><span class="lead">ofertas →</span><span class="big" style="color:var(--s1)" data-count="4">4</span><span class="lead">linhas</span></div><p class="mt8">Novos nomes, escopo, prazo e preço padronizados. Cada oferta ganha um caminho com IA.</p><div class="row mt8" style="flex-wrap:wrap;gap:6px"><span class="pill">Technology DD</span><span class="pill">Carve-out Blueprint</span><span class="pill">Day 1 &amp; 100-Day</span><span class="pill">Transaction Office</span><span class="pill">Exit Readiness + Vendor DD</span><span class="pill">Value Creation Office</span><span class="pill">Playbook + Copilot</span></div></div>
-      <div class="card ac" data-a="up" style="--d:3"><div class="eye" style="color:var(--orange-d)">Criar</div><div class="row" style="align-items:baseline;gap:8px"><span class="big" data-count="10">10</span><span class="lead">produtos e módulos novos,</span><span class="big" style="color:var(--s2)" data-count="6">6</span><span class="lead">mensais</span></div><p class="mt8">TSA Control Tower, Tech Deal Screening e Cyber &amp; Privacy na frente.</p><div class="row mt8" style="flex-wrap:wrap;gap:6px"><span class="pill or">TSA Control Tower</span><span class="pill or">Tech Deal Screening</span><span class="pill or">Cyber &amp; Privacy + Watch</span><span class="pill">CIO fracionado</span><span class="pill">AI DD</span><span class="pill">Distressed Tech &amp; UPI</span><span class="pill">Cost Optimization</span><span class="pill">Tech Intelligence</span><span class="pill">AI Value Sprint</span><span class="pill">Code DD</span></div></div>
-      <div class="card gr" data-a="up" style="--d:4"><div class="eye" style="color:#1D6B61">Industrializar</div><div class="row" style="align-items:baseline;gap:8px"><span class="big" data-count="1">1</span><span class="lead">motor de evidências com IA</span></div><p class="mt8">A IA propõe, a regra calcula, o especialista decide. Toda afirmação com fonte.</p><div class="row mt8" style="flex-wrap:wrap;gap:6px"><span class="pill nv">Deal Evidence Graph</span><span class="pill gr">IA lê e cita</span><span class="pill gr">Regras testadas</span><span class="pill gr">Especialista aprova</span><span class="pill gr">Encaixe A&amp;M Assist</span></div></div>
+    <div class="stmt sm kin"><em>Os 8 serviços de hoje ganham IA e nome de mercado</em>; as 10 extensões se encaixam neles, em quatro linhas sobre um motor único.</div>
+    <div class="arch">
+      <div class="ln" data-a="up" style="--d:2"><h4><span class="ico" data-ic="target"></span>1 · Decidir<small>pré-deal</small></h4>
+        <div class="pr"><span class="ico" data-ic="target"></span><div><span>Technology Due Diligence</span><small>era IT Due Diligence Buy Side</small></div></div>
+        <div class="ex">Módulos e extensão</div>
+        <div class="pills"><span class="pill">IT Core</span><span class="pill or">Cyber &amp; Privacy DD</span><span class="pill or">Software &amp; Code DD</span><span class="pill or">AI Due Diligence</span><span class="pill or">Tech Deal Screening</span></div></div>
+      <div class="ln" data-a="up" style="--d:3"><h4><span class="ico" data-ic="split"></span>2 · Transacionar<small>sign-to-close</small></h4>
+        <div class="pr"><span class="ico" data-ic="split"></span><div><span>Carve-out &amp; Separation Blueprint</span><small>era IT Separation Strategy &amp; Design</small></div></div>
+        <div class="pr"><span class="ico" data-ic="day1"></span><div><span>Day 1 &amp; 100-Day Readiness</span><small>era IT Integration &amp; Separation Planning</small></div></div>
+        <div class="pr"><span class="ico" data-ic="tower"></span><div><span>Transaction Office (IMO · SMO)</span><small>eram IT IMO e IT SMO</small></div></div>
+        <div class="ex">Extensões</div>
+        <div class="pills"><span class="pill or">TSA Control Tower</span><span class="pill or">Distressed Tech &amp; UPI</span></div></div>
+      <div class="ln" data-a="up" style="--d:4"><h4><span class="ico" data-ic="chart"></span>3 · Criar valor<small>hold period</small></h4>
+        <div class="pr"><span class="ico" data-ic="chart"></span><div><span>Tech Value Creation Office</span><small>era IT Synergies &amp; Value Creation</small></div></div>
+        <div class="ex">Extensões</div>
+        <div class="pills"><span class="pill or">Portfolio Cyber Watch</span><span class="pill or">Fractional / Interim CIO-CTO-CAIO</span><span class="pill or">Cost, License &amp; Cloud</span><span class="pill or">AI Value Sprint</span><span class="pill or">Portfolio Tech Intelligence</span></div></div>
+      <div class="ln" data-a="up" style="--d:5"><h4><span class="ico" data-ic="exit"></span>4 · Sair<small>exit e transversal</small></h4>
+        <div class="pr"><span class="ico" data-ic="exit"></span><div><span>Exit Readiness Track + Technology Vendor DD</span><small>era IT Vendor DD · de relatório a programa</small></div></div>
+        <div class="pr"><span class="ico" data-ic="book"></span><div><span>M&amp;A Tech Playbook + Copilot</span><small>era IT M&amp;A Playbook · em qualquer fase</small></div></div></div>
     </div>
-    <div class="g3">
-      <div class="card soft" data-a="up" style="--d:5"><h4>Para o cliente</h4><p>Triagem em 5–10 dias, cada número com fonte e <b>da diligência à execução com o mesmo time</b>.</p></div>
-      <div class="card soft" data-a="up" style="--d:6"><h4>Para a A&amp;M</h4><p>Receita recorrente: meta proposta de <b>20–25%</b> da linha ao fim de 2027 💡, saindo de praticamente zero.</p></div>
-      <div class="card soft" data-a="up" style="--d:7"><h4>Para quem</h4><p><b>Fundos de PE mid-market</b> e <b>situações especiais</b> primeiro; corporates em carve-out pela porta do TSA.</p></div>
-    </div>
-    <div class="fdii" data-a="fade" style="--d:8">
-      <div class="f"><span class="k">Hoje</span>8 ofertas cobrem o ciclo, mas só a DD tem prazo e só a variante VC tem preço 📘</div>
-      <div class="d"><span class="k">Mercado</span>Deloitte, PwC + Palantir, EY e McKinsey já têm plataforma de M&amp;A com IA ✅; a KPMG fechou aliança com a Anthropic ✅</div>
-      <div class="i"><span class="k">Nossa vantagem 💡</span>Método de diligência rastreável de ponta a ponta 📘 e a execução hands-on do TMO como diferencial</div>
-      <div class="m"><span class="k">2027 💡</span>4 linhas, 10 produtos e módulos novos, motor de IA e piloto em 12 semanas</div>
-    </div>
+    <div class="engine" data-a="fade" style="--d:6"><b>Deal Evidence Graph</b><span>Um motor interno por baixo de tudo: liga pergunta da tese → evidência → achado → risco → número, com citação. <b style="font:inherit;color:#F9A64A;text-transform:none;letter-spacing:0">O exit de um fundo é o pré-deal do próximo.</b></span></div>
   </div>
 </section>
 
-<!-- 4 -->
-<section class="slide" data-p="1 · Por quê" data-t="Por que agora" data-band="Por que agora · o mercado virou plataforma" data-c="c-steel" data-bs="Mercado, Brasil e o nosso ponto de partida" data-src="Fontes: comunicados oficiais (A&M, KPMG, PwC, Deloitte); KPMG Brasil; Serasa Experian; KPMG 2026 Global M&A Outlook (docs/09). Readiness: slide de status 🗂️ (docs/04).">
+<!-- 7 · IA rodando em toda a área -->
+<section class="slide" data-p="2 · O que vendemos" data-t="IA em toda a área" data-h="IA rodando em toda a área de M&amp;A" data-band="IA em toda a área · dez capacidades, nove serviços, um motor" data-c="c-purple" data-bs="A IA propõe, a regra calcula, o especialista decide" data-src="Fonte: docs/10 (método, regras e banco de 96 perguntas 📘); docs/07, Tabelas A e B (coluna “com IA”); docs/12 (motor e piloto). Mapa capacidade × serviço é proposta 💡.">
   <div class="body spread">
-    <div class="stmt sm kin">Em 2025–2026 as grandes firmas <em>transformaram M&amp;A em plataforma com IA</em>. No Brasil, <em>a janela está aberta</em>.</div>
-    <div class="ch" data-type="timeline" data-h="220"><script type="application/json">{"textW":260,"items":[
-      {"d":"jan/2024","t":"A&M lança o DiligenceGPT","s":"acelerador de diligência para PE ✅","c":"s2"},
-      {"d":"mai/2026","t":"KPMG + Anthropic","s":"aliança global; preferencial para PE ✅"},
-      {"d":"set/2026","t":"PwC + Palantir","s":"meta declarada: deals até 50% mais rápidos ✅"},
-      {"d":"set/2026","t":"Deloitte M&A Platform","s":"IA agêntica em mais de 1.000 engajamentos ✅"}
-    ]}</script></div>
-    <div class="row" style="gap:16px">
-      <div class="f1"><div class="ttl">Brasil <small>as páginas locais das Big Four não mostram ferramentas de IA para M&amp;A 🔎</small></div>
-        <div class="kpis mt8" style="--n:3">
-          <div class="kpi" data-a="up" style="--d:2"><div class="l">Deals com fundos em 2025</div><div class="v"><span data-count="50">50</span><small>%</small></div><div class="d">eram 43% · KPMG Brasil ✅</div></div>
-          <div class="kpi" data-a="up" style="--d:3;--kc:var(--s2)"><div class="l">Empresas em recuperação judicial</div><div class="v" data-count="2466">2.466</div><div class="d">recorde da série iniciada em 2012 · Serasa ✅</div></div>
-          <div class="kpi" data-a="up" style="--d:4;--kc:var(--s3)"><div class="l">Veem separação de TI e dados como risco</div><div class="v"><span data-count="40">40</span><small>%</small></div><div class="d">KPMG, 700 decisores ✅</div></div>
-        </div></div>
-      <div style="width:470px"><div class="ttl">Nós <small>ponto de partida</small></div>
-        <div class="kpis mt8" style="--n:2">
-          <div class="kpi" data-a="up" style="--d:5;--kc:var(--o4)"><div class="l">Readiness: diligência e execução</div><div class="v">~3,9</div><div class="d">média calculada do slide de status 🗂️💡</div></div>
-          <div class="kpi" data-a="up" style="--d:6;--kc:var(--s2)"><div class="l">Readiness: estratégia e exit</div><div class="v">~2,7</div><div class="d">Value Creation em 2,3 · escala de 1 a 5 🗂️</div></div>
-        </div></div>
+    <div class="stmt sm kin">Não é um chatbot ao lado: são <em>dez capacidades de IA</em> dentro dos <em>nove serviços</em>, num só motor. <em>Sem citação, não existe.</em></div>
+    <div class="steps" data-a="fade" style="--d:2">
+      <div><b>Entra</b><span>data room, contratos, faturas, Jira</span></div>
+      <div><b>IA lê e cita</b><span>classifica, extrai, mede completude</span></div>
+      <div class="on"><b>Grafo de evidências</b><span>pergunta · evidência · achado · número</span></div>
+      <div><b>IA sugere</b><span>nota, pergunta, alavanca, plano, alerta</span></div>
+      <div><b>Regras calculam</b><span>P×I, deal-breaker, ROI, capacidade</span></div>
+      <div><b>Especialista decide</b><span>aprova, ajusta, rejeita e assina</span></div>
+      <div><b>Sai</b><span>relatório, Day 1, TSA, painel</span></div>
     </div>
-    <div class="callout" data-a="fade" style="--d:7">Na leitura da liderança, a área perdeu espaço porque <b>o foco foi para o TMO</b>. A proposta transforma isso em vantagem 💡: <b>diligência com IA e execução com o mesmo time</b>, o nosso diferencial frente às plataformas.</div>
-  </div>
-</section>
-
-<!-- 5 -->
-<section class="slide" data-p="2 · Portfólio" data-t="O portfólio 2027" data-band="Portfólio 2027 · quatro linhas e um motor de IA" data-c="c-purple" data-bs="8 ofertas renovadas e 10 produtos e módulos novos" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seção 3 (arquitetura) e Tabelas A e B. Proposta 💡.">
-  <div class="body spread">
-    <div class="row" style="justify-content:space-between;align-items:flex-end">
-      <div class="stmt sm kin">Quatro linhas seguem o ciclo do deal, <em>apoiadas no mesmo motor de IA</em>.</div>
-      <div class="row" style="gap:10px;align-items:center"><span class="tr">Renovado</span><span class="tn">Novo</span><span class="nota" style="background:#FEF1E2">IA</span><span class="small">= IA no produto</span></div>
-    </div>
-    <div class="arch" style="align-items:start">
-      <div class="ln" data-a="up" style="--d:2"><h4>1 · Decidir<small>pré-deal</small></h4>
-        <div class="pr nw">Tech Deal Screening<small>triagem de tecnologia e cyber em 5–10 dias</small><i>IA</i></div>
-        <div class="pr ev">Technology Due Diligence<small>3 profundidades × 4 módulos</small><i>IA</i></div>
-        <div class="small" style="margin:-2px 0 0 6px">Módulos dentro da Technology DD:</div>
-        <div class="pr ev" style="margin-left:14px">IT Core<small>o módulo de base</small><i>IA</i></div>
-        <div class="pr nw" style="margin-left:14px">Cyber &amp; Privacy DD<small>cyber e LGPD no pré-deal</small><i>IA</i></div>
-        <div class="pr nw" style="margin-left:14px">Software &amp; Code DD<small>código, open source e licenças</small><i>IA</i></div>
-        <div class="pr nw" style="margin-left:14px">Data &amp; AI · AI Due Diligence<small>a IA do alvo e o risco de disrupção</small><i>IA</i></div></div>
-      <div class="ln" data-a="up" style="--d:3"><h4>2 · Transacionar<small>sign-to-close e 100 dias</small></h4>
-        <div class="pr ev">Carve-out &amp; Separation Blueprint<small>entanglements, cenários e modelo de TSA</small><i>IA</i></div>
-        <div class="pr ev">Day 1 &amp; 100-Day Readiness<small>plano de Day 1 a partir dos achados</small><i>IA</i></div>
-        <div class="pr ev">Transaction Office (IMO · SMO)<small>control tower de integração e separação</small><i>IA</i></div>
-        <div class="pr nw">TSA Control Tower<small>SLA, custo, faturas e saída do TSA</small><i>IA</i></div></div>
-      <div class="ln" data-a="up" style="--d:4"><h4>3 · Criar valor<small>hold period</small></h4>
-        <div class="pr ev">Tech Value Creation Office<small>alavancas e previsto × realizado</small><i>IA</i></div>
-        <div class="pr nw">Portfolio Cyber Watch<small>monitoramento contínuo do cyber das investidas</small><i>IA</i></div>
-        <div class="pr nw">Fractional / Interim CIO-CTO-CAIO<small>liderança por dias/mês</small><i>IA</i></div>
-        <div class="pr nw">Cost, License &amp; Cloud Optimization<small>economia com honorário por resultado</small><i>IA</i></div>
-        <div class="pr nw">AI Value Sprint<small>2 casos de IA em 6–8 semanas</small><i>IA</i></div>
-        <div class="pr nw">Portfolio Tech Intelligence<small>benchmark brasileiro das investidas</small><i>IA</i></div></div>
-      <div class="ln" data-a="up" style="--d:5"><h4>4 · Sair<small>exit</small></h4>
-        <div class="pr ev">Exit Readiness Track<small>prontidão contínua para a venda</small><i>IA</i></div>
-        <div class="pr ev">Technology Vendor DD<small>relatório independente na venda</small><i>IA</i></div>
-        <h4 class="mt8">Transversais<small>em qualquer fase</small></h4>
-        <div class="pr ev">M&amp;A Tech Playbook + Copilot<small>método vivo do cliente</small><i>IA</i></div>
-        <div class="pr nw">Distressed Tech &amp; UPI<small>recuperação judicial e venda de UPI</small><i>IA</i></div></div>
-    </div>
-    <div class="engine" data-a="fade" style="--d:6"><b>Deal Evidence Graph</b><span>Motor interno único: liga pergunta da tese → evidência → achado → risco → número, com citação. Encaixe para o A&amp;M Assist / DiligenceGPT. <b style="font:inherit;color:#F9A64A;text-transform:none;letter-spacing:0">O exit de um fundo é o pré-deal do próximo.</b></span></div>
-  </div>
-</section>
-
-<!-- 6 -->
-<section class="slide" data-p="2 · Portfólio" data-t="Novos nomes" data-band="Novos nomes · de → para" data-c="c-navy" data-bs="As 8 ofertas atuais renovadas" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seção 4 (Tabela A); nomes no vocabulário do mercado (docs/09, seção 5). Proposta 💡 a validar com os POs.">
-  <div class="body spread">
-    <div class="stmt sm kin">Nomes <em>descritivos</em>, no vocabulário que o mercado já usa, e <em>um caminho com IA</em> em cada oferta.</div>
-    <table class="tbl" data-a="fade" style="--d:2">
-      <thead><tr><th style="width:250px">Hoje</th><th style="width:300px">Nome 2027</th><th>O que a IA passa a fazer</th><th style="width:170px">Receita</th></tr></thead>
+    <table class="mx" data-a="fade" style="--d:3">
+      <thead><tr><th style="width:380px">Capacidade de IA</th><th class="nw">Screening</th><th>Tech DD</th><th>Carve-out</th><th>Day 1</th><th>Transaction Office</th><th class="nw">TSA Tower</th><th>Value Creation</th><th>Exit &amp; VDD</th><th>Playbook</th></tr></thead>
       <tbody>
-        <tr class="hl"><td>IT Due Diligence (Buy Side + PE, VC, Corporate)</td><td><b>Technology Due Diligence</b></td><td>Lê o data room, extrai evidências com citação, sugere notas e transforma lacunas em perguntas</td><td>Única + pacote anual</td></tr>
-        <tr><td>IT Separation Strategy &amp; Design</td><td><b>Carve-out &amp; Separation Blueprint</b></td><td>Mapeia dependências, lê contratos e simula cenários de separação com custo e prazo</td><td>Única → TSA mensal</td></tr>
-        <tr><td>IT Integration &amp; Separation Planning</td><td><b>Day 1 &amp; 100-Day Readiness</b></td><td>Gera o plano de Day 1 a partir dos achados da diligência, com caminho crítico</td><td>Única</td></tr>
-        <tr><td>IT IMO + IT SMO</td><td><b>Transaction Office (IMO · SMO)</b></td><td>Control tower: status lido das ferramentas do cliente, RAID assistido, alertas e sumário semanal</td><td><b>Mensal</b> + bônus</td></tr>
-        <tr><td>IT Vendor DD (Sell Side)</td><td><b>Exit Readiness Track + Technology Vendor DD</b></td><td>Confere a completude do data room e simula o comprador procurando red flags</td><td><b>Mensal</b> + única</td></tr>
-        <tr><td>IT Synergies &amp; Value Creation</td><td><b>Tech Value Creation Office</b></td><td>Lê contratos, faturas e inventário para achar alavancas e acompanha previsto × realizado</td><td><b>Mensal</b> + resultado</td></tr>
-        <tr><td>IT M&amp;A Playbook</td><td><b>M&amp;A Tech Playbook + Copilot</b></td><td>Copiloto que responde “o que fazer agora” com base no playbook do cliente e aprende a cada deal</td><td>Setup + <b>mensal</b></td></tr>
+        <tr><td>Lê e cita cada documento</td><td><i class="on"></i></td><td><i class="on"></i></td><td><i class="on"></i></td><td><i class="half"></i></td><td><i class="half"></i></td><td><i class="on"></i></td><td><i class="on"></i></td><td><i class="on"></i></td><td><i class="half"></i></td></tr>
+        <tr><td>Data request automático (96 perguntas)</td><td><i class="half"></i></td><td><i class="on"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="on"></i></td><td><i class="no"></i></td></tr>
+        <tr><td>Nota por âncora 1–5</td><td><i class="no"></i></td><td><i class="on"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="on"></i></td><td><i class="no"></i></td></tr>
+        <tr><td>Lacunas viram perguntas de Q&amp;A</td><td><i class="half"></i></td><td><i class="on"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="on"></i></td><td><i class="no"></i></td></tr>
+        <tr><td>Grafo de dependências e contratos</td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="on"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="on"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="no"></i></td></tr>
+        <tr><td>Simulação de cenários e comprador simulado</td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="on"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="on"></i></td><td><i class="no"></i></td></tr>
+        <tr><td>Plano gerado dos achados</td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="half"></i></td><td><i class="on"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="on"></i></td></tr>
+        <tr><td>Control tower: status, RAID, alertas</td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="on"></i></td><td><i class="on"></i></td><td><i class="on"></i></td><td><i class="half"></i></td><td><i class="no"></i></td></tr>
+        <tr><td>Conciliação de contratos e faturas</td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="on"></i></td><td><i class="on"></i></td><td><i class="no"></i></td><td><i class="no"></i></td></tr>
+        <tr><td>Copiloto que aprende a cada deal</td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="half"></i></td><td><i class="no"></i></td><td><i class="on"></i></td></tr>
       </tbody>
     </table>
-    <div class="g3">
-      <div class="callout" data-a="fade" style="--d:4"><b>SMO: proposta de manter 💡.</b> Está tachado no slide de status, mas separação é o tema do ano ✅. Viraria um modo do Transaction Office.</div>
-      <div class="callout bl" data-a="fade" style="--d:5"><b>Módulos ficam dentro da Technology DD:</b> IT Core, Cyber &amp; Privacy, Software &amp; Code e Data &amp; AI.</div>
-      <div class="callout bl" data-a="fade" style="--d:6"><b>O motor não é vendido como marca:</b> “Deal Evidence Graph” é o nome interno da plataforma.</div>
+    <div class="row" style="justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+      <div class="leg" data-a="fade" style="--d:4"><span><i class="on"></i>capacidade central do serviço</span><span><i class="half"></i>reaproveita o mesmo motor</span><span><i class="no"></i>não se aplica</span><span class="small">laranja no cabeçalho = extensão nova</span></div>
+      <div class="row" data-a="fade" style="--d:5;gap:8px;align-items:center"><span class="small">O que a IA não decide 📘:</span><span class="pill nv">Deal-breaker: CAPEX &gt; 2% do EV</span><span class="pill nv">Materialidade &gt; 5% do valuation</span><span class="pill nv">ROI só com lastro N1/N2</span></div>
     </div>
   </div>
 </section>
 
-<!-- 7 -->
-<section class="slide" data-p="2 · Portfólio" data-t="O motor de IA" data-band="Motor de IA · a IA propõe, a regra calcula, o especialista decide" data-c="c-purple" data-bs="Desenhado a partir do método A&M de diligência" data-src="Fonte: docs/10-engenharia-e-modelo-semantico-da-diligencia.md (método 📘) e docs/12-piloto-tech-dd-com-ia.md (arquitetura e piloto 💡).">
+<!-- 8 · Technology Due Diligence -->
+<section class="slide" data-p="3 · IA tangível" data-t="Technology DD" data-h="Technology Due Diligence" data-band="Technology Due Diligence · o carro-chefe com IA em quatro passos" data-c="c-blue" data-bs="Era IT Due Diligence Buy Side · readiness 4,5 🗂️" data-src="Fonte: docs/07, Tabela A (A2) e Tabela B (B2, B3, B5, B10); método e regras em docs/10 📘 (8 dimensões, 96 perguntas, âncoras, estados de evidência, P×I, deal-breaker, N1–N3, Master Content Model); piloto em docs/12. Passos de IA são proposta 💡. Mercado 🔎 em docs/09.">
   <div class="body spread">
-    <div class="stmt sm kin">Um <em>grafo único</em> liga cada pergunta da tese à evidência, ao risco e ao número. <em>Sem citação, a afirmação não existe.</em></div>
-    <div class="steps" data-a="fade" style="--d:2">
-      <div><b>Documentos</b><span>data room, entrevistas, contratos, faturas</span></div>
-      <div><b>IA lê e cita</b><span>classifica, extrai trechos, mede completude</span></div>
-      <div class="on"><b>Deal Evidence Graph</b><span>pergunta · evidência · achado · risco · número</span></div>
-      <div><b>IA sugere</b><span>nota por âncora 1–5 e perguntas de Q&amp;A</span></div>
-      <div><b>Especialista</b><span>aprova, ajusta ou rejeita</span></div>
-      <div><b>Regras calculam</b><span>risco P×I, custos, ROI com lastro</span></div>
-      <div><b>Saídas</b><span>relatório, Day 1, TSA, painel de valor, data room</span></div>
+    <div class="stmt sm kin">O mesmo relatório, <em>em menos horas e com cada afirmação citada</em>. A IA lê; <em>o especialista continua assinando</em>.</div>
+    <div class="svc star" data-a="up" style="--d:2">
+      <div class="svc-hd"><span class="icb or lg" data-ic="target"></span><div class="tx"><h3>Technology Due Diligence <span class="tr" style="margin-left:6px">Renovado</span></h3><div class="was">era IT Due Diligence Buy Side (PE, VC e Corporate) · 3 profundidades (Red Flag, Standard, Deep Dive) × 4 módulos, preço por módulo · cases CERC, Virutex Ilko e Braveo 📘</div></div><div class="promise">“A tecnologia mata o deal? Quanto custa?” Resposta em 1 a 6 semanas, na linguagem do deal.</div></div>
+      <div class="flow">
+        <div class="in" data-n="Entra"><h4>O data room do alvo</h4><p>Documentos, entrevistas, contratos e faturas.</p></div>
+        <div data-n="1"><h4>Lê e cita</h4><p>Classifica nas <b>8 dimensões</b>, gera o data request das <b>96 perguntas</b> e extrai cada evidência com citação e estado.</p></div>
+        <div data-n="2"><h4>Sugere a nota</h4><p>Nota <b>1 a 5 por âncora</b> em cada domínio. Em empate, a regra fica com a menor.</p></div>
+        <div data-n="3"><h4>Lacunas viram perguntas</h4><p>Contradições viram alertas. <b>“Não recebido” nunca vira “não existe”.</b></p></div>
+        <div data-n="4"><h4>Rascunha o relatório</h4><p>Achados, riscos e iniciativas com <b>proveniência em todo número</b> (Master Content Model).</p></div>
+        <div class="hum" data-n="✓"><h4>O especialista decide</h4><p>Deal-breakers, materialidade e a recomendação ao comitê. As regras fecham <b>P×I</b>, CAPEX &gt; 2% do EV e lastro N1–N3.</p></div>
+      </div>
+      <div class="rec"><span><b>O cliente recebe:</b> relatório na linguagem do deal · matriz de riscos P×I · Q&amp;A com citação · base pronta para o Day 1</span><span class="r">Receita: <b>projeto + pacote anual para fundos</b> · <b>Onda 1</b>, piloto de 12 semanas</span></div>
     </div>
-    <div class="g2">
-      <div class="card nv" data-a="up" style="--d:3"><div class="eye" style="color:#F9A64A">IA para fazer</div><h3>Acelerar a esteira, com rastreabilidade</h3><p>Leitura do data room, evidências com citação, contradições detectadas, lacunas que viram perguntas, rascunhos de achados. O cálculo de risco, custo e ROI fica em regras testadas.</p></div>
-      <div class="card nv" data-a="up" style="--d:4"><div class="eye" style="color:#F9A64A">IA como objeto</div><h3>Avaliar a IA do alvo e do portfólio</h3><p><b>AI Due Diligence</b>: capacidade real × wrapper, dados, custo de inferência, governança e risco de disrupção. <b>AI Value Sprint</b>: casos de IA em produção nas investidas.</p></div>
+    <div class="exts" style="grid-template-columns:repeat(4,1fr)">
+      <div class="ext" data-a="up" style="--d:3"><h4><span class="ico" data-ic="search"></span>Tech Deal Screening<span class="nota">nota 26</span></h4><p><b>A Tech DD em 5–10 dias, antes da LOI.</b> Lê teaser e fontes públicas e rascunha red flags com citação. Única ou assinatura.</p></div>
+      <div class="ext" data-a="up" style="--d:4"><h4><span class="ico" data-ic="shield"></span>Cyber &amp; Privacy DD<span class="nota">nota 25</span></h4><p><b>Cyber e LGPD no pré-deal</b>, com a Global Cyber Risk da A&amp;M. Consolida ratings e evidências no mesmo relatório.</p></div>
+      <div class="ext" data-a="up" style="--d:5"><h4><span class="ico" data-ic="chip"></span>AI Due Diligence<span class="nota">nota 23</span></h4><p><b>A IA do alvo:</b> capacidade real × wrapper, custo por chamada, dados e dependências. Testes assistidos.</p></div>
+      <div class="ext" data-a="up" style="--d:6"><h4><span class="ico" data-ic="code"></span>Software &amp; Code DD<span class="nota">nota 17</span></h4><p><b>Código, open source e licenças</b>, com ferramenta de parceiro e análise assistida. Onda 4.</p></div>
     </div>
-    <div class="g3">
-      <div class="card ac" data-a="up" style="--d:5"><h4>“Não recebido” nunca vira “não existe”</h4><p>Regra do método A&amp;M 📘: a falta de documento vira pergunta, não conclusão.</p></div>
-      <div class="card ac" data-a="up" style="--d:6"><h4>Dados isolados por deal</h4><p>LGPD, sem treino com dados do cliente, aprovação jurídica e de segurança antes do piloto.</p></div>
-      <div class="card ac" data-a="up" style="--d:7"><h4>Plugar antes de construir</h4><p>Encaixe para o A&amp;M Assist / DiligenceGPT da firma global; a DTS foca em método, grafo e regras.</p></div>
-    </div>
-    <div class="row" data-a="fade" style="--d:8;gap:10px;align-items:center;flex-wrap:wrap"><span class="ttl" style="margin-right:6px">Como mediremos 💡</span><span class="pill nv">Horas por diligência</span><span class="pill nv">Dias do data room ao 1º rascunho</span><span class="pill nv">% de afirmações com citação</span><span class="pill nv">Retrabalho</span><span class="pill or">Nenhum red flag perdido</span></div>
   </div>
 </section>
 
-<!-- 8 -->
-<section class="slide" data-p="3 · Produtos" data-t="Linha 1 · Decidir" data-band="Linha 1 · Decidir · pré-deal" data-c="c-blue" data-bs="Triagem e diligência com IA" data-src="Fonte: docs/07-estrategia-e-inovacao.md, Tabela A (A2) e Tabela B (B2, B3, B5, B10). Fatos de mercado ✅🔎 em docs/09. Proposta 💡.">
-  <div class="body">
-    <div class="stmt sm kin">Responder <em>em dias</em> se a tecnologia mata o deal, e <em>em semanas</em> quanto ela custa.</div>
-    <div class="row mt12 grow" style="gap:14px;align-items:stretch">
-      <div class="prod dk" style="width:640px;--d:2" data-a="up">
-        <div class="hd"><div><h3>Technology Due Diligence</h3><div class="was">era IT Due Diligence (Buy Side) · carro-chefe</div></div><span class="tr">Renovado</span></div>
-        <p>Saída sempre na linguagem do deal: preço, contrato, Day 1 e 100 dias. Software &amp; Code DD entra como módulo com ferramenta de parceiro (onda 4).</p>
-        <div class="mt4"><div class="eye" style="color:#9DB7CE;margin-bottom:6px">3 profundidades</div>
-          <div class="row" style="gap:8px"><span class="pill nv" style="background:rgba(255,255,255,.12)">Red Flag · 1–2 semanas</span><span class="pill nv" style="background:rgba(255,255,255,.12)">Standard · 3–4 semanas</span><span class="pill nv" style="background:rgba(255,255,255,.12)">Deep Dive · até 6 semanas</span></div></div>
-        <div><div class="eye" style="color:#9DB7CE;margin-bottom:6px">4 módulos, com preço por módulo</div>
-          <div class="row" style="gap:8px;flex-wrap:wrap"><span class="pill">IT Core</span><span class="pill">Cyber &amp; Privacy</span><span class="pill">Software &amp; Code</span><span class="pill">Data &amp; AI</span></div></div>
-        <p>Variantes Corporate e VC viram <b style="color:#fff">lentes</b> do mesmo produto.</p>
-        <div class="met">Um produto com 3 profundidades e 4 módulos, preço por módulo; saída na linguagem do deal.</div>
-        <div class="ia">Ingestão do data room, evidências com citação, sugestão de nota por âncora, contradições e lacunas viram perguntas de Q&amp;A.</div>
-        <div class="who"><b>Para quem:</b> fundos de PE/VC (50% dos deals no Brasil ✅) e corporates estratégicos. <b>O mercado pede:</b> velocidade, IA no alvo, cyber e impacto financeiro 🔎.</div>
-        <div class="row" style="gap:10px;flex-wrap:wrap;align-items:center"><span class="who"><b>Hoje 📘🗂️:</b></span><span class="pill nv" style="background:rgba(255,255,255,.12)">readiness 4,5, a mais alta</span><span class="pill nv" style="background:rgba(255,255,255,.12)">cases: CERC · Virutex Ilko · Braveo</span></div>
-        <div class="ft"><span>Receita: <b>projeto + pacote anual</b> para fundos</span><span>Onda 1</span></div>
-      </div>
-      <div class="f1 col" style="gap:12px">
-        <div class="prod star" data-a="up" style="--d:3">
-          <div class="hd"><div><h3>Tech Deal Screening</h3><div class="was">triagem de tecnologia e cyber em 5–10 dias, antes da carta de intenção</div></div><div class="col" style="gap:4px;align-items:flex-end"><span class="tn">Novo</span><span class="nota">nota 26</span></div></div>
-          <div class="met">Questionário curto, checklist outside-in, template de 5 páginas e SLA de 5–10 dias.</div>
-        <div class="ia">Lê teaser e fontes públicas, faz varredura outside-in e entrega rascunho de red flags com citação.</div>
-        <div class="who"><b>Para quem:</b> fundos e CVCs com pipeline ativo. Referência: boutique americana vende tech DD de 5 dias a partir de US$ 15 mil 🔎.</div>
-          <div class="ft"><span>Receita: <b>única ou assinatura</b> de triagens</span><span>Onda 1</span></div>
+<!-- 9 · Carve-out Blueprint e Day 1 -->
+<section class="slide" data-p="3 · IA tangível" data-t="Carve-out e Day 1" data-h="Carve-out Blueprint e Day 1 Readiness" data-band="Carve-out Blueprint e Day 1 · do emaranhado ao plano, sem redigitar" data-c="c-steel" data-bs="Eram IT Separation Strategy &amp; Design e IT Integration &amp; Separation Planning" data-src="Fonte: docs/07, Tabela A (A3, A4); método do deck em docs/03 e ofertas/03 📘 (Entanglement Log Major/Minor; Build Duplicate, Rebuild, New Build; cases Mubadala/UniFTC e Mubadala/Invepar); regras de roadmap em docs/10 📘. Passos de IA são proposta 💡. Mercado ✅🔎 em docs/09.">
+  <div class="body spread">
+    <div class="stmt sm kin">2026 é o ano do carve-out: <em>40% dos dealmakers</em> veem a separação de TI e dados como risco ✅. Já mapeamos <em>mais de 50 e mais de 67 entanglements</em> em dois cases 📘.</div>
+    <div class="g2" style="align-items:stretch">
+      <div class="svc" data-a="up" style="--d:2">
+        <div class="svc-hd"><span class="icb nv" data-ic="split"></span><div class="tx"><h3>Carve-out &amp; Separation Blueprint <span class="tr" style="margin-left:6px">Renovado</span></h3><div class="was">era IT Separation Strategy &amp; Design · readiness 3,6 🗂️</div></div></div>
+        <div class="flow f2">
+          <div data-n="1"><h4>Monta o grafo de dependências</h4><p>Lê inventário, CMDB, contratos e acessos: o que sai e o que fica.</p></div>
+          <div data-n="2"><h4>Classifica os entanglements</h4><p><b>Major ou Minor</b>, com o tratamento: Build Duplicate, Rebuild ou New Build.</p></div>
+          <div data-n="3"><h4>Simula cenários e rascunha o TSA</h4><p>Custo one-time, stranded e prazo; serviços, SLA, preço e marcos de saída.</p></div>
+          <div class="hum" data-n="✓"><h4>O especialista decide</h4><p>O cenário To-Be, os entanglements Major e a negociação do TSA.</p></div>
         </div>
-        <div class="g2" style="gap:12px">
-          <div class="prod" data-a="up" style="--d:4">
-            <div class="hd"><h3>AI Due Diligence</h3><span class="tn">Novo</span></div>
-            <p>Avalia a IA do alvo e o risco de disrupção do negócio por IA.</p>
-            <div class="met">Framework de 8–10 dimensões: capacidade real × wrapper, dados, custo de inferência, governança (ISO/IEC 42001, NIST AI RMF, EU AI Act, PL 2338/2023).</div>
-        <div class="ia">Testes assistidos: amostras de saídas, custo por chamada, dependências.</div>
-        <div class="who"><b>Para quem:</b> alvos de software e teses que dependem de IA.</div>
-            <div class="ft"><span>Módulo · <b>única</b></span><span class="nota">23</span></div>
-          </div>
-          <div class="prod" data-a="up" style="--d:5">
-            <div class="hd"><h3>Cyber &amp; Privacy DD</h3><span class="tn">Novo</span></div>
-            <p>Cyber e LGPD no pré-deal, com a Global Cyber Risk da A&amp;M.</p>
-            <div class="met">Framework de avaliação de cyber e LGPD, com a A&amp;M Global Cyber Risk.</div>
-        <div class="ia">Consolida ratings outside-in, evidências e alertas num só relatório.</div>
-        <div class="who"><b>Por quê:</b> a LGPD multa até 2% do faturamento 🔎; incidente em investida custa em média US$ 2,1 mi ✅.</div>
-            <div class="ft"><span>Módulo · <b>única</b></span><span class="nota">25 · com o Cyber Watch</span></div>
-          </div>
+        <div class="rec"><span><b>Sai:</b> Entanglement Log, cenários To-Be, landscape da NewCo, escopo de TSA</span><span class="r"><b>Única</b> → TSA mensal · Onda 2</span></div>
+      </div>
+      <div class="svc" data-a="up" style="--d:3">
+        <div class="svc-hd"><span class="icb nv" data-ic="day1"></span><div class="tx"><h3>Day 1 &amp; 100-Day Readiness <span class="tr" style="margin-left:6px">Renovado</span></h3><div class="was">era IT Integration &amp; Separation Planning · cases Plurix, Braveo e Invepar 📘</div></div></div>
+        <div class="flow f2">
+          <div data-n="1"><h4>Puxa os achados</h4><p>Cada achado da diligência ou do blueprint vira iniciativa com dono e prazo.</p></div>
+          <div data-n="2"><h4>Monta o checklist de Day 1</h4><p>Por setor, da base de <b>mais de 100 projetos</b> 📘; caminho crítico e waves por dependência.</p></div>
+          <div data-n="3"><h4>Rascunha charters e RACI</h4><p>E aplica as regras do roadmap: piso de prioridade e alerta de capacidade acima de 85%.</p></div>
+          <div class="hum" data-n="✓"><h4>O especialista decide</h4><p>O que é Day 1 crítico, a sequência e o plano aprovado com o cliente.</p></div>
         </div>
-        
+        <div class="rec"><span><b>Sai:</b> plano de Day 1 e 100 dias, charters, preço fixo por porte</span><span class="r"><b>Única</b> · Onda 2</span></div>
+      </div>
+    </div>
+    <div class="callout" data-a="fade" style="--d:4"><b>Nossa diferença 💡:</b> o blueprint nasce do grafo da diligência e o plano nasce do blueprint; nada é redigitado. No mercado, PwC (Tech Effect) e KPMG (Carve AI) vendem carve-out com IA 🔎 e a EY Capital Edge gera o modelo de Day 1 ✅. <b>Extensão:</b> Distressed Tech &amp; UPI, o mesmo grafo em dias, com Restructuring.</div>
+  </div>
+</section>
+
+<!-- 10 · Transaction Office e TSA Control Tower -->
+<section class="slide" data-p="3 · IA tangível" data-t="Transaction Office e TSA" data-h="Transaction Office e TSA Control Tower" data-band="Transaction Office e TSA Control Tower · a execução com control tower" data-c="c-steel" data-bs="Eram IT IMO e IT SMO · a extensão nº 1 em nota" data-src="Fonte: docs/07, Tabela A (A5, A6) e Tabela B (B1, nota 27); readiness em data/ofertas.yaml 🗂️. Passos de IA são proposta 💡. Mercado: McKinsey myIMO ✅, EY Capital Edge ✅, PwC e KPMG 🔎 (docs/09).">
+  <div class="body spread">
+    <div class="stmt sm kin">O DNA de execução do TMO, agora com <em>status lido direto das ferramentas</em> e <em>cada real do TSA conciliado</em>.</div>
+    <div class="g2" style="align-items:stretch">
+      <div class="svc" data-a="up" style="--d:2">
+        <div class="svc-hd"><span class="icb nv" data-ic="tower"></span><div class="tx"><h3>Transaction Office (IMO · SMO) <span class="tr" style="margin-left:6px">Renovado</span></h3><div class="was">eram IT IMO (readiness 4,1) e IT SMO (3,9, tachado no status) 🗂️ · uma oferta, dois modos</div></div></div>
+        <div class="flow f2">
+          <div data-n="1"><h4>Lê o status</h4><p>Em Jira, ServiceNow e planilhas do cliente, sem reunião de coleta.</p></div>
+          <div data-n="2"><h4>Mantém o RAID</h4><p>Riscos, ações, issues e decisões extraídos de atas e e-mails; alerta desvios antes do comitê.</p></div>
+          <div data-n="3"><h4>Escreve o sumário semanal</h4><p>Com citação; sinergias previsto × realizado validadas por Finanças. No modo SMO, a saída do TSA.</p></div>
+          <div class="hum" data-n="✓"><h4>O especialista decide</h4><p>Conduz os rituais, decide escaladas e negocia. Propomos manter o SMO como modo 💡.</p></div>
+        </div>
+        <div class="rec"><span><b>Sai:</b> control tower, RAID vivo, painel de sinergias</span><span class="r"><b>Mensal</b> + bônus · Onda 2</span></div>
+      </div>
+      <div class="svc star" data-a="up" style="--d:3">
+        <div class="svc-hd"><span class="icb or" data-ic="contract"></span><div class="tx"><h3>TSA Control Tower <span class="tn" style="margin-left:6px">Extensão</span></h3><div class="was">extensão do modo SMO · gestão contínua dos acordos de transição · MVP em 90 dias</div></div><span class="nota">nota 27 · nº 1</span></div>
+        <div class="flow f2">
+          <div data-n="1"><h4>Lê os contratos de TSA</h4><p>Inventário de serviços, SLA, preço e marcos de saída.</p></div>
+          <div data-n="2"><h4>Concilia cada fatura</h4><p>Com o serviço efetivamente prestado; aponta divergências e SLA furado.</p></div>
+          <div data-n="3"><h4>Alerta marcos de saída</h4><p>Risco e custo de prorrogação; relatório mensal para comprador, vendedor e NewCo.</p></div>
+          <div class="hum" data-n="✓"><h4>O especialista decide</h4><p>A saída de cada serviço e os ajustes a negociar no ritual mensal.</p></div>
+        </div>
+        <div class="rec"><span><b>Sai:</b> inventário vivo do TSA, conciliação, plano de saída por serviço</span><span class="r"><b>Mensal</b>, 6–24 meses · Onda 2</span></div>
+      </div>
+    </div>
+    <div class="callout" data-a="fade" style="--d:4"><b>Por que juntos:</b> o Transaction Office executa e o TSA Control Tower cuida do dinheiro que corre entre as partes depois do closing. É aqui que <b>nasce a primeira receita mensal</b> da área. McKinsey myIMO faz o status automático ✅; a EY Capital Edge acompanha marcos de TSA ✅; <b>a execução hands-on do TMO é a nossa diferença</b> 💡.</div>
+  </div>
+</section>
+
+<!-- 11 · Tech Value Creation Office -->
+<section class="slide" data-p="3 · IA tangível" data-t="Value Creation" data-h="Tech Value Creation Office" data-band="Tech Value Creation Office · onde nasce a recorrência" data-c="c-green" data-bs="Era IT Synergies &amp; Value Creation · readiness 2,3 🗂️, a maior oportunidade" data-src="Fonte: docs/07, Tabela A (A8) e Tabela B (B3, B4, B7, B8, B9); lastro N1–N3 em docs/10 📘. Passos de IA são proposta 💡. Mercado 🔎✅ em docs/09 (FTI PCCAP, A&M Interim Leadership, A&M AI-ZBO, Bain OPEXEngine, Crosslake).">
+  <div class="body spread">
+    <div class="stmt sm kin">É aqui que nasce a recorrência: <em>71% dos GPs</em> priorizam melhoria operacional 🔎. O serviço mais amplo que temos vira <em>um escritório mensal</em>.</div>
+    <div class="svc" data-a="up" style="--d:2">
+      <div class="svc-hd"><span class="icb nv lg" data-ic="chart"></span><div class="tx"><h3>Tech Value Creation Office <span class="tr" style="margin-left:6px">Renovado</span></h3><div class="was">era IT Synergies &amp; Value Creation · ganha corpo de produto: plano de valor por investida, cardápio de alavancas e governança trimestral</div></div><div class="promise">Valor de tecnologia capturado todo mês, com lastro, para o operating partner.</div></div>
+      <div class="flow">
+        <div class="in" data-n="Entra"><h4>A investida</h4><p>Contratos, faturas e inventário de tecnologia.</p></div>
+        <div data-n="1"><h4>Propõe alavancas</h4><p>Do cardápio, com lastro <b>N1</b> (real), <b>N2</b> (benchmark) ou <b>N3</b> (hipótese).</p></div>
+        <div data-n="2"><h4>Monta o plano de valor</h4><p>100 dias + hold, com dono, prazo e meta por alavanca.</p></div>
+        <div data-n="3"><h4>Acompanha previsto × realizado</h4><p>Todo mês, com a economia <b>validada por Finanças</b>.</p></div>
+        <div data-n="4"><h4>Escreve o relatório trimestral</h4><p>Ao fundo, com citação; guarda a memória dos deals como benchmark.</p></div>
+        <div class="hum" data-n="✓"><h4>O especialista decide</h4><p>Prioriza alavancas, negocia com fornecedores e responde ao operating partner.</p></div>
+      </div>
+      <div class="rec"><span><b>Sai:</b> plano de valor por investida · painel com lastro · relatório trimestral ao comitê</span><span class="r">Receita: <b>mensal + por resultado</b> · Onda 3</span></div>
+    </div>
+    <div class="exts" style="grid-template-columns:repeat(5,1fr)">
+      <div class="ext" data-a="up" style="--d:3"><h4><span class="ico" data-ic="eye"></span>Portfolio Cyber Watch<span class="nota">25</span></h4><p><b>Monitoramento contínuo</b> de cyber das investidas; relatório ao comitê e aos LPs. Mensal.</p></div>
+      <div class="ext" data-a="up" style="--d:4"><h4><span class="ico" data-ic="user"></span>CIO-CTO-CAIO fracionado<span class="nota">24</span></h4><p><b>Liderança por dias/mês</b> ou interina, com copiloto de status, riscos e board pack. Mensal.</p></div>
+      <div class="ext" data-a="up" style="--d:5"><h4><span class="ico" data-ic="coins"></span>Cost, License &amp; Cloud<span class="nota">23</span></h4><p><b>Economia em licenças, cloud e contratos</b>: concilia contratos, consumo e faturas. Por resultado.</p></div>
+      <div class="ext" data-a="up" style="--d:6"><h4><span class="ico" data-ic="rocket"></span>AI Value Sprint<span class="nota">22</span></h4><p><b>2 casos de IA em produção</b> na investida em 6–8 semanas. Única + mensal.</p></div>
+      <div class="ext" data-a="up" style="--d:7"><h4><span class="ico" data-ic="bars"></span>Portfolio Tech Intelligence<span class="nota">22</span></h4><p><b>Benchmark brasileiro</b> das investidas, em base anonimizada. Mensal ou anual.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · Exit, Playbook e Distressed -->
+<section class="slide" data-p="3 · IA tangível" data-t="Exit, Playbook e Distressed" data-h="Exit Readiness, Playbook Copilot e Distressed Tech" data-band="Exit, Playbook e Distressed · o exit vira programa, o playbook vira copiloto" data-c="c-gold" data-bs="Eram IT Vendor DD e IT M&amp;A Playbook · e a extensão que só a A&amp;M faz" data-src="Fonte: docs/07, Tabela A (A1, A7) e Tabela B (B6); banco de 96 perguntas em docs/10 📘. Passos de IA são proposta 💡. Mercado ✅🔎 em docs/09 (McKinsey myIMO, Big Four, Serasa).">
+  <div class="body spread">
+    <div class="stmt sm kin">O exit deixa de ser um relatório e vira <em>um programa</em>; o playbook vira <em>um copiloto</em>; e a A&amp;M volta à origem: <em>situações especiais</em>.</div>
+    <div class="g3" style="align-items:stretch">
+      <div class="svc" data-a="up" style="--d:2">
+        <div class="svc-hd"><span class="icb nv" data-ic="exit"></span><div class="tx"><h3>Exit Readiness + Vendor DD</h3><div class="was">era IT Vendor DD (Sell Side) · <span class="tr">Renovado</span></div></div></div>
+        <div class="flow f1">
+          <div data-n="1"><div><h4>Confere o data room</h4><p>Completude contra as 96 perguntas 📘.</p></div></div>
+          <div data-n="2"><div><h4>Roda o “comprador simulado”</h4><p>Procura red flags como um comprador; rascunha o Q&amp;A com citação.</p></div></div>
+          <div data-n="3"><div><h4>Mede o score trimestral</h4><p>Factbook; na venda, gera o Vendor DD com o mesmo motor da Tech DD.</p></div></div>
+          <div class="hum" data-n="✓"><div><h4>O especialista decide</h4><p>O plano de remediação e assina o Vendor DD.</p></div></div>
+        </div>
+        <div class="rec"><span><b>Mensal</b> (6–24 meses) + única</span><span class="r">Onda 3</span></div>
+      </div>
+      <div class="svc" data-a="up" style="--d:3">
+        <div class="svc-hd"><span class="icb nv" data-ic="book"></span><div class="tx"><h3>M&amp;A Tech Playbook + Copilot</h3><div class="was">era IT M&amp;A Playbook · <span class="tr">Renovado</span></div></div></div>
+        <div class="flow f1">
+          <div data-n="1"><div><h4>Lê o playbook do cliente</h4><p>E os deals anteriores.</p></div></div>
+          <div data-n="2"><div><h4>Responde “o que fazer agora”</h4><p>Por fase do deal, com a fonte; gera checklists por tipo de deal.</p></div></div>
+          <div data-n="3"><div><h4>Aprende a cada deal</h4><p>Registra o que mudou e por quê. A McKinsey faz o mesmo no myIMO ✅.</p></div></div>
+          <div class="hum" data-n="✓"><div><h4>O especialista decide</h4><p>Desenha o playbook, treina o time e revisa o que o copiloto aprendeu.</p></div></div>
+        </div>
+        <div class="rec"><span><b>Setup + mensal</b></span><span class="r">Onda 4</span></div>
+      </div>
+      <div class="svc star" data-a="up" style="--d:4">
+        <div class="svc-hd"><span class="icb or" data-ic="buoy"></span><div class="tx"><h3>Distressed Tech &amp; UPI</h3><div class="was">extensão do Carve-out Blueprint · <span class="tn">Extensão</span> <span class="nota">nota 23</span></div></div></div>
+        <div class="flow f1">
+          <div data-n="1"><div><h4>Leitura rápida</h4><p>Inventário, contratos e acessos da unidade.</p></div></div>
+          <div data-n="2"><div><h4>Grafo de dependências</h4><p>Entre a UPI e o resto do grupo: o que vai junto e o que quebra.</p></div></div>
+          <div data-n="3"><div><h4>Rascunha o plano</h4><p>Separação, continuidade e custo mínimo standalone, em dias.</p></div></div>
+          <div class="hum" data-n="✓"><div><h4>Por que a A&amp;M ganha</h4><p>Turnaround é a origem da firma; ninguém das Big Four vende isso 🔎. 2.466 empresas em RJ ✅.</p></div></div>
+        </div>
+        <div class="rec"><span><b>Única + mensal</b> · com Restructuring</span><span class="r">Onda 2</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 9 -->
-<section class="slide" data-p="3 · Produtos" data-t="Linha 2 · Transacionar" data-band="Linha 2 · Transacionar · sign-to-close e 100 dias" data-c="c-steel" data-bs="Separação e integração com control tower" data-src="Fonte: docs/07-estrategia-e-inovacao.md, Tabela A (A3, A4, A5, A6) e Tabela B (B1). Fato de mercado ✅ em docs/09. Proposta 💡.">
-  <div class="body">
-    <div class="stmt sm kin">2026 é o ano do carve-out: <em>40% dos dealmakers</em> veem a separação de TI e dados como risco material ✅.</div>
-    <div class="g4 mt12 grow">
-      <div class="prod" data-a="up" style="--d:2">
-        <div class="hd"><div><h3>Carve-out &amp; Separation Blueprint</h3><div class="was">era IT Separation Strategy &amp; Design</div></div></div><span class="tr" style="align-self:flex-start">Renovado</span>
-        <p>Estratégia de TI da separação, sem ruptura operacional.</p>
-        <div class="met">Catálogo de entanglements por setor, modelo de TSA e custo one-time e stranded padronizado.</div>
-        <div class="ia">Grafo de dependências (inventário, CMDB, contratos, acessos), leitura de contratos e simulação de cenários com custo e prazo.</div>
-        <div class="who"><b>Para quem:</b> corporates desinvestindo, fundos comprando carve-outs, vendedores de UPI. Cases: Mubadala/UniFTC e Mubadala/Invepar 📘.</div>
-        <div class="ft"><span>Receita: <b>única</b> → TSA mensal</span><span>Onda 2</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:3">
-        <div class="hd"><div><h3>Day 1 &amp; 100-Day Readiness</h3><div class="was">era IT Integration &amp; Separation Planning</div></div></div><span class="tr" style="align-self:flex-start">Renovado</span>
-        <p>Pronto para o Day 1: checklist-padrão por setor, base de mais de 100 projetos 📘.</p>
-        <div class="met">Cronograma-modelo de 100 dias e preço fixo por porte e complexidade.</div>
-        <div class="ia">Plano de Day 1 gerado a partir dos achados da diligência, caminho crítico e rascunho de charters.</div>
-        <div class="who"><b>Para quem:</b> compradores após o signing; vendedores com TSA. Cases: Plurix, Braveo e Invepar 📘.</div>
-        <div class="ft"><span>Receita: <b>única</b></span><span>Onda 2</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:4">
-        <div class="hd"><div><h3>Transaction Office (IMO · SMO)</h3><div class="was">eram IT IMO e IT SMO</div></div></div><span class="tr" style="align-self:flex-start">Renovado</span>
-        <p>Uma oferta, dois modos, com sinergias validadas por Finanças. <b>DNA de execução do TMO.</b></p>
-        <div class="met">Método de PMO, painel de sinergias baseline × realizado e rituais de governança.</div>
-        <div class="ia">Control tower: status lido de Jira, ServiceNow e planilhas, RAID assistido, alertas e sumário semanal com citações.</div>
-        <div class="who"><b>Para quem:</b> compradores em integração e NewCos de carve-out. Propomos manter o SMO, hoje tachado no slide de status 💡.</div>
-        <div class="ft"><span>Receita: <b>mensal</b> + bônus</span><span>Onda 2</span></div>
-      </div>
-      <div class="prod star" data-a="up" style="--d:5">
-        <div class="hd"><div><h3>TSA Control Tower</h3><div class="was">gestão contínua dos acordos de serviço de transição</div></div></div><div class="row" style="gap:6px"><span class="tn">Novo</span><span class="nota">nota 27 · nº 1</span></div>
-        <p>Serviços, SLA, custo, faturas e marcos de saída do TSA. MVP em 90 dias.</p>
-        <div class="met">Inventário-padrão de serviços TSA, modelo de SLA e custo, plano de saída por serviço e ritual mensal.</div>
-        <div class="ia">Lê contratos de TSA e faturas, concilia cobrança × serviço prestado e alerta marcos de saída e risco de prorrogação.</div>
-        <div class="who"><b>Para quem:</b> compradores de carve-out, vendedores e NewCos. A EY Capital Edge já acompanha marcos de TSA ✅.</div>
-        <div class="ft"><span>Receita: <b>mensal</b> (6–24 meses)</span><span>Onda 2</span></div>
-      </div>
-    </div>
-    <div class="fdii mt12" data-a="fade" style="--d:6">
-      <div class="f"><span class="k">Corporates</span><b>57%</b> estão abertos a racionalizar portfólio ou já o fazem ✅</div>
-      <div class="d"><span class="k">Risco</span><b>40%</b> citam a separação de TI e dados como risco material ✅</div>
-      <div class="i"><span class="k">Concorrência</span>EY Capital Edge acompanha marcos de TSA ✅; PwC e KPMG vendem saída acelerada de TSA 🔎</div>
-      <div class="m"><span class="k">Nossa aposta</span>Blueprint + Transaction Office + TSA Control Tower, com a execução do TMO 💡</div>
-    </div>
-  </div>
-</section>
-
-<!-- 10 -->
-<section class="slide" data-p="3 · Produtos" data-t="Linha 3 · Criar valor" data-band="Linha 3 · Criar valor · hold period" data-c="c-green" data-bs="Onde nasce a recorrência" data-src="Fonte: docs/07-estrategia-e-inovacao.md, Tabela A (A8) e Tabela B (B3, B4, B7, B8, B9). Fatos de mercado 🔎✅ em docs/09. Proposta 💡.">
-  <div class="body">
-    <div class="stmt sm kin">É aqui que nasce a recorrência: <em>71% dos GPs</em> priorizam melhoria operacional 🔎.</div>
-    <div class="g3 mt12 grow">
-      <div class="prod dk" data-a="up" style="--d:2">
-        <div class="hd"><div><h3>Tech Value Creation Office</h3><div class="was">era IT Synergies &amp; Value Creation</div></div><span class="tr">Renovado</span></div>
-        <div class="met">Plano de valor por investida (100 dias + hold), cardápio de alavancas e governança trimestral.</div>
-        <div class="ia">Lê contratos, faturas e inventário para propor alavancas; previsto × realizado com lastro; relatório trimestral ao fundo.</div>
-        <div class="who"><b>Para quem:</b> operating partners de fundos de PE e plataformas buy-and-build.</div>
-        <div class="ft"><span>Receita: <b>mensal + resultado</b></span><span>Onda 3</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:3">
-        <div class="hd"><div><h3>Portfolio Cyber Watch</h3><div class="was">monitoramento de cyber das investidas</div></div><span class="tn">Novo</span></div>
-        <div class="met">Avaliação semestral, ratings outside-in e plano de 100 dias.</div>
-        <div class="ia">Consolida ratings, evidências e incidentes; relatório ao comitê e respostas a investidores (LPs).</div>
-        <div class="who"><b>Para quem:</b> fundos de PE e investidas, no modelo do PCCAP da FTI 🔎.</div>
-        <div class="ft"><span>Receita: <b>mensal</b></span><span class="nota">25 · com o Cyber &amp; Privacy DD</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:4">
-        <div class="hd"><div><h3>Fractional / Interim CIO-CTO-CAIO</h3><div class="was">liderança de tecnologia por dias/mês</div></div><span class="tn">Novo</span></div>
-        <div class="met">Pool de executivos sêniores, modelo de dias/mês e playbook de 100 dias do CIO.</div>
-        <div class="ia">Copiloto de gestão: status, riscos e board pack mensal. Com a Interim Leadership da A&amp;M.</div>
-        <div class="who"><b>Para quem:</b> investidas, NewCos e empresas em reestruturação.</div>
-        <div class="ft"><span>Receita: <b>mensal</b></span><span class="nota">24</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:5">
-        <div class="hd"><div><h3>Cost, License &amp; Cloud Optimization</h3><div class="was">economia em licenças, cloud e contratos</div></div><span class="tn">Novo</span></div>
-        <div class="met">Diagnóstico de 4–6 semanas, catálogo de alavancas e economia validada por Finanças.</div>
-        <div class="ia">Concilia contratos, consumo e faturas; encontra licenças ociosas e duplicadas.</div>
-        <div class="who"><b>Para quem:</b> investidas, empresas pós-aquisição e em reestruturação.</div>
-        <div class="ft"><span>Receita: <b>única + % da economia</b></span><span class="nota">23</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:6">
-        <div class="hd"><div><h3>AI Value Sprint</h3><div class="was">2 casos de IA em produção em 6–8 semanas</div></div><span class="tn">Novo</span></div>
-        <div class="met">Sprint: diagnóstico, 2 casos em produção e plano.</div>
-        <div class="ia">É o próprio produto: casos de IA nas investidas, alinhado ao AI-ZBO da A&amp;M ✅.</div>
-        <div class="who"><b>Por quê:</b> só 36% das investidas usam IA no dia a dia 🔎.</div>
-        <div class="ft"><span>Receita: <b>única + mensal</b></span><span class="nota">22</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:7">
-        <div class="hd"><div><h3>Portfolio Tech Intelligence</h3><div class="was">painel com benchmark brasileiro</div></div><span class="tn">Novo</span></div>
-        <div class="met">Indicadores-padrão: razão de TI, custo total real, maturidade, cyber e adoção de IA.</div>
-        <div class="ia">Normaliza dados das investidas e gera leituras comparativas com base proprietária anonimizada.</div>
-        <div class="who"><b>Referências:</b> Bain OPEXEngine e Crosslake TechIndicators 🔎.</div>
-        <div class="ft"><span>Receita: <b>mensal / anual</b></span><span class="nota">22</span></div>
+<!-- 13 · Extensões × mercado -->
+<section class="slide" data-p="3 · IA tangível" data-t="Extensões × mercado" data-h="As extensões que o mercado já vende" data-band="Extensões · o que o mercado já vende e onde cada uma se encaixa" data-c="c-navy" data-bs="Nota de prioridade de 0 a 30 · seis critérios 💡" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seções 5 e 9 (Tabela B e matriz); concorrentes em docs/09 (🔎 páginas oficiais e imprensa; ✅ confirmado). Critérios: demanda, direito de vencer, recorrência, IA, viabilidade 2027 e sinergia (1 a 5 cada). Notas são proposta 💡. Passe o mouse para ver quem vende.">
+  <div class="body spread">
+    <div class="stmt sm kin">Nenhuma extensão nasce solta: <em>cada uma se encaixa num serviço que já vendemos</em>. As três primeiras somam as <em>maiores notas</em> 💡.</div>
+    <div class="row" style="gap:24px;align-items:flex-start">
+      <div class="f1"><div class="ch" data-type="hbar"><script type="application/json">{"max":36,"labelW":400,"barH":30,"gap":20,"fs":15,"axis":false,"items":[
+        {"l":"TSA Control Tower · Transaction Office","b":true,"v":27,"c":"s2","note":"EY Capital Edge ✅","tip":"EY Capital Edge acompanha marcos de TSA ✅; PwC e KPMG vendem saída acelerada de TSA 🔎 · receita mensal"},
+        {"l":"Tech Deal Screening · Technology DD","b":true,"v":26,"c":"s2","note":"Async Advisor 🔎","tip":"Async Advisor vende “5-Day Tech Due Diligence” a partir de US$ 15 mil 🔎 · única ou assinatura"},
+        {"l":"Cyber & Privacy DD + Cyber Watch · Tech DD e Value Creation","b":true,"v":25,"c":"s2","note":"Deloitte, FTI 🔎","tip":"Deloitte (cyber DD, Digital Footprint) 🔎; FTI PCCAP, programa recorrente de cyber do portfólio 🔎 · única + mensal"},
+        {"l":"Fractional / Interim CIO-CTO-CAIO · Value Creation","v":24,"c":"o3","note":"A&M Interim Leadership 🔎","tip":"A própria A&M Interim Leadership já oferece CIO, CTO e CAIO interinos 🔎 · mensal"},
+        {"l":"AI Due Diligence · módulo da Technology DD","v":23,"c":"o3","note":"PwC US, KPMG CH 🔎","tip":"PwC US (“AI and technology DD”) 🔎; KPMG Suíça, AI DD em 10 dimensões 🔎 · única"},
+        {"l":"Distressed Tech & UPI · Carve-out Blueprint","v":23,"c":"o3","note":"ninguém das Big Four 🔎","tip":"Nenhuma Big Four vende tech M&A para recuperação judicial 🔎: a lacuna do mercado e a origem da A&M · única + mensal"},
+        {"l":"Cost, License & Cloud Optimization · Value Creation","v":23,"c":"o3","note":"A&M AI-ZBO ✅","tip":"A&M AI-ZBO relata 15–25% de ganho de produtividade ✅ · única + por resultado"},
+        {"l":"Portfolio Tech Intelligence · Value Creation","v":22,"c":"o3","note":"Bain, Crosslake 🔎","tip":"Bain OPEXEngine 🔎; Crosslake TechIndicators, mais de 6.000 investimentos 🔎 · mensal ou anual"},
+        {"l":"AI Value Sprint · Value Creation","v":22,"c":"o3","note":"A&M AI-ZBO ✅","tip":"Alinhado ao AI-ZBO da A&M ✅ · única + mensal"},
+        {"l":"Software & Code DD · módulo da Technology DD","v":17,"c":"o3","note":"Deloitte DE 🔎","tip":"Deloitte Software DD (Alemanha) 🔎; Black Duck: open source em 100% das transações auditadas 🔎 · única"}
+      ]}</script></div></div>
+      <div class="col" style="width:400px;gap:14px">
+        <div class="card ac" data-a="up" style="--d:3"><div class="pil"><span class="icb or" data-ic="flag"></span><div><h4>Sugestão para as ondas 1–2 💡</h4><p><b>Tech Deal Screening</b>, <b>TSA Control Tower</b> e <b>Cyber &amp; Privacy</b>: demanda comprovada, recorrência e encaixe no que já fazemos.</p></div></div></div>
+        <div class="card" data-a="up" style="--d:4"><div class="pil"><span class="icb" data-ic="cycle"></span><div><h4>6 de 10 com receita mensal</h4><p>TSA Control Tower, Cyber Watch, CIO fracionado, Distressed Tech, Tech Intelligence e AI Value Sprint.</p></div></div></div>
+        <div class="card" data-a="up" style="--d:5"><div class="pil"><span class="icb" data-ic="handshake"></span><div><h4>4 já existem na A&amp;M global</h4><p>Interim Leadership, Global Cyber Risk, AI-ZBO e Restructuring. A DTS entra com método, execução e dados brasileiros.</p></div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 11 -->
-<section class="slide" data-p="3 · Produtos" data-t="Linha 4 · Sair e transversais" data-band="Linha 4 · Sair · e os transversais" data-c="c-gold" data-bs="Exit preparado, playbook vivo e situações especiais" data-src="Fonte: docs/07-estrategia-e-inovacao.md, Tabela A (A1, A7) e Tabela B (B6). Fatos de mercado ✅🔎 em docs/09. Proposta 💡.">
-  <div class="body">
-    <div class="stmt sm kin">O exit deixa de ser um relatório e vira <em>um programa</em>. E a A&amp;M volta à sua origem: <em>situações especiais</em>.</div>
-    <div class="g2 mt12 grow">
-      <div class="prod" data-a="up" style="--d:2">
-        <div class="hd"><div><h3>Exit Readiness Track + Technology Vendor DD</h3><div class="was">era IT Vendor Due Diligence (Sell Side)</div></div><span class="tr">Renovado</span></div>
-        <p>Prontidão contínua, remediação e data room sempre pronto; o relatório de vendor DD na hora da venda.</p>
-        <div class="met">Programa de 6–24 meses com score trimestral, factbook e checklist de data room.</div>
-        <div class="ia">Verifica a completude do data room contra o banco de 96 perguntas 📘, rascunha respostas de Q&amp;A com citação e roda um <b>“comprador simulado”</b> que procura red flags.</div>
-        <div class="who"><b>Para quem:</b> fundos em saída, corporates desinvestindo e vendedores de UPI.</div>
-        <div class="ft"><span>Receita: <b>mensal</b> (track) + única (VDD)</span><span>Onda 3</span></div>
-      </div>
-      <div class="prod star" data-a="up" style="--d:3">
-        <div class="hd"><div><h3>Distressed Tech &amp; UPI</h3><div class="was">tecnologia em recuperação judicial e venda de unidades produtivas</div></div><div class="row" style="gap:6px"><span class="tn">Novo</span><span class="nota">23</span></div></div>
-        <p>O que de tecnologia vai junto com a UPI e o que quebra, em dias. Com A&amp;M Restructuring.</p>
-        <div class="met">Kit expresso: inventário de TI da UPI, dependências, plano de separação e custo mínimo standalone.</div>
-        <div class="ia">Leitura rápida de inventários, contratos e acessos; grafo de dependências com o restante do grupo.</div>
-        <div class="who"><b>Para quem:</b> empresas em RJ, administradores judiciais, FIDCs e compradores.</div>
-        <div class="ft"><span>Receita: <b>única + mensal</b></span><span>2.466 empresas em RJ em 2025 ✅</span></div>
-      </div>
-      <div class="prod" data-a="up" style="--d:4">
-        <div class="hd"><div><h3>M&amp;A Tech Playbook + Copilot</h3><div class="was">era IT M&amp;A Playbook</div></div><span class="tr">Renovado</span></div>
-        <p>De documento para método vivo, usado deal a deal.</p>
-        <div class="met">Playbook-base por tipo de deal, 3 pacotes e trilha de capacitação do time de TI do cliente.</div>
-        <div class="ia">Copiloto treinado no playbook do cliente: responde “o que fazer agora”, gera checklists e aprende a cada deal (a McKinsey faz o mesmo no myIMO ✅).</div>
-        <div class="who"><b>Para quem:</b> corporates com aquisições recorrentes e plataformas buy-and-build.</div>
-        <div class="ft"><span>Receita: <b>setup + mensal</b></span><span>Onda 4</span></div>
-      </div>
-      <div class="card nv" data-a="up" style="--d:5;display:flex;flex-direction:column;justify-content:center;gap:8px">
-        <div class="eye" style="color:#F9A64A">Por que a A&amp;M ganha aqui</div>
-        <p style="font-size:15px">Turnaround é a origem da firma, e não encontramos oferta de tech M&amp;A para recuperação judicial nas Big Four 🔎.</p>
-        <p style="font-size:15px">Seguradoras de R&amp;W começam a impor exclusões de IA 🔎: <b>prontidão para o exit vira proteção de valor.</b></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 12 -->
-<section class="slide" data-p="4 · Plano" data-t="Prioridade dos novos" data-band="Prioridade · os dez produtos novos" data-c="c-gold" data-bs="Nota de 0 a 30 em seis critérios" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seções 5 e 9. Critérios: demanda, direito de vencer, recorrência, IA, viabilidade 2027 e sinergia (1 a 5 cada). Notas propostas 💡.">
-  <div class="body">
-    <div class="row grow" style="gap:24px">
-      <div class="f1 col">
-        <div class="stmt sm kin">Os três primeiros somam as <em>maiores notas</em> em demanda, recorrência e <em>sinergia</em> com o portfólio atual 💡.</div>
-        <div class="row" style="gap:16px;align-items:center"><span class="ch-legend" style="margin:0"><span><i style="background:var(--s2)"></i>Ondas 1–2 (sugestão)</span><span><i style="background:var(--o3)"></i>Demais</span></span><span class="small">↻ = receita mensal (6 de 10)</span></div>
-        <div class="ch" data-type="hbar"><script type="application/json">{"max":30,"labelW":330,"barH":26,"gap":31,"ticks":[0,10,20,30],"fmt":"int",
-          "items":[
-            {"l":"TSA Control Tower ↻","v":27,"c":"s2","b":true,"tip":"Mensal · onda 2"},
-            {"l":"Tech Deal Screening","v":26,"c":"s2","b":true,"tip":"Única ou assinatura de triagens · onda 1"},
-            {"l":"Cyber & Privacy DD + Cyber Watch ↻","v":25,"c":"s2","b":true,"tip":"Única + mensal · ondas 1 e 3"},
-            {"l":"Fractional / Interim CIO-CTO-CAIO ↻","v":24,"c":"o3","tip":"Mensal · onda 3"},
-            {"l":"AI Due Diligence","v":23,"c":"o3","tip":"Módulo · onda 1"},
-            {"l":"Distressed Tech & UPI ↻","v":23,"c":"o3","tip":"Única + mensal · onda 2"},
-            {"l":"Cost, License & Cloud Optimization","v":23,"c":"o3","tip":"Única + resultado · onda 3"},
-            {"l":"Portfolio Tech Intelligence ↻","v":22,"c":"o3","tip":"Mensal / anual · onda 4"},
-            {"l":"AI Value Sprint ↻","v":22,"c":"o3","tip":"Única + mensal · onda 4"},
-            {"l":"Software & Code DD","v":17,"c":"o3","tip":"Módulo · onda 4"}
-          ]}</script></div>
-      </div>
-      <div style="width:460px" class="col">
-        <div class="ch" data-type="radar" data-h="330"><script type="application/json">{"title":"Perfil dos três primeiros (notas de 1 a 5)","axes":["Demanda","Direito de vencer","Recorrência","IA","Viabilidade","Sinergia"],"max":5,"series":[
-          {"l":"TSA Control Tower","v":[5,4,5,4,4,5],"c":"s1"},
-          {"l":"Tech Deal Screening","v":[4,3,4,5,5,5],"c":"s2"},
-          {"l":"Cyber & Privacy","v":[5,4,5,3,4,4],"c":"s3"}]}</script></div>
-        <div class="callout" data-a="fade" style="--d:5"><b>Software &amp; Code DD fica por último:</b> o diferencial está na ferramenta do parceiro, não na A&amp;M.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 13 -->
-<section class="slide" data-p="4 · Plano" data-t="Clientes e receita" data-band="Clientes e receita · para quem e como cobramos" data-c="c-green" data-bs="Do evento à recorrência" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seções 7 e 8; evidências em docs/09 (KPMG Brasil, Serasa, KPMG 2026 Global M&A Outlook, Bloomberg Tax para a meta da PwC, McKinsey para honorários por resultado); âncora interna 📘 (deck de 2023). Prioridades, meta e fórmulas são proposta 💡.">
+<!-- 14 · Para quem e quanto -->
+<section class="slide" data-p="4 · Para quem e quanto" data-t="Fatias de mercado e receita" data-h="Para quem e quanto" data-band="Para quem e quanto · fatias de mercado e escada de receita" data-c="c-green" data-bs="Do evento à recorrência" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seções 7 e 8; evidências em docs/09 (KPMG Brasil, Serasa, KPMG 2026 Global M&A Outlook, Bloomberg Tax para a meta da PwC, McKinsey para honorários por resultado); âncora interna 📘 (deck de 2023). Prioridades, meta e fórmulas são proposta 💡.">
   <div class="body spread">
     <div class="stmt sm kin"><em>Fundos e situações especiais primeiro</em>; o mesmo cliente sobe a escada inteira, <em>da triagem à recorrência mensal</em>.</div>
     <div class="g3">
-      <div class="card nv" data-a="up" style="--d:2"><div class="row" style="justify-content:space-between;align-items:center"><span class="tagx or">Prioridade 1</span><span class="small">Direito de vencer: <b>Alto</b></span></div>
-        <h3 class="mt8">Fundos de PE/VC mid-market</h3>
-        <div class="row" style="align-items:baseline;gap:10px"><span class="big" style="color:#fff;font-size:48px">50<small style="color:#9DB7CE">%</small></span><span class="small">dos deals no Brasil em 2025 ✅</span></div>
-        <p class="mt4">Screening · Tech DD · Value Creation · Cyber Watch · CIO fracionado</p></div>
-      <div class="card nv" data-a="up" style="--d:3"><div class="row" style="justify-content:space-between;align-items:center"><span class="tagx or">Prioridade 1</span><span class="small">Direito de vencer: <b>Muito alto</b></span></div>
-        <h3 class="mt8">Situações especiais</h3>
-        <div class="row" style="align-items:baseline;gap:10px"><span class="big" style="color:#fff;font-size:48px">2.466</span><span class="small">empresas em RJ, recorde ✅</span></div>
-        <p class="mt4">Distressed Tech &amp; UPI · CIO interino · Cost Optimization, com Restructuring</p></div>
-      <div class="card" data-a="up" style="--d:4"><div class="row" style="justify-content:space-between;align-items:center"><span class="tagx">Prioridade 2</span><span class="small">Direito de vencer: <b>Médio-alto</b></span></div>
-        <h3 class="mt8">Corporates em carve-out</h3>
-        <div class="row" style="align-items:baseline;gap:10px"><span class="big" style="font-size:48px">57<small>%</small></span><span class="small">dos corporates no mundo abertos a racionalizar portfólio · KPMG Global Outlook ✅</span></div>
-        <p class="mt4">Carve-out Blueprint · Day 1 · Transaction Office · TSA Control Tower</p></div>
+      <div class="slice p1" data-a="up" style="--d:2"><div class="rk"><span class="tagx or">Prioridade 1</span><span class="small">Direito de vencer: <b>Alto</b></span></div>
+        <div class="row" style="align-items:center;gap:12px"><span class="icb wh" data-ic="briefcase"></span><h3>Fundos de PE/VC mid-market</h3></div>
+        <div class="row" style="align-items:baseline;gap:10px"><span class="big">50<small>%</small></span><span class="small">dos deals no Brasil em 2025 ✅</span></div>
+        <p class="pr">Screening · Technology DD · Value Creation Office · Cyber Watch · CIO fracionado</p></div>
+      <div class="slice p1" data-a="up" style="--d:3"><div class="rk"><span class="tagx or">Prioridade 1</span><span class="small">Direito de vencer: <b>Muito alto</b></span></div>
+        <div class="row" style="align-items:center;gap:12px"><span class="icb wh" data-ic="gavel"></span><h3>Situações especiais</h3></div>
+        <div class="row" style="align-items:baseline;gap:10px"><span class="big">2.466</span><span class="small">empresas em RJ, recorde ✅</span></div>
+        <p class="pr">Distressed Tech &amp; UPI · CIO interino · Cost Optimization, com Restructuring</p></div>
+      <div class="slice p2" data-a="up" style="--d:4"><div class="rk"><span class="tagx">Prioridade 2</span><span class="small">Direito de vencer: <b>Médio-alto</b></span></div>
+        <div class="row" style="align-items:center;gap:12px"><span class="icb" data-ic="building"></span><h3>Corporates em carve-out</h3></div>
+        <div class="row" style="align-items:baseline;gap:10px"><span class="big">57<small>%</small></span><span class="small">dos corporates no mundo abertos a racionalizar portfólio ✅</span></div>
+        <p class="pr">Carve-out Blueprint · Day 1 · Transaction Office · TSA Control Tower</p></div>
     </div>
     <div class="steps" data-a="fade" style="--d:5">
       <div><b>Screening</b><span>única ou assinatura</span></div>
@@ -521,59 +502,43 @@
     </div>
     <div class="row" style="gap:16px">
       <div class="f1 g3">
-        <div class="card soft" data-a="up" style="--d:6"><h4>Projeto</h4><p>Dias por perfil × taxa vigente, ou preço fixo por pacote. Âncora: R$ 35 mil/semana no VMaaS 📘.</p></div>
-        <div class="card soft" data-a="up" style="--d:7"><h4>Assinatura</h4><p>Dias-equipe por mês × taxa, com desconto por 12 meses. Sem preço público de assinatura nas grandes firmas 🔎.</p></div>
-        <div class="card soft" data-a="up" style="--d:8"><h4>Por resultado</h4><p>Fixo menor + % da economia comprovada por Finanças, com teto. McKinsey: cerca de 1/4 dos honorários 🔎.</p></div>
+        <div class="card soft" data-a="up" style="--d:6"><div class="pil"><span class="icb" data-ic="contract"></span><div><h4>Projeto</h4><p>Dias por perfil × taxa, ou preço fixo por pacote. Âncora: R$ 35 mil/semana no VMaaS 📘.</p></div></div></div>
+        <div class="card soft" data-a="up" style="--d:7"><div class="pil"><span class="icb" data-ic="cycle"></span><div><h4>Assinatura</h4><p>Dias-equipe por mês × taxa, com desconto por 12 meses. Sem preço público nas grandes firmas 🔎.</p></div></div></div>
+        <div class="card soft" data-a="up" style="--d:8"><div class="pil"><span class="icb" data-ic="money"></span><div><h4>Por resultado</h4><p>Fixo menor + % da economia comprovada por Finanças, com teto. McKinsey: cerca de 1/4 dos honorários 🔎.</p></div></div></div>
       </div>
       <div class="kpi hl" data-a="up" style="--d:9;width:380px"><div class="l">Meta de receita recorrente da linha, fim de 2027 💡</div><div class="v">20–25<small>%</small></div><div class="d">Hoje praticamente zero 📘. Referência: a PwC mira 20–25% da receita de advisory em managed services 🔎</div></div>
     </div>
   </div>
 </section>
 
-<!-- 14 -->
-<section class="slide" data-p="4 · Plano" data-t="Plano 2027" data-band="Plano 2027 · fundação, piloto e quatro ondas" data-c="c-navy" data-bs="Esforço em FTE-mês, não cotação" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seções 9 e 10; piloto em docs/12. Datas e esforço são proposta 💡. FTE-mês = uma pessoa em tempo integral por um mês.">
+<!-- 15 · Como começar -->
+<section class="slide" data-p="5 · Como começar" data-t="Como começar" data-h="Como começar" data-band="Como começar · plano de 2027 e as três decisões" data-c="c-gold" data-bs="Esforço em FTE-mês, não cotação 💡" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seções 9, 10 e 12; piloto em docs/12; docs/00, seção 9. Datas e esforço são proposta 💡. FTE-mês = uma pessoa em tempo integral por um mês.">
   <div class="body spread">
-    <div class="stmt sm kin">Primeiro o motor e a Technology DD; <em>os resultados do piloto</em> decidem a liberação das ondas seguintes.</div>
-    <div class="ch" data-type="gantt"><script type="application/json">{"start":"2026-11","end":"2027-12","labelW":430,"rowH":31,"pal":["mut","s2","s1","s3","s4"],
-      "rows":[
-        {"g":"Fundação","l":"Nomes, catálogo, preços e one-pagers","s":"2026-11","m":2},
-        {"g":"Fundação","l":"Pedido de acesso ao A&M Assist","s":"2026-11","m":3},
-        {"g":"Onda 1 · Decidir","l":"Motor de IA + Technology DD","s":"2027-01","m":3},
-        {"g":"Onda 1 · Decidir","l":"AI DD, Cyber & Privacy e Tech Deal Screening","s":"2027-02","m":2},
-        {"g":"Onda 1 · Decidir","l":"Piloto em 2 deals reais","s":"2027-04","m":2,"tag":"piloto"},
-        {"g":"Onda 2 · Transacionar","l":"Carve-out, Day 1, Transaction Office, TSA, Distressed","s":"2027-04","m":4},
-        {"g":"Onda 3 · Valor e saída","l":"Value Creation, Exit, Cyber Watch, CIO, Cost","s":"2027-07","m":4},
-        {"g":"Onda 4 · Escala","l":"Intelligence, AI Sprint, Code DD, Playbook Copilot","s":"2027-10","m":3}
-      ]}</script></div>
+    <div class="stmt sm kin">Com três decisões, <em>a Onda 1 começa em janeiro</em>: o motor de IA dentro da Technology DD. O piloto decide as ondas seguintes.</div>
+    <div class="row" style="gap:20px;align-items:stretch">
+      <div class="f1"><div class="ch" data-type="gantt"><script type="application/json">{"start":"2026-11","end":"2027-12","labelW":300,"rowH":28,"pal":["mut","s2","o3","s3","o5"],
+          "rows":[
+            {"g":"Fundação","l":"Nomes, catálogo, preços, one-pagers","s":"2026-11","m":2},
+            {"g":"Fundação","l":"Pedido de acesso ao A&M Assist","s":"2026-11","m":3},
+            {"g":"Onda 1 · Decidir","l":"Motor de IA + Technology DD","s":"2027-01","m":3},
+            {"g":"Onda 1 · Decidir","l":"AI DD, Cyber & Privacy, Screening","s":"2027-02","m":2},
+            {"g":"Onda 1 · Decidir","l":"Piloto em 2 deals reais","s":"2027-04","m":2,"tag":"piloto"},
+            {"g":"Onda 2 · Transacionar","l":"Carve-out, Day 1, Transaction Office, TSA","s":"2027-04","m":4},
+            {"g":"Onda 3 · Valor e saída","l":"Value Creation, Exit, Watch, CIO, Cost","s":"2027-07","m":4},
+            {"g":"Onda 4 · Escala","l":"Intelligence, AI Sprint, Code DD, Copilot","s":"2027-10","m":3}
+          ]}</script></div></div>
+      <div style="width:420px" class="col" data-a="up">
+        <div class="card ac" style="--d:3"><div class="eye" style="color:var(--orange-d)">Piloto de 12 semanas</div><p><b>1 deal histórico</b> como gabarito e <b>2 deals reais</b>. Mede horas, prazo, % de afirmações com citação e retrabalho. Critério: <b>nenhum red flag perdido</b>.</p></div>
+        <div class="g2" style="gap:12px">
+          <div class="card" style="--d:4"><div class="eye">Primeiro cheque</div><div class="row" style="align-items:baseline;gap:6px"><span class="big" style="font-size:40px">18–26</span><span class="lead">FTE-mês</span></div><p class="small">Fundação + Onda 1 + piloto</p></div>
+          <div class="card" style="--d:5"><div class="eye">2027 completo</div><div class="row" style="align-items:baseline;gap:6px"><span class="big" style="font-size:40px">45–66</span><span class="lead">FTE-mês</span></div><p class="small">A custos ilustrativos de R$ 30–70 mil por FTE-mês: R$ 1,35 a 4,62 mi</p></div>
+        </div>
+      </div>
+    </div>
     <div class="g3">
-      <div class="card ac" data-a="up" style="--d:3"><div class="eye" style="color:var(--orange-d)">Piloto de 12 semanas</div><p><b>1 deal histórico</b> como gabarito e <b>2 deals reais</b>. Mede horas, prazo, % de afirmações com citação e retrabalho. Critério: <b>nenhum red flag perdido</b>.</p></div>
-      <div class="card" data-a="up" style="--d:4"><div class="eye">Primeiro cheque</div><div class="row" style="align-items:baseline;gap:6px"><span class="big" style="font-size:46px">18–26</span><span class="lead">FTE-mês</span></div><p>Fundação + Onda 1 + piloto. Caminho enxuto ou proprietário.</p></div>
-      <div class="card" data-a="up" style="--d:5"><div class="eye">2027 completo</div><div class="row" style="align-items:baseline;gap:6px"><span class="big" style="font-size:46px">45–66</span><span class="lead">FTE-mês</span></div><p>A custos ilustrativos de R$ 30–70 mil por FTE-mês: R$ 1,35 a 4,62 mi, sem consumo de IA e licenças.</p></div>
+      <div class="card nv" data-a="up" style="--d:4"><div class="pil"><span class="num-badge or">1</span><div><h3>Aprovar o portfólio 2027</h3><p>Os 8 serviços renovados, com nome de mercado e IA em cada um. Os POs validam escopo e kit.</p></div></div></div>
+      <div class="card nv" data-a="up" style="--d:5"><div class="pil"><span class="num-badge or">2</span><div><h3>Escolher 3 extensões</h3><p>Sugestão: <b>Tech Deal Screening</b>, <b>TSA Control Tower</b> e <b>Cyber &amp; Privacy</b>.</p></div></div></div>
+      <div class="card nv" data-a="up" style="--d:6"><div class="pil"><span class="num-badge or">3</span><div><h3>Aprovar o primeiro cheque</h3><p>18 a 26 FTE-mês para fundação, Onda 1 e piloto; caminho enxuto (A&amp;M Assist) ou proprietário.</p></div></div></div>
     </div>
-  </div>
-</section>
-
-<!-- 15 -->
-<section class="slide" data-p="4 · Plano" data-t="Próximos passos" data-band="Próximos passos · o que pedimos" data-c="c-gold" data-bs="Sete decisões, três prioritárias 💡" data-src="Fonte: docs/07-estrategia-e-inovacao.md, seção 12, e docs/00-sumario-executivo.md, seção 9. Detalhes no repositório: Tabelas A e B em data/portfolio-2027.csv.">
-  <div class="body spread">
-    <div class="stmt kin">Com três decisões, <em>a Onda 1 começa em janeiro</em>.</div>
-    <div class="g3">
-      <div class="card nv" data-a="up" style="--d:2"><span class="num-badge or">1</span><h3 class="mt8">Aprovar o portfólio 2027</h3><p>As 4 linhas e os novos nomes. Os POs validam escopo e kit de cada produto.</p><p class="mt8 small" style="color:#F9A64A">Destrava: catálogo, preços e one-pagers em nov–dez/2026</p></div>
-      <div class="card nv" data-a="up" style="--d:3"><span class="num-badge or">2</span><h3 class="mt8">Escolher 3 produtos novos</h3><p>Sugestão: <b>Tech Deal Screening</b>, <b>TSA Control Tower</b> e <b>Cyber &amp; Privacy</b>.</p><p class="mt8 small" style="color:#F9A64A">Destrava: produtos novos nas ondas 1 e 2</p></div>
-      <div class="card nv" data-a="up" style="--d:4"><span class="num-badge or">3</span><h3 class="mt8">Aprovar o primeiro cheque</h3><p>18 a 26 FTE-mês para fundação, Onda 1 (motor de IA, Technology DD, AI DD, Cyber, Screening) e piloto; escolher o caminho enxuto ou proprietário.</p><p class="mt8 small" style="color:#F9A64A">Destrava: piloto em 2 deals reais em abril de 2027</p></div>
-    </div>
-    <div class="g4">
-      <div class="card" data-a="up" style="--d:5"><span class="num-badge">4</span><h4 class="mt8">Pedir acesso</h4><p>Ao A&amp;M Assist / DiligenceGPT e à Global Cyber Risk.</p></div>
-      <div class="card" data-a="up" style="--d:6"><span class="num-badge">5</span><h4 class="mt8">Juntar com Restructuring</h4><p>Oferta conjunta de Distressed Tech &amp; UPI.</p></div>
-      <div class="card" data-a="up" style="--d:7"><span class="num-badge">6</span><h4 class="mt8">Proteger o time</h4><p>Um squad de produto M&amp;A fora do fluxo do TMO.</p></div>
-      <div class="card" data-a="up" style="--d:8"><span class="num-badge">7</span><h4 class="mt8">Atualizar a readiness</h4><p>Com a rubrica proposta, antes do orçamento de 2027.</p></div>
-    </div>
-    <div class="steps" data-a="fade" style="--d:9">
-      <div><b>Nov–dez/2026</b><span>nomes, catálogo, preços, one-pagers e pedido de acesso ao A&amp;M Assist</span></div>
-      <div class="on"><b>Jan/2027</b><span>motor de IA e Technology DD; AI DD, Cyber e Screening a partir de fev</span></div>
-      <div><b>Abr/2027</b><span>piloto em 2 deals reais; começa a onda 2 (carve-out e Day 1; TSA em maio)</span></div>
-      <div><b>Jul–out/2027</b><span>ondas 3 e 4: valor, exit e escala</span></div>
-    </div>
-    <div class="engine" data-a="fade" style="--d:10"><b>IT M&amp;A 2027</b><span>De serviço a produto · IA com citação em todo o ciclo · da diligência à execução com o mesmo time · receita mensal</span><b style="margin-left:auto;font-size:16px;color:#F9A64A;letter-spacing:.14em">Leadership. Action. Results.℠</b></div>
   </div>
 </section>
