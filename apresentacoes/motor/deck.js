@@ -326,9 +326,9 @@ const slides = [...stage.querySelectorAll(":scope > .slide")];
 const N = slides.length;
 const BRAND_S = META.marca || "Digital & Technology Services";
 const DECK = META.titulo || document.title;
-const AMDECO = `<svg class="am-deco" viewBox="0 0 520 80" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#9DBBD9" stroke-width="1" opacity=".55">${
-  Array.from({ length: 7 }, (_, i) => `<path d="M${120 + i * 60} 80 L${200 + i * 60} 0"/>`).join("")}</g><g fill="#F78C16">${
-  [[150, 22], [262, 54], [388, 18], [470, 46]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="2.4"/>`).join("")}</g></svg>`;
+const AMDECO = `<svg class="am-deco" viewBox="0 0 520 80" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><path d="M40 80 L100 0" stroke="#F78C16" stroke-width="1.4" fill="none"/><path d="M150 80 L210 0" stroke="#5E8AB4" stroke-width="7" fill="none" opacity=".55"/><path d="M190 80 V0" stroke="#F78C16" stroke-width="1.2" opacity=".7"/><path d="M280 80 L340 0" stroke="#5E8AB4" stroke-width="16" fill="none" opacity=".45"/><path d="M350 80 V0" stroke="#5E8AB4" stroke-width="5" opacity=".45"/><path d="M420 80 L480 0" stroke="#F78C16" stroke-width="1.4" fill="none" opacity=".8"/></svg>`;
+const AMMARK = `<svg class="am-mark" viewBox="0 0 46 46" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l11 14L5 37" stroke="#F78C16"/><path d="M15 9l11 14-11 14" stroke="#5E8AB4"/><path d="M25 9l11 14-11 14" stroke="#9DBBD9"/></svg>`;
+const SLOGAN = META.slogan === false ? "" : (META.slogan || "Leadership. Action. Results.℠");
 function kin(el) {
   let k = 0; const walk = n => [...n.childNodes].forEach(c => {
     if (c.nodeType === 3) { const parts = c.textContent.split(/(\s+)/); const f = document.createDocumentFragment();
@@ -340,7 +340,7 @@ function kin(el) {
 slides.forEach((s, i) => {
   if (s.dataset.band) {
     const top = H("div", { class: "sr-top" }); const p = (s.dataset.p || "").split(" · ");
-    top.innerHTML = `${AMDECO}<div class="am-wm"><span class="am-a">Alvarez &amp; Marsal</span><span class="am-s">${esc(BRAND_S)}</span></div><div class="am-div"></div>` +
+    top.innerHTML = `${AMDECO}${AMMARK}<div class="am-wm"><span class="am-a">Alvarez &amp; Marsal</span><span class="am-s">${esc(BRAND_S)}</span></div><div class="am-div"></div>` +
       `<div class="am-title"><b>${esc(s.dataset.t || "")}</b><span>${p.length > 1 ? "Parte " + esc(p[0]) + " · " + esc(p.slice(1).join(" · ")) : esc(p[0] || "")}</span></div>` +
       `<div class="am-right"><span class="am-dot"></span>${esc(DECK)}<span class="am-chip">${i + 1} / ${N}</span></div>`;
     s.prepend(top); s.prepend(H("div", { class: "sr-dec" }, null, "▸▸▸▸▸▸▸▸▸▸▸▸"));
@@ -356,7 +356,7 @@ slides.forEach((s, i) => {
 document.querySelectorAll(".kin").forEach(kin);
 
 /* capa: marca e arte */
-document.querySelectorAll(".cv-brand").forEach(b => { if (!b.innerHTML.trim()) b.innerHTML = `<span class="am-wm"><span class="am-a">Alvarez &amp; Marsal</span><span class="am-s">${esc(BRAND_S)}</span></span>`; });
+document.querySelectorAll(".cv-brand").forEach(b => { if (!b.innerHTML.trim()) b.innerHTML = `${AMMARK}<span class="am-wm"><span class="am-a">Alvarez &amp; Marsal</span><span class="am-s">${esc(BRAND_S)}</span></span>${SLOGAN ? `<span class="am-slogan">${esc(SLOGAN)}</span>` : ""}`; });
 document.querySelectorAll(".cv-deco").forEach(box => {
   const s = S("svg", { viewBox: "0 0 760 760", width: "100%", height: "100%" }, box), cx = 380, cy = 380;
   [140, 215, 290, 350].forEach((r, i) => S("circle", { cx, cy, r, style: `fill:none;stroke:rgba(255,255,255,${.07 + i * .02});stroke-width:1` }, s));

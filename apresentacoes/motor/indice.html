@@ -23,6 +23,8 @@ a{color:inherit;text-decoration:none}
 .am-s{font:500 12px var(--fb);color:#9DBBD9;letter-spacing:.04em;margin-top:3px}
 .am-div{width:1px;height:40px;background:rgba(255,255,255,.28)}
 .brand b{font:800 14px var(--fb);letter-spacing:.12em;text-transform:uppercase}
+.slogan{margin-left:auto;font:700 12px var(--fb);letter-spacing:.22em;text-transform:uppercase;color:#F9A64A}
+@media (max-width:760px){.slogan{display:none}}
 .eye{font:700 13px var(--fb);letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-top:44px}
 h1{font:800 clamp(44px,7vw,78px)/.98 var(--fh);margin-top:10px;letter-spacing:-.005em}
 h1 em{font-style:normal;color:#F9A64A}
@@ -52,12 +54,12 @@ footer{font-size:12px;color:var(--muted);padding:0 16px 30px}
 </head>
 <body>
 <header class="hero"><div class="wrap">
-  <div class="brand"><div><div class="am-a">Alvarez &amp; Marsal</div><div class="am-s">Digital &amp; Technology Services</div></div><div class="am-div"></div><b>IT M&amp;A</b></div>
+  <div class="brand"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l11 14L5 37" stroke="#F78C16"/><path d="M15 9l11 14-11 14" stroke="#5E8AB4"/><path d="M25 9l11 14-11 14" stroke="#9DBBD9"/></svg><div><div class="am-a">Alvarez &amp; Marsal</div><div class="am-s">Digital &amp; Technology Services</div></div><div class="am-div"></div><b>IT M&amp;A</b><span class="slogan">Leadership. Action. Results.℠</span></div>
   <div class="eye">Apresentações</div>
   <h1>Portfólio IT M&amp;A <em>2027</em></h1>
-  <p class="lead">Uma apresentação por documento do repositório: o portfólio de hoje, o mercado, o método de diligência da A&amp;M e a proposta de portfólio para 2027, com tabelas, gráficos e as fontes de cada número.</p>
+  <p class="lead">A apresentação da área em 15 slides, com os produtos novos, os novos nomes e o papel da IA em cada um. Para aprofundar, o sumário executivo e a estratégia completa, com as fontes de cada número.</p>
   <div class="stats"><div><b>{{N_DECKS}}</b><span>apresentações</span></div><div><b>{{N_SLIDES}}</b><span>slides</span></div><div><b>{{N_GRUPOS}}</b><span>blocos</span></div></div>
-  <a class="start" href="{{PRIMEIRO}}">Começar pelo sumário executivo ➜</a>
+  <a class="start" href="{{PRIMEIRO}}">Abrir a apresentação da área (15 slides) ➜</a>
 </div></header>
 <main><div class="wrap">
 {{GRUPOS}}

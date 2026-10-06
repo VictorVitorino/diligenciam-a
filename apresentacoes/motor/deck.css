@@ -349,3 +349,9 @@ a{color:var(--s1)}
 .det{display:none}.det.on{display:block;animation:aF .35s both}
 .card .small,.card p.small{font-size:11.5px;line-height:1.4;color:var(--muted)}
 .card.nv .small{color:#9DB7CE}
+
+/* identidade A&M: marca em chevrons e assinatura */
+.am-mark{width:40px;height:40px;flex:none;position:relative}
+.sr-top .am-mark{width:34px;height:34px;margin-right:-10px}
+.cv-brand .am-mark{width:48px;height:48px}
+.am-slogan{margin-left:18px;padding-left:18px;border-left:1px solid rgba(255,255,255,.25);font:700 12px var(--fb);letter-spacing:.22em;text-transform:uppercase;color:#F9A64A;white-space:nowrap}
