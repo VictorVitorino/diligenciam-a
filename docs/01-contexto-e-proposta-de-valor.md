@@ -22,7 +22,7 @@
 2. **A TI é o centro de gravidade da integração.** Mais de 50% dos esforços de integração de uma fusão ou aquisição estão em TI, com forte variação entre Due Diligence, Planning e Post Merger Integration. → [§2](#2-a-importância-da-ti-em-ma-)
 3. **O desafio é holístico, mas passa pela TI.** O deck lista 10 desafios (de capturar sinergias a comunicar a evolução do processo) e 5 riscos típicos de TI, com impactos financeiros, em clientes e em operações. → [§3](#3-os-10-desafios-holísticos-de-ma-) e [§4](#4-riscos-de-ti-e-possíveis-impactos-)
 4. **A A&M traz escala e DNA de execução.** 7.500+ profissionais no mundo e 1.000+ no Brasil, 77 escritórios (3 no Brasil), atuação desde 1983, quatro pilares de diferenciação e prêmios em due diligence e turnaround. → [§6](#6-quem-somos-a-am-em-números-) a [§9](#9-esferas-de-atuação-da-am-)
-5. **IT M&A é um dos quatro pilares da DTS**, liderada pelo MD Fabio Quintão. → [§10](#10-digital--technology-services-pilares-)
+5. **IT M&A é um dos quatro pilares da DTS.** A DTS é liderada pelo MD Fabio Quintão 📘; a service line IT M&A, por Thiago Vieira 🗂️. → [§10](#10-digital--technology-services-pilares-)
 6. **"A&M é M&A": seis fases, oito ofertas.** Do *M&A Strategy* ao *Exit*, com uma oferta transversal de *Value Creation as a Service*. A prontidão média da service line é 3,29, com alvo de 3,95 no FY. → [§11](#11-am-é-ma-o-ciclo-e-as-oito-ofertas-)
 7. **Há pendências antes de uso externo.** Slide de clientes marcado "Validar c/ Quintão", percentual de crescimento que não fecha com a série, fonte "Exhibit" incompleta e datas mistas. → [§13.4](#134-pontos-a-reforçar-na-próxima-versão-do-deck) e [§14](#14-perguntas-em-aberto-)
 
@@ -396,6 +396,8 @@ O posicionamento das ofertas na linha do tempo segue `data/ofertas.yaml`; a extr
 | ITMA-06 | IT Separation Management Office (SMO) | Execução da separação e transição de serviços, sistemas e ativos de TI para a NewCo, com resolução de entanglements, gestão de riscos e apoio a novas políticas | 3,9 → 4,3 · *tachada no status* |
 | ITMA-07 | IT Due Diligence (Sell Side) | Prepara a organização de TI do cliente para o M&A, com prontidão na diligência, as visões necessárias, oportunidades e potenciais de geração de valor com a transação | 2,7 → 3,7 |
 | ITMA-08 | IT Synergies & Value Creation (Value Creation as a Service) | Advisor de tecnologia para fundos de PE na estrutura de value creation, da DD à execução, ao longo de todo o ciclo de investimento | 2,3 → 3,3 |
+
+Nota: o readiness de ITMA-02 vem da linha "IT Due Diligence (Private Equity)" do slide de status. A variante de Venture Capital, que o catálogo junta no rótulo "PE or VC", tem linha própria no status (2,5 → 3,5, tachada).
 
 Escala de readiness 🗂️: 1 Oferta incompleta (risco muito alto) · 2 Oferta inicial (alto) · 3 Oferta definida (médio) · 4 Oferta estruturada (baixo) · 5 Oferta otimizada (muito baixo). O detalhamento de cada oferta está nos dossiês em `ofertas/`; os one-pagers 📎 seguem pendentes de ingestão.
 
