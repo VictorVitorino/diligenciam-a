@@ -10,6 +10,8 @@ Este repositório guarda a **análise organizada** do portfólio IT M&A. Os arqu
 | 2 | Slide **"A&M é M&A"** | Slide de posicionamento | Linha do tempo do deal (6 fases) e 8 ofertas com descrição oficial | ✅ Analisado (também presente no deck 1) | `data/ofertas.yaml` (`descricao_oficial`) |
 | 3 | Slide **"Status das Ofertas – IT M&A"** | Slide interno de governança | Readiness atual/alvo FY por oferta, PO, squad, líder da service line, escala 1–5, fluxo de status | ✅ Analisado | `data/ofertas.yaml` (`readiness`), `data/governanca.yaml` |
 | 4 | **One-pagers DTS.pptx** (123 MB) | Deck de one-pagers | Um one-pager por oferta da DTS | ⏳ **Pendente**: acima do limite de 10 MB do conector e hosts do Google bloqueados na rede do ambiente | Será incorporado aos dossiês com o selo 📎 |
+| 5 | **Pasta de 24 ZIPs de IT Due Diligence** (Claude Skills geradas pelo Meta Skill Engine) | Método interno de diligência | Esteira de 18 skills: tese, data request, diagnósticos por dimensão, riscos, iniciativas, business case, roadmap, narrativa, relatório e QA | ✅ 18 analisados · ⏳ **6 não abriram** (arquivos grandes demais para o conector; reenviar em partes menores que 5 MB) | `docs/10` (só a semântica e a analítica; nenhum código foi copiado) |
+| 6 | **Insumos de outras IAs** (3 textos) e anotações do usuário | Material de apoio | Benchmarks, de-para, custos e estratégia propostos por outras ferramentas | ✅ Guardados como insumo, não como fonte | `insumos/`, `docs/11` |
 
 ### Observações sobre as fontes
 
