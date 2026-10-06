@@ -189,6 +189,11 @@ tbody tr:hover { background: var(--surface-2); }
 .drawer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); margin: 18px 0 6px; }
 .drawer ol, .drawer ul { margin: 0; padding-left: 20px; font-size: 14px; }
 .drawer li { margin: 2px 0; }
+.score { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.score .bar { display: inline-block; height: 8px; border-radius: 4px; background: var(--s-alvo); }
+.tag-rec { font-size: 12px; color: var(--ink-2); }
+.drawer .p27 { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 4px 12px; margin: 12px 0; }
+.drawer .p27 dl { margin: 8px 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; }
 
@@ -249,6 +254,12 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
     <h2 id="h-tab">Tabela do portfólio</h2>
     <p class="lede">Todos os valores do painel, em formato de tabela.</p>
     <div class="table-wrap"><table id="table"></table></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-novos" id="sec-novos" hidden>
+    <h2 id="h-novos">Proposta 2027: produtos novos</h2>
+    <p class="lede">Produtos e módulos propostos na <a href="../docs/07-estrategia-e-inovacao.md">estratégia 2027</a>, ordenados pela nota de prioridade (6 critérios de 1 a 5, máximo 30). É proposta a validar, não oferta existente.</p>
+    <div class="table-wrap"><table id="tableNovos"></table></div>
   </section>
 
   <footer id="footer"></footer>
@@ -487,7 +498,7 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
   /* Tabela (gêmea acessível do gráfico) */
   var table = document.getElementById("table");
   var thead = el("thead"), hr = el("tr");
-  ["Código", "Oferta", "Fases", "Atual", "Alvo FY", "Gap", "Nível atual", "PO", "Squad"].forEach(function (h, i) {
+  ["Código", "Oferta", "Fases", "Atual", "Alvo FY", "Gap", "Nível atual", "PO", "Squad", "Nome 2027 (proposta)"].forEach(function (h, i) {
     var th = el("th", null, h); if (i >= 3 && i <= 5) th.style.textAlign = "right"; hr.appendChild(th);
   });
   thead.appendChild(hr); table.appendChild(thead);
@@ -496,7 +507,8 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
     var tr = el("tr", o.situacao_status_slide === "riscada" ? "struck" : "");
     var faseNomes = o.fases.map(function (f) { return D.fases[faseIdx[f]].nome; }).join(", ");
     [[o.codigo], [o.nome, "o-name"], [faseNomes], [fmt(o.readiness.atual), "num"], [fmt(o.readiness.alvo_fy), "num"],
-     ["+" + fmt(o.readiness.alvo_fy - o.readiness.atual), "num"], [escalaNome(o.readiness.atual).nome], [o.po || "—"], [(o.squad || []).join(", ") || "—"]]
+     ["+" + fmt(o.readiness.alvo_fy - o.readiness.atual), "num"], [escalaNome(o.readiness.atual).nome], [o.po || "—"], [(o.squad || []).join(", ") || "—"],
+     [o.proposta_2027 ? o.proposta_2027.nome_2027 : "—"]]
       .forEach(function (c) { tr.appendChild(el("td", c[1] || null, c[0])); });
     tr.tabIndex = 0;
     tr.addEventListener("click", function () { openDrawer(o); });
@@ -504,6 +516,36 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);
+
+  /* Proposta 2027: produtos novos */
+  var novos = D.novos_2027 || [];
+  if (novos.length) {
+    document.getElementById("sec-novos").hidden = false;
+    var tn = document.getElementById("tableNovos");
+    var thn = el("thead"), hn = el("tr");
+    ["#", "Produto", "Tipo", "O que é", "Receita", "Onda", "Nota"].forEach(function (h, i) {
+      var th = el("th", null, h); if (i === 6) th.style.textAlign = "right"; hn.appendChild(th);
+    });
+    thn.appendChild(hn); tn.appendChild(thn);
+    var tbn = el("tbody");
+    novos.forEach(function (n) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, n.id));
+      tr.appendChild(el("td", "o-name", n.nome_2027));
+      tr.appendChild(el("td", null, n.decisao_ou_tipo));
+      tr.appendChild(el("td", null, n.o_que_e));
+      var rc = el("td"); rc.appendChild(el("span", null, n.receita));
+      if (/^sim/.test(n.tem_recorrencia)) { rc.appendChild(el("br")); rc.appendChild(el("span", "tag-rec", "↻ recorrente")); }
+      tr.appendChild(rc);
+      tr.appendChild(el("td", null, n.onda));
+      var sc = el("td", "num"), wrapS = el("span", "score"), bar = el("span", "bar");
+      bar.style.width = Math.round(Number(n.nota_prioridade_0_30) / 30 * 60) + "px";
+      wrapS.appendChild(bar); wrapS.appendChild(el("span", null, n.nota_prioridade_0_30));
+      sc.appendChild(wrapS); tr.appendChild(sc);
+      tbn.appendChild(tr);
+    });
+    tn.appendChild(tbn);
+  }
 
   /* Painel de detalhe */
   var drawer = document.getElementById("drawer"), bg = document.getElementById("drawerBg");
@@ -525,6 +567,18 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
       drawer.appendChild(el("p", "src", "Proposta de valor: síntese analítica deste repositório, a validar com o PO."));
     }
     drawer.appendChild(meter(o));
+    var p27 = o.proposta_2027;
+    if (p27) {
+      var box = el("div", "p27");
+      box.appendChild(el("h4", null, "Proposta 2027 · " + p27.id));
+      var dl27 = el("dl");
+      [["Novo nome", p27.nome_2027], ["Decisão", p27.decisao_ou_tipo], ["Linha", p27.linha_2027],
+       ["Sem IA", p27.como_sem_ia], ["Com IA", p27.como_com_ia], ["Receita", p27.receita], ["Onda", p27.onda]]
+        .forEach(function (r) { if (r[1]) { dl27.appendChild(el("dt", null, r[0])); dl27.appendChild(el("dd", null, r[1])); } });
+      box.appendChild(dl27);
+      box.appendChild(el("p", "src", "Proposta da estratégia 2027 (docs/07), a validar com a liderança."));
+      drawer.appendChild(box);
+    }
     var dl = el("dl");
     var row = function (k, v) { dl.appendChild(el("dt", null, k)); dl.appendChild(el("dd", null, v)); };
     row("Fases", o.fases.map(function (f) { return D.fases[faseIdx[f]].nome; }).join(", "));

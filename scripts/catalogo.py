@@ -6,12 +6,14 @@ Uso:
   python3 scripts/catalogo.py painel           # gera painel/index.html a partir de data/
   python3 scripts/catalogo.py extrair ARQ...   # extrai texto de .pptx/.pdf para fontes/brutos/
 
-data/ofertas.yaml é a fonte única da verdade; data/governanca.yaml é opcional.
+data/ofertas.yaml é a fonte única da verdade do portfólio atual; data/governanca.yaml é opcional;
+data/portfolio-2027.csv (opcional) traz a proposta 2027 exibida no painel.
 """
 
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import math
 import re
@@ -126,8 +128,30 @@ def relatorio(catalogo: dict, governanca: dict | None) -> str:
     return "\n".join(linhas)
 
 
+def carregar_portfolio_2027() -> tuple[dict, list]:
+    """Lê data/portfolio-2027.csv: devolve {código atual: linha da Tabela A} e a Tabela B."""
+    arq = DADOS / "portfolio-2027.csv"
+    if not arq.exists():
+        return {}, []
+    with arq.open(encoding="utf-8-sig", newline="") as f:
+        linhas = list(csv.DictReader(f))
+    por_codigo, novos = {}, []
+    for ln in linhas:
+        if ln["tabela"] == "A":
+            for cod in ln["codigo_hoje"].split(";"):
+                por_codigo[cod.strip()] = ln
+        else:
+            novos.append({k: ln[k] for k in (
+                "id", "nome_2027", "decisao_ou_tipo", "linha_2027", "o_que_e", "como_com_ia",
+                "receita", "tem_recorrencia", "para_quem", "nota_prioridade_0_30", "onda",
+            )})
+    novos.sort(key=lambda n: -int(n["nota_prioridade_0_30"] or 0))
+    return por_codigo, novos
+
+
 def montar_dados_painel(catalogo: dict, governanca: dict | None) -> dict:
     gov = (governanca or {}).get("ofertas", {})
+    prop_2027, novos_2027 = carregar_portfolio_2027()
     ofertas = []
     for o in catalogo["ofertas"]:
         item = {k: o.get(k) for k in (
@@ -139,6 +163,12 @@ def montar_dados_painel(catalogo: dict, governanca: dict | None) -> dict:
         if o["id"] in gov:
             item["po"] = gov[o["id"]].get("po")
             item["squad"] = gov[o["id"]].get("squad", [])
+        if o["codigo"] in prop_2027:
+            ln = prop_2027[o["codigo"]]
+            item["proposta_2027"] = {k: ln[k] for k in (
+                "id", "nome_2027", "decisao_ou_tipo", "linha_2027", "como_sem_ia", "como_com_ia",
+                "receita", "onda",
+            )}
         ofertas.append(item)
     return {
         "meta": {k: catalogo["meta"][k] for k in ("firma", "pratica", "service_line", "atualizado_em")},
@@ -149,6 +179,7 @@ def montar_dados_painel(catalogo: dict, governanca: dict | None) -> dict:
         "lideranca": (governanca or {}).get("lideranca_service_line", []),
         "aviso": (governanca or {}).get("aviso_do_slide"),
         "ofertas": ofertas,
+        "novos_2027": novos_2027,
     }
 
 

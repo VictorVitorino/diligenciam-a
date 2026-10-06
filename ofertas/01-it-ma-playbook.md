@@ -319,7 +319,7 @@ A recomendação é posicionar o Playbook como "método proprietário do cliente
 
 ## 9. Maturidade e governança 🗂️
 
-> *Uso interno. Esta seção traz nomes de profissionais vindos de `data/governanca.yaml` e não deve ser publicada fora da A&M.*
+> *Esta seção traz nomes de profissionais vindos de `data/governanca.yaml`. Antes de compartilhar fora da A&M, confirme que a exibição dos nomes está autorizada.*
 
 ### Readiness
 

@@ -189,6 +189,11 @@ tbody tr:hover { background: var(--surface-2); }
 .drawer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); margin: 18px 0 6px; }
 .drawer ol, .drawer ul { margin: 0; padding-left: 20px; font-size: 14px; }
 .drawer li { margin: 2px 0; }
+.score { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.score .bar { display: inline-block; height: 8px; border-radius: 4px; background: var(--s-alvo); }
+.tag-rec { font-size: 12px; color: var(--ink-2); }
+.drawer .p27 { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 4px 12px; margin: 12px 0; }
+.drawer .p27 dl { margin: 8px 0; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { font-size: 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 2px 10px; }
 
@@ -249,6 +254,12 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
     <h2 id="h-tab">Tabela do portfólio</h2>
     <p class="lede">Todos os valores do painel, em formato de tabela.</p>
     <div class="table-wrap"><table id="table"></table></div>
+  </section>
+
+  <section class="block" aria-labelledby="h-novos" id="sec-novos" hidden>
+    <h2 id="h-novos">Proposta 2027: produtos novos</h2>
+    <p class="lede">Produtos e módulos propostos na <a href="../docs/07-estrategia-e-inovacao.md">estratégia 2027</a>, ordenados pela nota de prioridade (6 critérios de 1 a 5, máximo 30). É proposta a validar, não oferta existente.</p>
+    <div class="table-wrap"><table id="tableNovos"></table></div>
   </section>
 
   <footer id="footer"></footer>
@@ -417,7 +428,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "squad": [
     "Glaucea N",
     "Tatiane N"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A1",
+    "nome_2027": "M&A Tech Playbook + Copilot",
+    "decisao_ou_tipo": "Reformular",
+    "linha_2027": "Transversal",
+    "como_sem_ia": "Playbook-base por tipo de deal; 3 pacotes (Essencial, Completo, Com acompanhamento); trilha de capacitação; 2 cases",
+    "como_com_ia": "Copiloto que responde com base no playbook do cliente, gera checklists e incorpora lições de cada deal",
+    "receita": "Setup (única) + assinatura anual (mensal)",
+    "onda": "Onda 4"
+   }
   },
   {
    "id": "it-due-diligence-buy-side",
@@ -479,7 +500,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "po": "Matheus Teixeira",
    "squad": [
     "Julio F"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A2",
+    "nome_2027": "Technology Due Diligence",
+    "decisao_ou_tipo": "Evoluir (carro-chefe)",
+    "linha_2027": "1 · Decidir",
+    "como_sem_ia": "Red Flag 1–2 sem., Standard 3–4 sem., Deep Dive até 6 sem.; preço por módulo; Corporate e VC viram lentes; saída na linguagem do deal",
+    "como_com_ia": "Deal Evidence Graph: ingestão do VDR, evidências com citação, sugestão de nota por âncora, contradições e lacunas viram Q&A; cálculos em regras determinísticas",
+    "receita": "Projeto (única) + pacote anual para fundos",
+    "onda": "Onda 1"
+   }
   },
   {
    "id": "it-separation-strategy-design",
@@ -544,7 +575,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "po": "Heitor Milani",
    "squad": [
     "Marcela B"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A3",
+    "nome_2027": "Carve-out & Separation Blueprint",
+    "decisao_ou_tipo": "Reformular e fundir",
+    "linha_2027": "2 · Transacionar",
+    "como_sem_ia": "Fundir com a parte de separação do Planning; catálogo de entanglements por setor; modelo de TSA; custo one-time e stranded padronizado",
+    "como_com_ia": "Grafo de dependências (inventário, CMDB, contratos, acessos); leitura de contratos; simulação de cenários com custo e prazo",
+    "receita": "Projeto (única) → upsell mensal (TSA Control Tower)",
+    "onda": "Onda 2"
+   }
   },
   {
    "id": "it-integration-separation-planning",
@@ -612,7 +653,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "po": "Thiago Lorusso",
    "squad": [
     "Marcela B"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A4",
+    "nome_2027": "Day 1 & 100-Day Readiness",
+    "decisao_ou_tipo": "Evoluir",
+    "linha_2027": "2 · Transacionar",
+    "como_sem_ia": "Checklist-padrão por setor (base de 100+ projetos); cronograma-modelo de 100 dias; preço fixo por porte e complexidade",
+    "como_com_ia": "Plano de Day 1 gerado dos findings da DD; caminho crítico e dependências automáticos; rascunho de charters",
+    "receita": "Projeto (única)",
+    "onda": "Onda 2"
+   }
   },
   {
    "id": "it-integration-management-office",
@@ -669,7 +720,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "squad": [
     "Tatiane N",
     "Guilherme C"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A5",
+    "nome_2027": "Transaction Office: Integration (IMO)",
+    "decisao_ou_tipo": "Evoluir e ferramentar",
+    "linha_2027": "2 · Transacionar",
+    "como_sem_ia": "Método de PMO; painel de sinergias baseline × realizado validado por Finanças; rituais e metas contratuais",
+    "como_com_ia": "Control tower: status lido das ferramentas do cliente, RAID assistido, alertas, sumário semanal com citações, rastreio de sinergias",
+    "receita": "Mensal (3–12 meses) + componente por sinergia",
+    "onda": "Onda 2"
+   }
   },
   {
    "id": "it-separation-management-office",
@@ -713,7 +774,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "po": "Heitor Milani",
    "squad": [
     "Guilherme C"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A6",
+    "nome_2027": "Transaction Office: Separation (SMO)",
+    "decisao_ou_tipo": "Fundir com IMO; não descontinuar",
+    "linha_2027": "2 · Transacionar",
+    "como_sem_ia": "Mesmo método do IMO, com foco em NewCo e TSA",
+    "como_com_ia": "Mesmo motor do IMO + acompanhamento da saída do TSA",
+    "receita": "Mensal",
+    "onda": "Onda 2"
+   }
   },
   {
    "id": "it-due-diligence-sell-side",
@@ -773,7 +844,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "squad": [
     "João M",
     "Luana G"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A7",
+    "nome_2027": "Exit Readiness Track + Technology Vendor DD",
+    "decisao_ou_tipo": "Reformular (de relatório para programa)",
+    "linha_2027": "4 · Sair",
+    "como_sem_ia": "Track de 6–24 meses com score trimestral, remediação e data room sempre pronto; VDD separado",
+    "como_com_ia": "Verificador de completude do data room (banco de 96 perguntas + perguntas de comprador); Q&A com citação; agente 'comprador simulado'",
+    "receita": "Mensal (track) + única (VDD)",
+    "onda": "Onda 3"
+   }
   },
   {
    "id": "it-synergies-value-creation",
@@ -823,7 +904,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "squad": [
     "Giovanna B",
     "Alexandre B"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A8",
+    "nome_2027": "Tech Value Creation Office",
+    "decisao_ou_tipo": "Reformular (dar corpo de produto)",
+    "linha_2027": "3 · Criar valor",
+    "como_sem_ia": "Plano de valor por investida (100 dias + hold); cardápio de alavancas; governança trimestral com o operating partner; KPIs-padrão",
+    "como_com_ia": "Motor de alavancas sobre contratos, faturas e inventário; estimativa com lastro N1–N3; previsto × realizado; relatório trimestral ao fundo",
+    "receita": "Mensal + componente por resultado",
+    "onda": "Onda 3"
+   }
   },
   {
    "id": "it-due-diligence-corporate",
@@ -855,7 +946,17 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "squad": [
     "Victor F",
     "Thais M"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A2",
+    "nome_2027": "Technology Due Diligence",
+    "decisao_ou_tipo": "Evoluir (carro-chefe)",
+    "linha_2027": "1 · Decidir",
+    "como_sem_ia": "Red Flag 1–2 sem., Standard 3–4 sem., Deep Dive até 6 sem.; preço por módulo; Corporate e VC viram lentes; saída na linguagem do deal",
+    "como_com_ia": "Deal Evidence Graph: ingestão do VDR, evidências com citação, sugestão de nota por âncora, contradições e lacunas viram Q&A; cálculos em regras determinísticas",
+    "receita": "Projeto (única) + pacote anual para fundos",
+    "onda": "Onda 1"
+   }
   },
   {
    "id": "it-due-diligence-venture-capital",
@@ -907,7 +1008,149 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
    "squad": [
     "Tatiane N",
     "Thais M"
-   ]
+   ],
+   "proposta_2027": {
+    "id": "A2",
+    "nome_2027": "Technology Due Diligence",
+    "decisao_ou_tipo": "Evoluir (carro-chefe)",
+    "linha_2027": "1 · Decidir",
+    "como_sem_ia": "Red Flag 1–2 sem., Standard 3–4 sem., Deep Dive até 6 sem.; preço por módulo; Corporate e VC viram lentes; saída na linguagem do deal",
+    "como_com_ia": "Deal Evidence Graph: ingestão do VDR, evidências com citação, sugestão de nota por âncora, contradições e lacunas viram Q&A; cálculos em regras determinísticas",
+    "receita": "Projeto (única) + pacote anual para fundos",
+    "onda": "Onda 1"
+   }
+  }
+ ],
+ "novos_2027": [
+  {
+   "id": "B1",
+   "nome_2027": "TSA Control Tower",
+   "decisao_ou_tipo": "Produto novo",
+   "linha_2027": "2 · Transacionar",
+   "o_que_e": "Gestão contínua dos TSAs: serviços, SLA, custo, faturas e marcos de saída",
+   "como_com_ia": "Leitura de contratos de TSA e faturas, conciliação cobrança × serviço, alertas de marcos e de risco de prorrogação",
+   "receita": "Mensal (6–24 meses)",
+   "tem_recorrencia": "sim",
+   "para_quem": "Compradores de carve-out, vendedores, NewCos",
+   "nota_prioridade_0_30": "27",
+   "onda": "Onda 2"
+  },
+  {
+   "id": "B2",
+   "nome_2027": "Tech Deal Screening",
+   "decisao_ou_tipo": "Produto novo",
+   "linha_2027": "1 · Decidir",
+   "o_que_e": "Triagem de tecnologia e cyber de alvos em 5–10 dias, antes da LOI",
+   "como_com_ia": "Leitura de teaser/CIM e fontes públicas, varredura outside-in, red flags com citação, perguntas para a DD",
+   "receita": "Única (preço fixo) ou assinatura de N triagens/mês",
+   "tem_recorrencia": "sim (assinatura)",
+   "para_quem": "Fundos de PE/VC e CVCs com pipeline ativo",
+   "nota_prioridade_0_30": "26",
+   "onda": "Onda 1"
+  },
+  {
+   "id": "B3",
+   "nome_2027": "Cyber & Privacy DD + Portfolio Cyber Watch",
+   "decisao_ou_tipo": "Módulo + produto novo",
+   "linha_2027": "1 · Decidir / 3 · Criar valor",
+   "o_que_e": "DD de cyber e LGPD e, depois, monitoramento contínuo das investidas",
+   "como_com_ia": "Consolidação de ratings, evidências e incidentes; relatório trimestral ao fundo e respostas a LPs",
+   "receita": "Única (DD) + mensal (Watch)",
+   "tem_recorrencia": "sim",
+   "para_quem": "Fundos de PE e investidas",
+   "nota_prioridade_0_30": "25",
+   "onda": "Onda 1 (DD) / Onda 3 (Watch)"
+  },
+  {
+   "id": "B4",
+   "nome_2027": "Fractional / Interim CIO-CTO-CAIO",
+   "decisao_ou_tipo": "Produto novo",
+   "linha_2027": "3 · Criar valor",
+   "o_que_e": "Liderança de tecnologia por dias/mês ou interina, para investidas e NewCos",
+   "como_com_ia": "Copiloto de gestão: status, riscos e board pack mensal",
+   "receita": "Mensal",
+   "tem_recorrencia": "sim",
+   "para_quem": "Investidas de PE, NewCos, empresas em reestruturação",
+   "nota_prioridade_0_30": "24",
+   "onda": "Onda 3"
+  },
+  {
+   "id": "B5",
+   "nome_2027": "AI Due Diligence",
+   "decisao_ou_tipo": "Módulo novo da Tech DD",
+   "linha_2027": "1 · Decidir",
+   "o_que_e": "Avaliação da IA do alvo e do risco de disrupção do negócio por IA",
+   "como_com_ia": "Testes práticos assistidos: amostras de outputs, custo por chamada, análise de prompts e pipelines",
+   "receita": "Única (módulo)",
+   "tem_recorrencia": "não",
+   "para_quem": "Alvos de software e serviços digitais; teses que dependem de IA",
+   "nota_prioridade_0_30": "23",
+   "onda": "Onda 1"
+  },
+  {
+   "id": "B6",
+   "nome_2027": "Distressed Tech & UPI",
+   "decisao_ou_tipo": "Produto novo",
+   "linha_2027": "Transversal",
+   "o_que_e": "Avaliação expressa de ativos tecnológicos, separação de TI e continuidade em RJ e venda de UPI",
+   "como_com_ia": "Leitura rápida de inventários, contratos e acessos; grafo de dependências",
+   "receita": "Única (avaliação) + mensal (continuidade e TI interina)",
+   "tem_recorrencia": "sim",
+   "para_quem": "Empresas em RJ, administradores judiciais, FIDCs, compradores",
+   "nota_prioridade_0_30": "23",
+   "onda": "Onda 2"
+  },
+  {
+   "id": "B7",
+   "nome_2027": "Cost, License & Cloud Optimization",
+   "decisao_ou_tipo": "Produto novo",
+   "linha_2027": "3 · Criar valor",
+   "o_que_e": "Captura de economia em licenças, cloud e contratos de TI, com honorário atrelado ao resultado",
+   "como_com_ia": "Conciliação de contratos, consumo e faturas; detecção de licenças ociosas e duplicadas",
+   "receita": "Única + por resultado (% da economia comprovada, com teto)",
+   "tem_recorrencia": "parcial",
+   "para_quem": "Investidas de PE, empresas pós-aquisição e em reestruturação",
+   "nota_prioridade_0_30": "23",
+   "onda": "Onda 3"
+  },
+  {
+   "id": "B8",
+   "nome_2027": "Portfolio Tech Intelligence",
+   "decisao_ou_tipo": "Produto de dados novo",
+   "linha_2027": "3 · Criar valor",
+   "o_que_e": "Painel de indicadores de tecnologia das investidas com benchmark brasileiro proprietário",
+   "como_com_ia": "Normalização de dados heterogêneos e leituras comparativas",
+   "receita": "Mensal / anual",
+   "tem_recorrencia": "sim",
+   "para_quem": "Fundos de PE",
+   "nota_prioridade_0_30": "22",
+   "onda": "Onda 4"
+  },
+  {
+   "id": "B9",
+   "nome_2027": "AI Value Sprint",
+   "decisao_ou_tipo": "Produto novo",
+   "linha_2027": "3 · Criar valor",
+   "o_que_e": "Identificar e colocar em produção casos de IA nas investidas em 6–8 semanas",
+   "como_com_ia": "É o próprio produto",
+   "receita": "Única + mensal (operação dos casos)",
+   "tem_recorrencia": "sim",
+   "para_quem": "Investidas de PE; empresas pós-aquisição",
+   "nota_prioridade_0_30": "22",
+   "onda": "Onda 4"
+  },
+  {
+   "id": "B10",
+   "nome_2027": "Software & Code DD",
+   "decisao_ou_tipo": "Módulo novo da Tech DD",
+   "linha_2027": "1 · Decidir",
+   "o_que_e": "Scan de código, open source e licenças, dívida técnica e código gerado por IA",
+   "como_com_ia": "Ferramenta do parceiro com análise assistida",
+   "receita": "Única (módulo)",
+   "tem_recorrencia": "não",
+   "para_quem": "Alvos de software",
+   "nota_prioridade_0_30": "17",
+   "onda": "Onda 4"
   }
  ]
 }</script>
@@ -1139,7 +1382,7 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
   /* Tabela (gêmea acessível do gráfico) */
   var table = document.getElementById("table");
   var thead = el("thead"), hr = el("tr");
-  ["Código", "Oferta", "Fases", "Atual", "Alvo FY", "Gap", "Nível atual", "PO", "Squad"].forEach(function (h, i) {
+  ["Código", "Oferta", "Fases", "Atual", "Alvo FY", "Gap", "Nível atual", "PO", "Squad", "Nome 2027 (proposta)"].forEach(function (h, i) {
     var th = el("th", null, h); if (i >= 3 && i <= 5) th.style.textAlign = "right"; hr.appendChild(th);
   });
   thead.appendChild(hr); table.appendChild(thead);
@@ -1148,7 +1391,8 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
     var tr = el("tr", o.situacao_status_slide === "riscada" ? "struck" : "");
     var faseNomes = o.fases.map(function (f) { return D.fases[faseIdx[f]].nome; }).join(", ");
     [[o.codigo], [o.nome, "o-name"], [faseNomes], [fmt(o.readiness.atual), "num"], [fmt(o.readiness.alvo_fy), "num"],
-     ["+" + fmt(o.readiness.alvo_fy - o.readiness.atual), "num"], [escalaNome(o.readiness.atual).nome], [o.po || "—"], [(o.squad || []).join(", ") || "—"]]
+     ["+" + fmt(o.readiness.alvo_fy - o.readiness.atual), "num"], [escalaNome(o.readiness.atual).nome], [o.po || "—"], [(o.squad || []).join(", ") || "—"],
+     [o.proposta_2027 ? o.proposta_2027.nome_2027 : "—"]]
       .forEach(function (c) { tr.appendChild(el("td", c[1] || null, c[0])); });
     tr.tabIndex = 0;
     tr.addEventListener("click", function () { openDrawer(o); });
@@ -1156,6 +1400,36 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);
+
+  /* Proposta 2027: produtos novos */
+  var novos = D.novos_2027 || [];
+  if (novos.length) {
+    document.getElementById("sec-novos").hidden = false;
+    var tn = document.getElementById("tableNovos");
+    var thn = el("thead"), hn = el("tr");
+    ["#", "Produto", "Tipo", "O que é", "Receita", "Onda", "Nota"].forEach(function (h, i) {
+      var th = el("th", null, h); if (i === 6) th.style.textAlign = "right"; hn.appendChild(th);
+    });
+    thn.appendChild(hn); tn.appendChild(thn);
+    var tbn = el("tbody");
+    novos.forEach(function (n) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, n.id));
+      tr.appendChild(el("td", "o-name", n.nome_2027));
+      tr.appendChild(el("td", null, n.decisao_ou_tipo));
+      tr.appendChild(el("td", null, n.o_que_e));
+      var rc = el("td"); rc.appendChild(el("span", null, n.receita));
+      if (/^sim/.test(n.tem_recorrencia)) { rc.appendChild(el("br")); rc.appendChild(el("span", "tag-rec", "↻ recorrente")); }
+      tr.appendChild(rc);
+      tr.appendChild(el("td", null, n.onda));
+      var sc = el("td", "num"), wrapS = el("span", "score"), bar = el("span", "bar");
+      bar.style.width = Math.round(Number(n.nota_prioridade_0_30) / 30 * 60) + "px";
+      wrapS.appendChild(bar); wrapS.appendChild(el("span", null, n.nota_prioridade_0_30));
+      sc.appendChild(wrapS); tr.appendChild(sc);
+      tbn.appendChild(tr);
+    });
+    tn.appendChild(tbn);
+  }
 
   /* Painel de detalhe */
   var drawer = document.getElementById("drawer"), bg = document.getElementById("drawerBg");
@@ -1177,6 +1451,18 @@ footer { color: var(--muted); font-size: 12px; padding: 8px 0 40px; }
       drawer.appendChild(el("p", "src", "Proposta de valor: síntese analítica deste repositório, a validar com o PO."));
     }
     drawer.appendChild(meter(o));
+    var p27 = o.proposta_2027;
+    if (p27) {
+      var box = el("div", "p27");
+      box.appendChild(el("h4", null, "Proposta 2027 · " + p27.id));
+      var dl27 = el("dl");
+      [["Novo nome", p27.nome_2027], ["Decisão", p27.decisao_ou_tipo], ["Linha", p27.linha_2027],
+       ["Sem IA", p27.como_sem_ia], ["Com IA", p27.como_com_ia], ["Receita", p27.receita], ["Onda", p27.onda]]
+        .forEach(function (r) { if (r[1]) { dl27.appendChild(el("dt", null, r[0])); dl27.appendChild(el("dd", null, r[1])); } });
+      box.appendChild(dl27);
+      box.appendChild(el("p", "src", "Proposta da estratégia 2027 (docs/07), a validar com a liderança."));
+      drawer.appendChild(box);
+    }
     var dl = el("dl");
     var row = function (k, v) { dl.appendChild(el("dt", null, k)); dl.appendChild(el("dd", null, v)); };
     row("Fases", o.fases.map(function (f) { return D.fases[faseIdx[f]].nome; }).join(", "));
