@@ -3,6 +3,8 @@
 Base organizada do portfólio de **IT M&A** da Alvarez & Marsal Brasil (DTS): o que existe hoje, como o mercado está se movendo e a proposta de portfólio para 2027.
 
 > **Comece aqui:** [Sumário executivo](docs/00-sumario-executivo.md). Responde em uma página se dá para criar produtos novos ou melhorar os atuais, como fazer, quanto custa e para quem.
+>
+> **Para apresentar:** abra [`apresentacoes/index.html`](apresentacoes/index.html) no navegador. Há uma apresentação por documento, no padrão visual dos decks da A&M, com tabelas, gráficos e as fontes de cada número ([como editar](apresentacoes/GUIA.md)).
 
 ---
 
@@ -63,12 +65,24 @@ Cada afirmação traz um selo de origem:
 - Arquivos-fonte brutos ficam fora do git ([fontes](fontes/README.md)).
 - Textos de outras IAs são insumo, nunca fonte ([insumos](insumos/README.md)).
 
+## Apresentações
+
+| O quê | Onde |
+|---|---|
+| Índice das apresentações | [`apresentacoes/index.html`](apresentacoes/index.html) |
+| Uma apresentação por documento e por oferta | `apresentacoes/*.html` (arquivos autocontidos, abrem offline) |
+| Fontes editáveis | `apresentacoes/src/` |
+| Motor, componentes e gráficos | `apresentacoes/motor/` e o [guia](apresentacoes/GUIA.md) |
+
+Navegação: setas do teclado ou botões; **F** para tela cheia; `#5` na URL abre o slide 5; Imprimir → Salvar como PDF gera um slide por página.
+
 ## Painel e scripts
 
 ```bash
 pip install -r requirements.txt
 python3 scripts/catalogo.py validar   # confere os dados e recalcula os índices
 python3 scripts/catalogo.py painel    # gera painel/index.html (abrir no navegador)
+python3 scripts/apresentacoes.py      # gera apresentacoes/*.html e o índice
 ```
 
 O painel mostra o ciclo do deal, a readiness atual e o alvo, as leituras do portfólio e, para cada oferta, o detalhe do deck e a proposta 2027.
