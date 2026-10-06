@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITULO_PAGINA}}</title>
+<meta name="description" content="{{DESCRICAO}}">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Gerado por scripts/apresentacoes.py a partir de apresentacoes/src/{{FONTE_SRC}}. Edite a fonte, não este arquivo. -->
+<style>
+{{CSS}}
+</style>
+{{ESTILO_DECK}}
+</head>
+<body>
+<div id="progress"></div>
+<div id="viewport"><div id="stage">
+{{SLIDES}}
+<div id="wipe"><i></i><i></i><i></i></div><div id="chap"></div>
+</div></div>
+<div id="controls"><button class="g" id="bPrev" aria-label="Slide anterior"><span style="transform:rotate(180deg);display:inline-block">➜</span><span class="lb">Voltar</span></button><span class="c" id="cnt">1 / 1</span><button class="p" id="bNext" aria-label="Próximo slide"><span class="lb">Avançar</span>➜</button></div>
+<div id="dots"></div>
+<div id="tip"><b></b><span></span></div>
+<script type="application/json" id="deck-meta">{{META}}</script>
+<script>
+{{JS}}
+</script>
+{{SCRIPT_DECK}}
+</body>
+</html>
