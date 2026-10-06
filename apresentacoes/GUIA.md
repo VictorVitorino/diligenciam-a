@@ -13,6 +13,7 @@ Uma apresentação HTML por documento do repositório, no padrão visual do deck
 | `apresentacoes/src/NN-nome.html` | Fonte de cada apresentação: metadados + slides |
 | `apresentacoes/motor/deck.css`, `deck.js` | Motor compartilhado: moldura, navegação, componentes e gráficos |
 | `apresentacoes/motor/template.html`, `indice.html` | Moldes da página e do índice |
+| `apresentacoes/motor/am-symbol.svg` | Símbolo A&M vetorizado a partir do arquivo "performance" (o mesmo desenho está embutido em `deck.js`) |
 | `scripts/apresentacoes.py` | Gera tudo (`python3 scripts/apresentacoes.py`), só alguns (`... 07 o02`) ou valida (`... --checar`) |
 
 Na URL, `?static` desliga as animações (útil para revisar e capturar tela) e `#5` abre o slide 5.
